@@ -1,0 +1,24 @@
+{
+    "schoolarApp": {
+        "tblAudienceClient" : {
+            "home": {
+                "title": "Tbl Audience Clients",
+                "createLabel": "Create a new Tbl Audience Client",
+                "createOrEditLabel": "Create or edit a Tbl Audience Client"
+            },
+            "created": "A new Tbl Audience Client is created with identifier {{ param }}",
+            "updated": "A Tbl Audience Client is updated with identifier {{ param }}",
+            "deleted": "A Tbl Audience Client is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl Audience Client {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl Audience Client"
+            },
+            "strBase64Secret": "Str Base 64 Secret",
+            "strName": "Str Name",
+            "intDaysAccessTokenExpire": "Int Days Access Token Expire",
+            "intDaysRefreshTokenExpire": "Int Days Refresh Token Expire"
+        }
+    }
+}

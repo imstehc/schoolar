@@ -1,0 +1,54 @@
+
+<div *ngIf="tblClass">
+    <h2><span jhiTranslate="schoolarApp.tblClass.detail.title">Tbl Class</span> {{tblClass.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblClass.strName">Str Name</span></dt>
+        <dd>
+            <span>{{tblClass.strName}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblClass.intYear">Int Year</span></dt>
+        <dd>
+            <span>{{tblClass.intYear}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblClass.dtmCreated">Dtm Created</span></dt>
+        <dd>
+            <span>{{tblClass.dtmCreated | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblClass.dtmLastUpdate">Dtm Last Update</span></dt>
+        <dd>
+            <span>{{tblClass.dtmLastUpdate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblClass.intExcluded">Int Excluded</span></dt>
+        <dd>
+            <span>{{tblClass.intExcluded}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblClass.tblSchool">Tbl School</span></dt>
+        <dd>
+            <div *ngIf="tblClass.tblSchool">
+                <a [routerLink]="['/tbl-school', tblClass.tblSchool?.id]">{{tblClass.tblSchool?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblClass.tblShiftType">Tbl Shift Type</span></dt>
+        <dd>
+            <div *ngIf="tblClass.tblShiftType">
+                <a [routerLink]="['/tbl-shift-type', tblClass.tblShiftType?.id]">{{tblClass.tblShiftType?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-class/'+ tblClass.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

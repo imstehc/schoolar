@@ -1,0 +1,30 @@
+
+<div *ngIf="tblGeneralProcedureType">
+    <h2><span jhiTranslate="schoolarApp.tblGeneralProcedureType.detail.title">Tbl General Procedure Type</span> {{tblGeneralProcedureType.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblGeneralProcedureType.strName">Str Name</span></dt>
+        <dd>
+            <span>{{tblGeneralProcedureType.strName}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblGeneralProcedureType.dtmLastUpdate">Dtm Last Update</span></dt>
+        <dd>
+            <span>{{tblGeneralProcedureType.dtmLastUpdate | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-general-procedure-type/'+ tblGeneralProcedureType.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

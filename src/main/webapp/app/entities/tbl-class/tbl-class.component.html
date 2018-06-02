@@ -1,0 +1,78 @@
+<div>
+    <h2>
+        <span jhiTranslate="schoolarApp.tblClass.home.title">Tbl Classes</span>
+        <button class="btn btn-primary float-right jh-create-entity create-tbl-class" [routerLink]="['/', { outlets: { popup: ['tbl-class-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="schoolarApp.tblClass.home.createLabel">
+            Create new Tbl Class
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="tblClasses">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="schoolarApp.tblClass.strName">Str Name</span></th>
+            <th><span jhiTranslate="schoolarApp.tblClass.intYear">Int Year</span></th>
+            <th><span jhiTranslate="schoolarApp.tblClass.dtmCreated">Dtm Created</span></th>
+            <th><span jhiTranslate="schoolarApp.tblClass.dtmLastUpdate">Dtm Last Update</span></th>
+            <th><span jhiTranslate="schoolarApp.tblClass.intExcluded">Int Excluded</span></th>
+            <th><span jhiTranslate="schoolarApp.tblClass.tblSchool">Tbl School</span></th>
+            <th><span jhiTranslate="schoolarApp.tblClass.tblShiftType">Tbl Shift Type</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tblClass of tblClasses ;trackBy: trackId">
+                <td><a [routerLink]="['../tbl-class', tblClass.id ]">{{tblClass.id}}</a></td>
+                <td>{{tblClass.strName}}</td>
+                <td>{{tblClass.intYear}}</td>
+                <td>{{tblClass.dtmCreated | date:'medium'}}</td>
+                <td>{{tblClass.dtmLastUpdate | date:'medium'}}</td>
+                <td>{{tblClass.intExcluded}}</td>
+                <td>
+                    <div *ngIf="tblClass.tblSchool">
+                        <a [routerLink]="['../tbl-school', tblClass.tblSchool?.id ]" >{{tblClass.tblSchool?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="tblClass.tblShiftType">
+                        <a [routerLink]="['../tbl-shift-type', tblClass.tblShiftType?.id ]" >{{tblClass.tblShiftType?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../tbl-class', tblClass.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-class/'+ tblClass.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-class/'+ tblClass.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

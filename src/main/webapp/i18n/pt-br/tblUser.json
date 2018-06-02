@@ -1,0 +1,50 @@
+{
+    "schoolarApp": {
+        "tblUser" : {
+            "home": {
+                "title": "Usuários",
+                "createLabel": "Novo usuário",
+                "createUser": "Cadastrar Usuários",
+                "editUser": "Editar Usuário",
+                "personalData": "Dados do perfil",
+                "roles": "Papéis",
+                "filter": "Filtrar por Nome",
+                "noResults": "Nenhum registro encontrado.",
+                "results": "Carregando resultados."
+            },
+            "created": "Novo usuário cadastrado",
+            "updated": "Usuário atualizado",
+            "deleted": "Usuário removido",
+            "delete": {
+                "question": "Deseja excluír o usuário?"
+            },
+            "detail": {
+                "title": "Usuários"
+            },
+            "strCPF": "CPF",
+            "strFirstName": "Nome",
+            "strLastName": "Último Nome",
+            "strNickName": "Apelido",
+            "dtmBirthday": "Data de Nascimento",
+            "strEmail": "E-mail",
+            "strPhoto": "Foto",
+            "strGender": "Gênero",
+            "dtmCreated": "Data de Criação",
+            "dtmLastUpdate": "Data da Última Atualização",
+            "bolExcluded": "Excluído",
+            "tblPhone": "Telefone",
+            "tblAddress": "Endereço",
+			"tblContact": "Contatos",
+            "tblGender":{
+                "male":"Masculino",
+                "female":"Feminino"
+            },
+            "AssociatedUser": "Usuário associado",
+            "SearchAssociateds": "Buscar associados",
+            "SearchType": "Relacionamento",
+            "Select": "Selecione uma Data",
+            "verifyFields": "O preenchimento deste campo é obrigatório para maiores de 18 anos.",
+            "userName": "Nome de Usuário"
+        }
+    }
+}

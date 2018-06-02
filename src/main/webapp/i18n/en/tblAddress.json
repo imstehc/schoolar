@@ -1,0 +1,37 @@
+{
+    "schoolarApp": {
+        "tblAddress" : {
+            "home": {
+                "title": "Tbl Addresses",
+                "createLabel": "Create a new Tbl Address",
+                "createOrEditLabel": "Create or edit a Tbl Address"
+            },
+            "created": "A new Tbl Address is created with identifier {{ param }}",
+            "updated": "A Tbl Address is updated with identifier {{ param }}",
+            "deleted": "A Tbl Address is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl Address {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl Address"
+            },
+            "strLabel": "Address name",
+            "strPostCode": "Str Post Code",
+            "strStreet": "Str Street",
+            "strNumber": "Str Number",
+            "strNeighborhood": "Str Neighborhood",
+            "strComplement": "Str Complement",
+            "strCity": "Str City",
+            "strState": "Str State",
+            "strCountry": "Str Country",
+            "dtmCreate": "Dtm Create",
+            "dtmLastUpdate": "Dtm Last Update",
+            "intExcluded": "Int Excluded",
+            "tblUser": "Tbl User",
+            "tblSchoolNetwork": "Tbl School Network",
+            "tblSchool": "Tbl School",
+            "newAddress": "New Address",
+            "editAddress": "Edit Address"
+        }
+    }
+}

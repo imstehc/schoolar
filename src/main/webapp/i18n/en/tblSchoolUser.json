@@ -1,0 +1,25 @@
+{
+    "schoolarApp": {
+        "tblSchoolUser" : {
+            "home": {
+                "title": "Tbl School Users",
+                "createLabel": "Create a new Tbl School User",
+                "createOrEditLabel": "Create or edit a Tbl School User"
+            },
+            "created": "A new Tbl School User is created with identifier {{ param }}",
+            "updated": "A Tbl School User is updated with identifier {{ param }}",
+            "deleted": "A Tbl School User is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl School User {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl School User"
+            },
+            "dtmCreated": "Dtm Created",
+            "dtmLastUpdate": "Dtm Last Update",
+            "intExcluded": "Int Excluded",
+            "school": "School",
+            "user": "User"
+        }
+    }
+}

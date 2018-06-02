@@ -1,0 +1,143 @@
+<div class="address-content">
+    <div class="form-row" ngNativeValidate>
+        <div class="col-md-7">
+            <h4 class="title-modal" jhiTranslate="schoolarApp.tblUser.tblAddress">
+                Address
+            </h4>
+        </div>
+        <div class="col-md-5">
+            <span class="iconCircle add_icon" (click)="addAddress()">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </span>
+        </div>
+    </div>
+    <div class="accordion-content" *ngFor="let address of tblAddresses; let i=index">
+        <span class="mdl-js-button float-right float-delete " [hidden]="i === 0">
+            <span class="iconCircle remove_icon" (click)="removeAddress(i)">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </span>
+        </span>
+        <ngb-accordion #acc="ngbAccordion" class="address-content" activeIds="toggle-0" required="">
+            <ngb-panel class="address-content" id="toggle-{{ i }}" aria-expanded="true" aria-disabled="false" aria-controls="toggle-{{ i }}"
+                (click)="toggleAccordion(i)">
+                <ng-template ngbPanelTitle>
+                    <span class="address-title label-accordion">
+                        {{ address.strLabel }}
+                        <br>
+                        <span class="address-info label-text" [hidden]="(!address.strStreet) && (!address.strNumber) && (!address.strNeighborhood)">
+                            {{ address.strStreet }} {{ address.strNumber?', ' + address.strNumber:'' }} {{ address.strNeighborhood?' - '+ address.strNeighborhood:''
+                            }}
+                        </span>
+                        <br>
+                        <span class="address-info label-text" [hidden]="(!address.strStreet) && (!address.strNumber) && (!address.strNeighborhood)">
+                            {{ address.strCity }}
+                        </span>
+                        <span class=" primary_color arrow_icon_address" id="arrow{{i}}" role="button" (click)="toggleAccordion('arrow'+ i)">
+                            <img src="icons/arrow-right.svg" alt="">
+                        </span>
+                    </span>
+                </ng-template>
+                <ng-template ngbPanelContent>
+                    <div class="form-row">
+                        <div class="form-group col-md-12 mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-upgraded is-dirty is-focused':address.strLabel>0}"
+                            data-upgraded=",MaterialTextfield">
+                            <label class="label-text" for="sample3" jhiTranslate="schoolarApp.tblAddress.strLabel">Address Name</label>
+                            <span class="asterisk">*</span>
+                            <input class="form-control input-border input-required" type="text" name="sample3" id="sample3" [(ngModel)]="address.strLabel"
+                                required min="2" max="255" placeholder="{{ 'schoolarApp.tblAddress.newAddress' | translate }}">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col-md-6 mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-upgraded is-dirty':address.strCity>0}">
+                            <label for="city" class="form-control-label label-text" jhiTranslate="schoolarApp.tblAddress.strCity">City</label><span class="asterisk">*</span>
+                            <input type="text" class="form-control  input-border input-required" name="city'+i+'" id="city'+i+'" [(ngModel)]="address.strCity"
+                                maxlength="50" required placeholder="Cidade" />
+                            <div [hidden]="!(editForm.controls.city?.dirty && editForm.controls.city?.invalid)">
+                                <small class="form-text text-danger" [hidden]="!editForm.controls.city?.errors?.required" jhiTranslate="entity.validation.required">
+                                    This field is required.
+                                </small>
+                                <small class="form-text text-danger" [hidden]="!address.strCity == undefined" jhiTranslate="entity.validation.maxlength"
+                                    translateValues="{ max: 50 }">
+                                    This field cannot be longer than 50 characters.
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6 mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-upgraded is-dirty':address.strState>0}">
+                            <label for="state" class="form-control-label label-text" jhiTranslate="schoolarApp.tblAddress.strState">State</label>
+                            <span class="asterisk">*</span>
+                            <input type="text" class="form-control  input-border input-required" name="state" id="state" [(ngModel)]="address.strState"
+                                maxlength="2" required placeholder="Estado" />
+                            <div [hidden]="!(editForm.controls.state?.dirty && editForm.controls.state?.invalid)">
+                                <small class="form-text text-danger" [hidden]="!editForm.controls.state?.errors?.required" jhiTranslate="entity.validation.required">
+                                    This field is required.
+                                </small>
+                                <small class="form-text text-danger" [hidden]="!editForm.controls.state?.errors?.maxlength" jhiTranslate="entity.validation.maxlength"
+                                    translateValues="{ max: 2 }">
+                                    This field cannot be longer than 50 characters.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col-md-6 mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-upgraded is-dirty':address.strCountry>0}">
+                            <label for="country" class="form-control-label label-text" jhiTranslate="schoolarApp.tblAddress.strCountry">Country</label>
+                            <span class="asterisk">*</span>
+                            <input type="text" class="form-control  input-border input-required" name="country" id="country" [(ngModel)]="address.strCountry"
+                                maxlength="20" required placeholder="Pais" />
+                            <div [hidden]="!(editForm.controls.country?.dirty && editForm.controls.country?.invalid)">
+                                <small class="form-text text-danger" [hidden]="!editForm.controls.country?.errors?.required" jhiTranslate="entity.validation.required">
+                                    This field is required.
+                                </small>
+                                <small class="form-text text-danger" [hidden]="!editForm.controls.country?.errors?.maxlength" jhiTranslate="entity.validation.maxlength"
+                                    translateValues="{ max: 20 }">
+                                    This field cannot be longer than 20 characters.
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-group  col-md-6 mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-upgraded is-dirty':address.strPostCode>0}">
+                            <label for="zip_code" class="form-control-label label-text" jhiTranslate="schoolarApp.tblAddress.strPostCode">Zip Code</label>
+                            <input type="text" class="form-control input-border" name="zip_code" id="zip_code" [(ngModel)]="address.strPostCode" maxlength="9"
+                                placeholder="00000-000" mask="00000-000" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col-md-12 mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-upgraded is-dirty':address.strStreet>0}">
+                            <label for="street" class="form-control-label label-text" jhiTranslate="schoolarApp.tblAddress.strStreet">Street</label>
+                            <span class="asterisk">*</span>
+                            <input type="text" class="form-control  input-border input-required" name="street" id="street" [(ngModel)]="address.strStreet"
+                                   required placeholder="{{'schoolarApp.tblAddress.strStreet' | translate}}"/>
+                            <div [hidden]="!(editForm.controls.street?.dirty && editForm.controls.street?.invalid)">
+                                <small class="form-text text-danger" [hidden]="!editForm.controls.street?.errors?.required" jhiTranslate="entity.validation.required">
+                                    This field is required.
+                                </small>
+                                <small class="form-text text-danger" [hidden]="!editForm.controls.street?.errors?.maxlength" jhiTranslate="entity.validation.maxlength"
+                                    translateValues="{ max: 200 }">
+                                    This field cannot be longer than 200 characters.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col-md-6 mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-upgraded is-dirty':address.strNumber>0}">
+                            <label for="address_number" class="form-control-label label-text" jhiTranslate="schoolarApp.tblAddress.strNumber">Number</label>
+                            <input type="text" class="form-control  input-border" name="address_number" id="address_number" [(ngModel)]="address.strNumber"
+                                placeholder="000" maxlength="10" />
+                        </div>
+                        <div class="form-group  col-md-6 mdl-textfield mdl-js-textfield mdl-textfield--floating-label" [ngClass]="{'is-upgraded is-dirty':address.strNeighborhood>0}">
+                            <label for="neighborhood" class="form-control-label label-text" jhiTranslate="schoolarApp.tblAddress.strNeighborhood">Neighborhood</label>
+                            <input type="text" class="form-control  input-border" name="neighborhood" id="neighborhood" [(ngModel)]="address.strNeighborhood"
+                                placeholder="Nome do bairro" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group  col-md-12 mdl-textfield mdl-js-textfield mdl-textfield--floating-label label-text" [ngClass]="{'is-upgraded is-dirty':address.strComplement>0}">
+                            <label for="complements" class="form-control-label label-text" jhiTranslate="schoolarApp.tblAddress.strComplement">Complements </label>
+                            <input type="text" class="form-control  input-border" name="complements" id="complements" [(ngModel)]="address.strComplement"
+                                placeholder="Complemento" />
+                        </div>
+                    </div>
+                </ng-template>
+            </ngb-panel>
+        </ngb-accordion>
+    </div>
+</div>

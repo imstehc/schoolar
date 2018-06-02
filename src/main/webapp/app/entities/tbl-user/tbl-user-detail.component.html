@@ -1,0 +1,75 @@
+
+<div *ngIf="tblUser">
+    <h2><span jhiTranslate="schoolarApp.tblUser.detail.title">Tbl User</span> {{tblUser.id}}</h2>
+    <jhi-alert-error></jhi-alert-error>
+    <hr>
+        <table class="table table-striped" style="width:100%">
+            <tr>
+                <th><span jhiTranslate="schoolarApp.tblUser.strCPF">Str CPF</span></th>
+                <th><span jhiTranslate="schoolarApp.tblUser.strFirstName">Str First Name</span></th>
+                <th><span jhiTranslate="schoolarApp.tblUser.strLastName">Str Last Name</span></th>
+                <th><span jhiTranslate="schoolarApp.tblUser.strNickName">Str Nick Name</span></th>
+                <th><span jhiTranslate="schoolarApp.tblUser.dtmBirthday">Dtm Birthday</span></th>
+                <th><span jhiTranslate="schoolarApp.tblUser.strEmail">Str Email</span></th>
+                <th><span jhiTranslate="schoolarApp.tblUser.strPhoto">Str Photo</span></th>
+                <th><span jhiTranslate="schoolarApp.tblUser.strGender">Str Gender</span></th>
+                <th><span jhiTranslate="schoolarApp.tblUser.dtmCreated">Dtm Created</span></th>
+            </tr>
+            <tr>
+                <td><span>{{tblUser.strCPF}}</span></td>
+                <td><span>{{tblUser.strFirstName}}</span></td>
+                <td><span>{{tblUser.strLastName}}</span></td>
+                <td><span>{{tblUser.strNickName}}</span></td>
+                <td><span>{{tblUser.dtmBirthday | date:'MM/dd/yyyy'}}</span></td>
+                <td><span>{{tblUser.strEmail}}</span></td>
+                <td><span>{{tblUser.strPhoto}}</span></td>
+                <td><span>{{tblUser.strGender}}</span></td>
+                <td><span>{{tblUser.dtmCreated | date:'medium'}}</span></td>
+            </tr>
+
+            <tr>
+                <th><span jhiTranslate="schoolarApp.tblUser.dtmLastUpdate">Dtm Last Update</span></th>
+                <th><span jhiTranslate="schoolarApp.tblAddress.strCity">City</span></th>
+                <th><span jhiTranslate="schoolarApp.tblAddress.strState">State</span></th>
+                <th><span jhiTranslate="schoolarApp.tblAddress.strCountry">Country</span></th>
+                <th><span jhiTranslate="schoolarApp.tblAddress.strPostCode">Postal Code</span></th>
+                <th><span jhiTranslate="schoolarApp.tblAddress.strStreet">Street</span></th>
+                <th><span jhiTranslate="schoolarApp.tblAddress.strNumber">Number</span></th>
+                <th><span jhiTranslate="schoolarApp.tblAddress.strNeighborhood">Neighborhood</span></th>
+                <th><span jhiTranslate="schoolarApp.tblAddress.strComplement">Complement</span></th>
+            </tr>
+            <tr>
+                <td><span>{{tblUser.dtmLastUpdate | date:'medium'}}</span></td>
+                <td><span>{{tblUser.tblAddresses[0].strCity}}</span></td>
+                <td><span>{{tblUser.tblAddresses[0].strState}}</span></td>
+                <td><span>{{tblUser.tblAddresses[0].strCountry}}</span></td>
+                <td><span>{{tblUser.tblAddresses[0].strPostCode}}</span></td>
+                <td><span>{{tblUser.tblAddresses[0].strStreet}}</span></td>
+                <td><span>{{tblUser.tblAddresses[0].strNumber}}</span></td>
+                <td><span>{{tblUser.tblAddresses[0].strNeighborhood}}</span></td>
+                <td><span>{{tblUser.tblAddresses[0].strComplement}}</span></td>
+            </tr>
+
+        </table>
+        <div *ngFor="let tblPhone of tblUser.tblPhones; index as i">
+            <th><span jhiTranslate="schoolarApp.tblUser.tblPhone">Tbl Phone</span></th> ({{i+1}})
+            <span>
+                ({{tblPhone.strPrefix}}) {{tblPhone.strNumber}} - {{tblPhone.strPhoneType}} - {{tblPhone.strLabel}}
+             </span>
+        </div>
+        <hr>
+        <button type="submit"
+                (click)="previousState()"
+                class="btn btn-info">
+            <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+        </button>
+
+        <button type="button"
+                [routerLink]="['/', { outlets: { popup: 'tbl-user/'+ tblUser.id + '/edit'} }]"
+                replaceUrl="true"
+                queryParamsHandling="merge"
+                class="btn btn-primary">
+            <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+        </button>
+    </div>
+</div>

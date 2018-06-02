@@ -1,0 +1,31 @@
+{
+    "schoolarApp": {
+        "tblPhone" : {
+            "home": {
+                "title": "Phone",
+                "createLabel": "Create a new Tbl Phone",
+                "createOrEditLabel": "Create or edit a Tbl Phone"
+            },
+            "created": "A new Tbl Phone is created with identifier {{ param }}",
+            "updated": "A Tbl Phone is updated with identifier {{ param }}",
+            "deleted": "A Tbl Phone is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl Phone {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl Phone"
+            },
+            "strPrefix": "Str Prefix",
+            "strNumber": "Phone",
+            "strPhoneType": "Str Phone Type",
+            "strLabel": "Str Label",
+            "dtmCreated": "Dtm Created",
+            "dtmLastUpdate": "Dtm Last Update",
+            "intExcluded": "Int Excluded",
+            "tblUser": "Tbl User",
+            "tblSchoolNetwork": "Tbl School Network",
+            "tblSchool": "Tbl School",
+            "newPhone": "New Phone"
+        }
+    }
+}

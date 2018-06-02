@@ -1,0 +1,49 @@
+{
+    "schoolarApp": {
+        "tblUser" : {
+            "home": {
+                "title": "Users",
+                "createLabel": "Create user",
+                "createUser": "Create User",
+                "editUser": "Edit User Data",
+                "personalData": "Personal Data",
+                "roles": "Roles",
+                "filter": "Filter by Name",
+                "noResults": "No records found.",
+                "results": "Loading results."
+            },
+            "created": "User created",
+            "updated": "User updated",
+            "deleted": "User deleted",
+            "delete": {
+                "question": "Are you sure you want to delete this user?"
+            },
+            "detail": {
+                "title": "User"
+            },
+            "strCPF": "CPF",
+            "strFirstName": "First Name",
+            "strLastName": "Last Name",
+            "strNickName": "Nick Name",
+            "dtmBirthday": "Birthday",
+            "strEmail": "Email",
+            "strPhoto": "Photo",
+            "strGender": "Gender",
+            "dtmCreated": "Created",
+            "dtmLastUpdate": "Last Update",
+            "intExcluded": "Excluded",
+            "tblPhone": "Phones",
+            "tblAddress": "Address",
+            "AssociatedUser": "Associated User",
+            "SearchAssociateds": "Search Associated",
+            "tblContact": "Contact",
+            "tblGender":{
+                "male":"Male",
+                "female":"Female"
+            },
+            "SearchType": "Search Type",
+            "VerifyFields": "This field is required for ages 18 and over.",
+            "UserName": "User Name"
+        }
+    }
+}

@@ -1,0 +1,62 @@
+<div>
+    <h2>
+        <span jhiTranslate="schoolarApp.tblDefaultSchoolSetting.home.title">Tbl Default School Settings</span>
+        <button class="btn btn-primary float-right jh-create-entity create-tbl-default-school-setting" [routerLink]="['/', { outlets: { popup: ['tbl-default-school-setting-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="schoolarApp.tblDefaultSchoolSetting.home.createLabel">
+            Create new Tbl Default School Setting
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="tblDefaultSchoolSettings">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="schoolarApp.tblDefaultSchoolSetting.intYear">Int Year</span></th>
+            <th><span jhiTranslate="schoolarApp.tblDefaultSchoolSetting.intEnabled">Int Enabled</span></th>
+            <th><span jhiTranslate="schoolarApp.tblDefaultSchoolSetting.dtmLastUpdate">Dtm Last Update</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tblDefaultSchoolSetting of tblDefaultSchoolSettings ;trackBy: trackId">
+                <td><a [routerLink]="['../tbl-default-school-setting', tblDefaultSchoolSetting.id ]">{{tblDefaultSchoolSetting.id}}</a></td>
+                <td>{{tblDefaultSchoolSetting.intYear}}</td>
+                <td>{{tblDefaultSchoolSetting.intEnabled}}</td>
+                <td>{{tblDefaultSchoolSetting.dtmLastUpdate | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../tbl-default-school-setting', tblDefaultSchoolSetting.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-default-school-setting/'+ tblDefaultSchoolSetting.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-default-school-setting/'+ tblDefaultSchoolSetting.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="nav-side-menu">
+    <div class="brand">
+        <a routerLink="" (click)="collapseNavbar()">
+            <h2><span class="title" jhiTranslate="global.title">Schoolar</span></h2>
+        </a>
+    </div>
+    <div class="menu-list">
+        <ul class="menu-content collapse out" id="menu-content">
+            <li>
+                <a class="dropdown-item" routerLink="tbl-user" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <i class="fa fa-address-card"></i>
+                    <span jhiTranslate="global.menu.entities.tblUser">Usuarios</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item active" routerLink="tbl-school" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" >
+                    <i class="fa fa-building"></i>
+                    <span jhiTranslate="global.menu.entities.tblSchool">Escolas</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item active" routerLink="tbl-school-network" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" >
+                    <i class="fa fa-building"></i>
+                    <span jhiTranslate="global.menu.entities.tblSchoolNetwork">Rede de Escolas</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" routerLink="tbl-class" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <i class="fa fa-users"></i>
+                    <span jhiTranslate="global.menu.entities.tblClass">Turmas</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<jhi-progress-bar #barLoad></jhi-progress-bar>
+<div id="wrapper">
+    <div class="container_warp">
+        <ng-container>
+            <div class="card jh-cardInternal" >
+                <router-outlet></router-outlet>
+                <router-outlet name="popup"></router-outlet>
+            </div>
+        </ng-container>
+     </div>
+</div> <!-- .page-wrapper -->

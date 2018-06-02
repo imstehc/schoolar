@@ -1,0 +1,25 @@
+{
+    "schoolarApp": {
+        "tblAuthentication" : {
+            "home": {
+                "title": "Authentications",
+                "createLabel": "Criar novo Authentication",
+                "createOrEditLabel": "Criar ou editar Authentication"
+            },
+            "created": "Um novo Authentication foi criado com o identificador {{ param }}",
+            "updated": "Um Authentication foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Authentication foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Authentication {{ id }}?"
+            },
+            "detail": {
+                "title": "Authentication"
+            },
+            "idAuthentication": "Id Authentication",
+            "strCPF": "CPF",
+            "strUserName": "User Name",
+            "strEmail": "Email",
+            "strPassword": "Password"
+        }
+    }
+}

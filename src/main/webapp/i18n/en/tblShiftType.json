@@ -1,0 +1,22 @@
+{
+    "schoolarApp": {
+        "tblShiftType" : {
+            "home": {
+                "title": "Tbl Shift Types",
+                "createLabel": "Create a new Tbl Shift Type",
+                "createOrEditLabel": "Create or edit a Tbl Shift Type"
+            },
+            "created": "A new Tbl Shift Type is created with identifier {{ param }}",
+            "updated": "A Tbl Shift Type is updated with identifier {{ param }}",
+            "deleted": "A Tbl Shift Type is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl Shift Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl Shift Type"
+            },
+            "strName": "Str Name",
+            "dtmLastUpdate": "Dtm Last Update"
+        }
+    }
+}

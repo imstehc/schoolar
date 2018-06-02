@@ -1,0 +1,28 @@
+{
+  "groups": [
+    {
+      "name": "application",
+      "sourceType": "br.com.positivo.schoolar.config.ApplicationProperties",
+      "type": "br.com.positivo.schoolar.config.ApplicationProperties"
+    },
+    {
+      "name": "oauth2",
+      "sourceType": "br.com.positivo.schoolar.config.oauth2.OAuth2Properties",
+      "type": "br.com.positivo.schoolar.config.oauth2.OAuth2Properties"
+    },
+    {
+      "name": "oauth2.signature-verification",
+      "sourceMethod": "getSignatureVerification()",
+      "sourceType": "br.com.positivo.schoolar.config.oauth2.OAuth2Properties",
+      "type": "br.com.positivo.schoolar.config.oauth2.OAuth2Properties$SignatureVerification"
+    },
+    {
+      "name": "oauth2.web-client-configuration",
+      "sourceMethod": "getWebClientConfiguration()",
+      "sourceType": "br.com.positivo.schoolar.config.oauth2.OAuth2Properties",
+      "type": "br.com.positivo.schoolar.config.oauth2.OAuth2Properties$WebClientConfiguration"
+    }
+  ],
+  "hints": [],
+  "properties": []
+}

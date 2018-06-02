@@ -1,0 +1,21 @@
+<div class="card border">
+  <div class="form-row">
+      <ul class="col-md-6 list-group">
+          <li class="list-group-item" [ngClass]="{'active': isSelectedItem == schoolIndex}" (click)="listClick($event, school, schoolIndex)" *ngFor="let school of tblUser.schoolRoles; let schoolIndex = index" >
+            {{ school.strName }}
+           </li>
+      </ul>
+
+      <div *ngIf="tblUser.schoolRoles" class="col-md-6 list-group">
+          <ul class="list-group">
+                    <li class="roles-list list-group-item format-check"  *ngFor="let role of tblUser.schoolRoles[schoolIndex]?.roleList">
+                          <label class="container">
+                            <input type="checkbox" [(ngModel)]="role.checked">
+                            <span class="checkmark"></span>
+                              {{ role.strDescription }}
+                          </label>
+                      </li>
+           </ul>
+      </div>
+  </div>
+</div>

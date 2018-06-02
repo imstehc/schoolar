@@ -1,0 +1,26 @@
+{
+    "schoolarApp": {
+        "tblSchoolSubject" : {
+            "home": {
+                "title": "School Subjects",
+                "createLabel": "Criar novo School Subject",
+                "createOrEditLabel": "Criar ou editar School Subject"
+            },
+            "created": "Um novo School Subject foi criado com o identificador {{ param }}",
+            "updated": "Um School Subject foi atualizado com o identificador {{ param }}",
+            "deleted": "Um School Subject foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir School Subject {{ id }}?"
+            },
+            "detail": {
+                "title": "School Subject"
+            },
+            "dtmCreated": "Created",
+            "dtmLastUpdade": "Last Updade",
+            "intExcluded": "Excluded",
+            "tblLevelType": "Level Type",
+            "tblSubject": "Subject",
+            "tblSchool": "School"
+        }
+    }
+}

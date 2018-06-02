@@ -1,0 +1,36 @@
+{
+    "schoolarApp": {
+        "tblSchool" : {
+            "home": {
+                "title": "Tbl Schools",
+                "createLabel": "New school",
+                "createLabelTitle": "Register School",
+                "editLabelTitle": "Edit School",
+                "personalData": "School Data"
+            },
+            "created": "A new Tbl School is created with identifier {{ param }}",
+            "updated": "A Tbl School is updated with identifier {{ param }}",
+            "deleted": "A Tbl School is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl School {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl School"
+            },
+            "strCode": "Code",
+            "strName": "Name",
+            "strLegalName": "Str Legal Name",
+            "strEmail": "Str Email",
+            "strPhoto": "Str Photo",
+            "idSchoolType": "Id School Type",
+            "strCNPJ": "CNPJ",
+            "strINEP": "Code INEP",
+            "strINEPName": "Str INEP Name",
+            "dtmCreated": "Dtm Created",
+            "dtmLastUpdate": "Dtm Last Update",
+            "intExcluded": "Int Excluded",
+            "tblAddress": "Tbl Address",
+            "tblPhone": "Tbl Phone"
+        }
+    }
+}

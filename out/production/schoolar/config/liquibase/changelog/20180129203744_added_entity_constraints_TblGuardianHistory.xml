@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity TblGuardianHistory.
+    -->
+    <changeSet id="20180129203744-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="tbl_guardian_history"
+                                 constraintName="fk_tbl_guardian_history_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tbl_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="guardian_user_id"
+                                 baseTableName="tbl_guardian_history"
+                                 constraintName="fk_tbl_guardian_history_guardian_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tbl_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="guardian_type_id"
+                                 baseTableName="tbl_guardian_history"
+                                 constraintName="fk_tbl_guardian_history_guardian_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tbl_guardian_type"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_author_id"
+                                 baseTableName="tbl_guardian_history"
+                                 constraintName="fk_tbl_guardian_history_user_author_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tbl_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="audience_client_id"
+                                 baseTableName="tbl_guardian_history"
+                                 constraintName="fk_tbl_guardian_history_audience_client_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tbl_audience_client"/>
+
+        <addForeignKeyConstraint baseColumnNames="general_procedure_type_id"
+                                 baseTableName="tbl_guardian_history"
+                                 constraintName="fk_tbl_guardian_history_general_procedure_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tbl_general_procedure_type"/>
+
+    </changeSet>
+</databaseChangeLog>

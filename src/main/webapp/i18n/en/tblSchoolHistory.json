@@ -1,0 +1,36 @@
+{
+    "schoolarApp": {
+        "tblSchoolHistory" : {
+            "home": {
+                "title": "Tbl School Histories",
+                "createLabel": "Create a new Tbl School History",
+                "createOrEditLabel": "Create or edit a Tbl School History"
+            },
+            "created": "A new Tbl School History is created with identifier {{ param }}",
+            "updated": "A Tbl School History is updated with identifier {{ param }}",
+            "deleted": "A Tbl School History is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl School History {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl School History"
+            },
+            "strCode": "Str Code",
+            "strName": "Str Name",
+            "strLegalName": "Str Legal Name",
+            "strEmail": "Str Email",
+            "strPhoto": "Str Photo",
+            "idSchoolType": "Id School Type",
+            "strCNPJ": "Str CNPJ",
+            "strNEP": "Str NEP",
+            "strNEPName": "Str NEP Name",
+            "intExcluded": "Int Excluded",
+            "dtmChanged": "Dtm Changed",
+            "dtmLastUpdate": "Dtm Last Update",
+            "school": "School",
+            "userAuthor": "User Author",
+            "audienceClient": "Audience Client",
+            "generalProcedureType": "General Procedure Type"
+        }
+    }
+}

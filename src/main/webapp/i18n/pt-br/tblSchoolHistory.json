@@ -1,0 +1,36 @@
+{
+    "schoolarApp": {
+        "tblSchoolHistory" : {
+            "home": {
+                "title": "School Histories",
+                "createLabel": "Criar novo School History",
+                "createOrEditLabel": "Criar ou editar School History"
+            },
+            "created": "Um novo School History foi criado com o identificador {{ param }}",
+            "updated": "Um School History foi atualizado com o identificador {{ param }}",
+            "deleted": "Um School History foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir School History {{ id }}?"
+            },
+            "detail": {
+                "title": "School History"
+            },
+            "strCode": "Code",
+            "strName": "Name",
+            "strLegalName": "Legal Name",
+            "strEmail": "Email",
+            "strPhoto": "Photo",
+            "idSchoolType": "Id School Type",
+            "strCNPJ": "CNPJ",
+            "strNEP": "NEP",
+            "strNEPName": "NEP Name",
+            "intExcluded": "Excluded",
+            "dtmChanged": "Changed",
+            "dtmLastUpdate": "Last Update",
+            "school": "School",
+            "userAuthor": "User Author",
+            "audienceClient": "Audience Client",
+            "generalProcedureType": "General Procedure Type"
+        }
+    }
+}

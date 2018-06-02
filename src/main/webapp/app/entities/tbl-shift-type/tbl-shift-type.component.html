@@ -1,0 +1,60 @@
+<div>
+    <h2>
+        <span jhiTranslate="schoolarApp.tblShiftType.home.title">Tbl Shift Types</span>
+        <button class="btn btn-primary float-right jh-create-entity create-tbl-shift-type" [routerLink]="['/', { outlets: { popup: ['tbl-shift-type-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="schoolarApp.tblShiftType.home.createLabel">
+            Create new Tbl Shift Type
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="tblShiftTypes">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="schoolarApp.tblShiftType.strName">Str Name</span></th>
+            <th><span jhiTranslate="schoolarApp.tblShiftType.dtmLastUpdate">Dtm Last Update</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tblShiftType of tblShiftTypes ;trackBy: trackId">
+                <td><a [routerLink]="['../tbl-shift-type', tblShiftType.id ]">{{tblShiftType.id}}</a></td>
+                <td>{{tblShiftType.strName}}</td>
+                <td>{{tblShiftType.dtmLastUpdate | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../tbl-shift-type', tblShiftType.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-shift-type/'+ tblShiftType.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-shift-type/'+ tblShiftType.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

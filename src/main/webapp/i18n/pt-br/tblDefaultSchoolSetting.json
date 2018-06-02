@@ -1,0 +1,23 @@
+{
+    "schoolarApp": {
+        "tblDefaultSchoolSetting" : {
+            "home": {
+                "title": "Default School Settings",
+                "createLabel": "Criar novo Default School Setting",
+                "createOrEditLabel": "Criar ou editar Default School Setting"
+            },
+            "created": "Um novo Default School Setting foi criado com o identificador {{ param }}",
+            "updated": "Um Default School Setting foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Default School Setting foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Default School Setting {{ id }}?"
+            },
+            "detail": {
+                "title": "Default School Setting"
+            },
+            "intYear": "Year",
+            "intEnabled": "Enabled",
+            "dtmLastUpdate": "Last Update"
+        }
+    }
+}

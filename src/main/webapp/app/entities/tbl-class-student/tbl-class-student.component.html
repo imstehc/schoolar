@@ -1,0 +1,70 @@
+<div>
+    <h2>
+        <span jhiTranslate="schoolarApp.tblClassStudent.home.title">Tbl Class Students</span>
+        <button class="btn btn-primary float-right jh-create-entity create-tbl-class-student" [routerLink]="['/', { outlets: { popup: ['tbl-class-student-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="schoolarApp.tblClassStudent.home.createLabel">
+            Create new Tbl Class Student
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="tblClassStudents">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="schoolarApp.tblClassStudent.dtmLastUpdate">Dtm Last Update</span></th>
+            <th><span jhiTranslate="schoolarApp.tblClassStudent.tblUser">Tbl User</span></th>
+            <th><span jhiTranslate="schoolarApp.tblClassStudent.tblClass">Tbl Class</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tblClassStudent of tblClassStudents ;trackBy: trackId">
+                <td><a [routerLink]="['../tbl-class-student', tblClassStudent.id ]">{{tblClassStudent.id}}</a></td>
+                <td>{{tblClassStudent.dtmLastUpdate | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="tblClassStudent.tblUser">
+                        <a [routerLink]="['../tbl-user', tblClassStudent.tblUser?.id ]" >{{tblClassStudent.tblUser?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="tblClassStudent.tblClass">
+                        <a [routerLink]="['../tbl-class', tblClassStudent.tblClass?.id ]" >{{tblClassStudent.tblClass?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../tbl-class-student', tblClassStudent.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-class-student/'+ tblClassStudent.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-class-student/'+ tblClassStudent.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

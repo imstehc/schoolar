@@ -1,0 +1,37 @@
+{
+    "schoolarApp": {
+        "tblUserHistory" : {
+            "home": {
+                "title": "Tbl User Histories",
+                "createLabel": "Create a new Tbl User History",
+                "createOrEditLabel": "Create or edit a Tbl User History"
+            },
+            "created": "A new Tbl User History is created with identifier {{ param }}",
+            "updated": "A Tbl User History is updated with identifier {{ param }}",
+            "deleted": "A Tbl User History is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl User History {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl User History"
+            },
+            "strCPF": "Str CPF",
+            "strFirstName": "Str First Name",
+            "strLastName": "Str Last Name",
+            "strNickName": "Str Nick Name",
+            "dtmBirthday": "Dtm Birthday",
+            "strUserName": "Str User Name",
+            "strEmail": "Str Email",
+            "strPassword": "Str Password",
+            "strPhoto": "Str Photo",
+            "strGender": "Str Gender",
+            "intExcluded": "Int Excluded",
+            "dtmChanged": "Dtm Changed",
+            "dtmLastUpdate": "Dtm Last Update",
+            "user": "User",
+            "userAuthor": "User Author",
+            "audienceClient": "Audience Client",
+            "generalProcedureType": "General Procedure Type"
+        }
+    }
+}

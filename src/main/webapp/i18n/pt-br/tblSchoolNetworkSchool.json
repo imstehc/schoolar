@@ -1,0 +1,25 @@
+{
+    "schoolarApp": {
+        "tblSchoolNetworkSchool" : {
+            "home": {
+                "title": "School Network Schools",
+                "createLabel": "Criar novo School Network School",
+                "createOrEditLabel": "Criar ou editar School Network School"
+            },
+            "created": "Um novo School Network School foi criado com o identificador {{ param }}",
+            "updated": "Um School Network School foi atualizado com o identificador {{ param }}",
+            "deleted": "Um School Network School foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir School Network School {{ id }}?"
+            },
+            "detail": {
+                "title": "School Network School"
+            },
+            "dtmCreated": "Created",
+            "dtmLastUpdate": "Last Update",
+            "intExcluded": "Excluded",
+            "school": "School",
+            "schoolNetwork": "Rede de escolar"
+        }
+    }
+}

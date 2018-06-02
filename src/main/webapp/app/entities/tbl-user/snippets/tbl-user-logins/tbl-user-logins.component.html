@@ -1,0 +1,59 @@
+<div class="form-row card">
+  <div class="col-md-12">
+    <table class="card-body table table-striped">
+      <thead>
+        <tr>
+          <th>
+            <img src="icons/icon-add-user.svg">
+            <span jhiTranslate="schoolarApp.tblLogin.strUserName">User</span>
+          </th>
+          <th>
+            <img src="icons/icon key.svg">
+            <span jhiTranslate="schoolarApp.tblLogin.strPassword">Password</span>
+          </th>
+          <th></th>
+          <th>
+			<!-- <img src="icons/btn-add.svg" (click)="addLogin()"> -->
+			<span class="iconCircle add_user" (click)="addLogin()">
+				<i class="fa fa-plus" aria-hidden="true"></i>
+			</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let login of tblLogins; let i = index" [attr.data-index]="i">
+          <td width="50%">
+            <input #loginName="ngModel" type="text" [(ngModel)]="login.strUserName" name="strUserName{{ i }}" class="form-control input-text"
+             placeholder="{{ 'schoolarApp.tblUser.userName' | translate}}" maxlength="50" pattern="^[a-zA-Z0-9-_][\w\.-]*$">
+              <div [hidden]="!(loginName.dirty && loginName.invalid)">
+                  <small class="form-text text-danger" [hidden]="!( loginName.hasError('pattern'))"
+                         jhiTranslate="global.form.logininvalid">
+                      Please enter a valid login
+                  </small>
+              </div>
+              <div *ngIf="login.strUserName == undefined">
+                  <small class="form-text text-danger" *ngIf="this.age >= 18" jhiTranslate="schoolarApp.tblUser.verifyFields">
+                      This field is required for ages 18 and over.
+                  </small>
+              </div>
+          </td>
+          <td width="30%">
+            <input type="password"  [(ngModel)]="login.strPassword" name="strPassword{{ i }}" class="form-control"
+            placeholder="{{ 'schoolarApp.tblLogin.strPassword' | translate}}" required>
+          </td>
+          <td width="10%">
+            <a href="#"><img src="icons/reset.png"></a>
+          </td>
+          <td>
+            <!-- <span [hidden]="tblLogins.length===1" href="#" role="button">
+              <img src="icons/btn-delete.svg" (click)="removeLogin(i)">
+			</span> -->
+			<span class="iconCircle remove_user" [hidden]="tblLogins.length===1" href="#" role="button" (click)="removeLogin(i)">
+				<i class="fa fa-minus" aria-hidden="true" ></i>
+			</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

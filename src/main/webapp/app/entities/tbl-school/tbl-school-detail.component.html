@@ -1,0 +1,79 @@
+
+<div *ngIf="tblSchool">
+    <h2><span jhiTranslate="schoolarApp.tblSchool.detail.title">Tbl School</span> {{tblSchool.strName}}</h2>
+    <jhi-alert-error></jhi-alert-error>
+    <hr>
+    <table class="table table-striped" style="width:100%">
+        <tr>
+            <th><span jhiTranslate="schoolarApp.tblSchool.strPhoto">Str Photo</span></th>
+            <th><span jhiTranslate="schoolarApp.tblSchool.strCode">Str Code</span></th>
+            <th><span jhiTranslate="schoolarApp.tblSchool.strName">Str Name</span></th>
+            <th><span jhiTranslate="schoolarApp.tblSchool.strLegalName">Str Legal Name</span></th>
+        </tr>
+        <tr>
+            <td><span>{{tblSchool.strPhoto}}</span></td>
+            <td><span>{{tblSchool.strName}}</span></td>
+            <td><span>{{tblSchool.strCode}}</span></td>
+            <td><span>{{tblSchool.strLegalName}}</span></td>
+        </tr>
+        <tr>
+            <th><span jhiTranslate="schoolarApp.tblSchool.strEmail">Str Email</span></th>
+            <!--<th><span jhiTranslate="schoolarApp.tblSchool.idSchoolType">Id School Type</span></th>-->
+            <th><span jhiTranslate="schoolarApp.tblSchool.strCNPJ">Str CNPJ</span></th>
+            <th><span jhiTranslate="schoolarApp.tblSchool.strINEP">Str INEP</span></dt></th>
+            <th><span jhiTranslate="schoolarApp.tblSchool.strINEPName">Str INEP Name</span></th>
+        </tr>
+        <tr>
+            <td><span>{{tblSchool.strEmail}}</span></td>
+            <!--<td><span>{{tblSchool.idSchoolType}}</span></td>-->
+            <td><span>{{tblSchool.strCNPJ}}</span></td>
+            <td><span>{{tblSchool.strINEP}}</span></td>
+            <td><span>{{tblSchool.strINEPName}}</span></td>
+        </tr>
+        <tr>
+            <th><span jhiTranslate="schoolarApp.tblSchool.dtmCreated">Dtm Created</span></th>
+            <th><span jhiTranslate="schoolarApp.tblSchool.dtmLastUpdate">Dtm Last Update</span></th>
+            <!--<th><span jhiTranslate="schoolarApp.tblSchool.intExcluded">Int Excluded</span></th>-->
+            <th><span jhiTranslate="schoolarApp.tblSchool.tblAddress">Tbl Address</span></th>
+            <th><span jhiTranslate="schoolarApp.tblSchool.tblPhone">Tbl Phone</span></th>
+        </tr>
+        <tr>
+            <td><span>{{tblSchool.dtmCreated | date:'medium'}}</span></td>
+            <td><span>{{tblSchool.dtmLastUpdate | date:'medium'}}</span></td>
+            <!--<td><span>{{tblSchool.intExcluded}}</span></td>-->
+            <td><span *ngFor="let tblAddress of tblSchool.tblAddresses; let last = last">
+
+                <a [routerLink]="['/tbl-address', tblAddress?.id ]" jhiTranslate="schoolarApp.tblUser.tblAddress">Address</a>{{last ? '' : ', '}}
+                </span>
+            </td>
+            <td><span *ngFor="let tblPhone of tblSchool.tblPhones; let last = last">
+                <a [routerLink]="['/tbl-phone', tblPhone?.id ]" jhiTranslate="schoolarApp.tblUser.tblContact">Contact</a>{{last ? '' : ', '}}
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <th><span jhiTranslate="schoolarApp.tblSchool.idSchoolType">Str School Type</span></th>
+            <th><span>Latitude</span></th>
+            <th><span>Longitude</span></th>
+        </tr>
+        <tr>
+            <td><span>{{tblSchool.schoolType ? tblSchool.schoolType.strName: ''}}</span></td>
+            <td><span>{{tblSchool.latitude}}</span></td>
+            <td><span>{{tblSchool.longitude}}</span></td>
+        </tr>
+    </table>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-school/'+ tblSchool.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

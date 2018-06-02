@@ -1,0 +1,23 @@
+{
+    "schoolarApp": {
+        "tblGuardian" : {
+            "home": {
+                "title": "Responsável",
+                "createLabel": "Cadastrar novo Responsável",
+                "createOrEditLabel": "Cadastrar ou editar Responsável"
+            },
+            "created": "Um novo Responsável foi cadastrado com o identificador {{ param }}",
+            "updated": "Um Responsável foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Responsável foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluír Responsável {{ id }}?"
+            },
+            "detail": {
+                "title": "Responsável"
+            },
+            "user": "Usuário",
+            "guardianUser": "Responsável do Úsuario",
+            "guardianType": "Tipo de Responsável"
+        }
+    }
+}

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180124145624_added_entity_TblUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180124145625_added_entity_TblAuthentication.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180124145626_added_entity_TblGuardianType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180124145627_added_entity_TblAddress.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180124145628_added_entity_TblRole.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180124145629_added_entity_TblSchool.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180124145630_added_entity_TblSchoolType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180124145631_added_entity_TblPhone.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180124145632_added_entity_TblSchoolNetwork.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180124145633_added_entity_TblGeneralProcedureType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203728_added_entity_TblUserRole.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203730_added_entity_TblGuardian.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203732_added_entity_TblSchoolUserRole.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203735_added_entity_TblSchoolUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203740_added_entity_TblSchoolNetworkSchool.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203741_added_entity_TblAuthenticate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203742_added_entity_TblAudienceClient.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203743_added_entity_TblSchoolHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203744_added_entity_TblGuardianHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203745_added_entity_TblUserHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203746_added_entity_TblShiftType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203747_added_entity_TblLevelType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203748_added_entity_TblGrade.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203749_added_entity_TblClassCoordinator.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203750_added_entity_TblClassStudent.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203751_added_entity_TblClass.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203752_added_entity_TblClassSubjectTeacher.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203753_added_entity_TblSubject.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203754_added_entity_TblSchoolSubject.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203755_added_entity_TblSchoolSetting.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203756_added_entity_TblDefaultSchoolSetting.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180130232342_added_entity_TblLogin.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180131175058_added_entity_TblNfc.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180124145624_added_entity_constraints_TblUser.xml" relativeToChangelogFile="false"/>
+    <!--<include file="config/liquibase/changelog/20180124145628_added_entity_constraints_TblRole.xml" relativeToChangelogFile="false"/>-->
+    <include file="config/liquibase/changelog/20180124145629_added_entity_constraints_TblSchool.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180124145632_added_entity_constraints_TblSchoolNetwork.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203728_added_entity_constraints_TblUserRole.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203730_added_entity_constraints_TblGuardian.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203732_added_entity_constraints_TblSchoolUserRole.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203735_added_entity_constraints_TblSchoolUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203740_added_entity_constraints_TblSchoolNetworkSchool.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203741_added_entity_constraints_TblAuthenticate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203743_added_entity_constraints_TblSchoolHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203744_added_entity_constraints_TblGuardianHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203745_added_entity_constraints_TblUserHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203748_added_entity_constraints_TblGrade.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203749_added_entity_constraints_TblClassCoordinator.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203750_added_entity_constraints_TblClassStudent.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203751_added_entity_constraints_TblClass.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203752_added_entity_constraints_TblClassSubjectTeacher.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180129203754_added_entity_constraints_TblSchoolSubject.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180130232342_added_entity_constraints_TblLogin.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180131175058_added_entity_constraints_TblNfc.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180519101200_added_entity_constraint_TblUser.xml" relativeToChangelogFile="false"/>
+
+    <include file="config/liquibase/changelog/20180310150000_modify_entity_columns_TblAddress.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180310181100_modify_entity_columns_TblUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180311094105_modify_entity_add_indexes_TblGuardian.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180311102953_modify_entity_add_indexes_TblLogin.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180311103246_modify_entity_add_indexes_TblNfc.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180311103622_modify_entity_add_indexes_TblSchoolUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180311103819_modify_entity_add_indexes_TblSchool.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180311104836_modify_entity_add_indexes_TblUser.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180311105932_modify_entity_add_indexes_TblPhone.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180311110212_modify_entity_add_indexes_TblUserTblPhone.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180311110450_modify_entity_add_indexes_TblUserTblAddress.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180311111612_modify_entity_add_indexes_TblSchoolTblPhone.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180311112145_modify_entity_add_indexes_TblSchoolTblAddress.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180419092800_modify_entity_change_field_type_TblSchool.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180519173606_modify_entity_columns_TblUser.xml" relativeToChangelogFile="false"/>
+    <!--<include file="config/liquibase/changelog/data_population.xml" relativeToChangelogFile="false"/>-->
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

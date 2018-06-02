@@ -1,0 +1,52 @@
+
+<div *ngIf="tblGrade">
+    <h2><span jhiTranslate="schoolarApp.tblGrade.detail.title">Tbl Grade</span> {{tblGrade.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblGrade.strName">Str Name</span></dt>
+        <dd>
+            <span>{{tblGrade.strName}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblGrade.intNumber">Int Number</span></dt>
+        <dd>
+            <span>{{tblGrade.intNumber}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblGrade.dtmCreated">Dtm Created</span></dt>
+        <dd>
+            <span>{{tblGrade.dtmCreated | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblGrade.dtmLastUpdate">Dtm Last Update</span></dt>
+        <dd>
+            <span>{{tblGrade.dtmLastUpdate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblGrade.intExcluded">Int Excluded</span></dt>
+        <dd>
+            <span>{{tblGrade.intExcluded}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblGrade.strLabel">Str Label</span></dt>
+        <dd>
+            <span>{{tblGrade.strLabel}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblGrade.tblLevelType">Tbl Level Type</span></dt>
+        <dd>
+            <div *ngIf="tblGrade.tblLevelType">
+                <a [routerLink]="['/tbl-level-type', tblGrade.tblLevelType?.id]">{{tblGrade.tblLevelType?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-grade/'+ tblGrade.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

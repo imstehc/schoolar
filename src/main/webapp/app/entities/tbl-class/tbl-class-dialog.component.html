@@ -1,0 +1,68 @@
+<form name="editForm" role="form" (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTblClassLabel" jhiTranslate="schoolarApp.tblClass.home.createOrEditLabel">Create or edit a Tbl Class</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!tblClass.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="tblClass.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblClass.strName" for="field_strName">Str Name</label>
+            <input type="text" class="form-control" name="strName" id="field_strName"
+                [(ngModel)]="tblClass.strName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblClass.intYear" for="field_intYear">Int Year</label>
+            <input type="number" class="form-control" name="intYear" id="field_intYear"
+                [(ngModel)]="tblClass.intYear" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblClass.dtmCreated" for="field_dtmCreated">Dtm Created</label>
+            <div class="d-flex">
+                <input id="field_dtmCreated" type="datetime-local" class="form-control" name="dtmCreated" [(ngModel)]="tblClass.dtmCreated"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblClass.dtmLastUpdate" for="field_dtmLastUpdate">Dtm Last Update</label>
+            <div class="d-flex">
+                <input id="field_dtmLastUpdate" type="datetime-local" class="form-control" name="dtmLastUpdate" [(ngModel)]="tblClass.dtmLastUpdate"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblClass.intExcluded" for="field_intExcluded">Int Excluded</label>
+            <input type="number" class="form-control" name="intExcluded" id="field_intExcluded"
+                [(ngModel)]="tblClass.intExcluded" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblClass.tblSchool" for="field_tblSchool">Tbl School</label>
+            <select class="form-control" id="field_tblSchool" name="tblSchool" [(ngModel)]="tblClass.tblSchool" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tblSchoolOption.id === tblClass.tblSchool?.id ? tblClass.tblSchool : tblSchoolOption" *ngFor="let tblSchoolOption of tblschools; trackBy: trackTblSchoolById">{{tblSchoolOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblClass.tblShiftType" for="field_tblShiftType">Tbl Shift Type</label>
+            <select class="form-control" id="field_tblShiftType" name="tblShiftType" [(ngModel)]="tblClass.tblShiftType" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tblShiftTypeOption.id === tblClass.tblShiftType?.id ? tblClass.tblShiftType : tblShiftTypeOption" *ngFor="let tblShiftTypeOption of tblshifttypes; trackBy: trackTblShiftTypeById">{{tblShiftTypeOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

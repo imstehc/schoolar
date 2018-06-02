@@ -1,0 +1,38 @@
+
+<div *ngIf="tblClassCoordinator">
+    <h2><span jhiTranslate="schoolarApp.tblClassCoordinator.detail.title">Tbl Class Coordinator</span> {{tblClassCoordinator.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblClassCoordinator.dtmLastUpdate">Dtm Last Update</span></dt>
+        <dd>
+            <span>{{tblClassCoordinator.dtmLastUpdate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblClassCoordinator.tblUser">Tbl User</span></dt>
+        <dd>
+            <div *ngIf="tblClassCoordinator.tblUser">
+                <a [routerLink]="['/tbl-user', tblClassCoordinator.tblUser?.id]">{{tblClassCoordinator.tblUser?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblClassCoordinator.tblClass">Tbl Class</span></dt>
+        <dd>
+            <div *ngIf="tblClassCoordinator.tblClass">
+                <a [routerLink]="['/tbl-class', tblClassCoordinator.tblClass?.id]">{{tblClassCoordinator.tblClass?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-class-coordinator/'+ tblClassCoordinator.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

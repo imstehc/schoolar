@@ -1,0 +1,42 @@
+{
+    "schoolarApp": {
+        "tblSchool" : {
+            "home": {
+                "title": "Escolas",
+                "createLabel": "Nova escola",
+                "createLabelTitle": "Cadastro de Escola",
+                "editLabelTitle": "Editar Escola",
+                "personalData": "Dados da escola"
+            },
+            "created": "Uma novo Escola foi criado com o identificador {{ param }}",
+            "updated": "Escola atualizada com sucesso",
+            "deleted": "Escola excluída com sucesso",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Escola {{ id }}?"
+            },
+            "detail": {
+                "title": "Escolas"
+            },
+            "form":{
+                "selectSchoolType": "Selecione o tipo de escola"
+            },
+            "strCode": "Código",
+            "strName": "Nome",
+            "strLegalName": "Razão Social",
+            "strEmail": "E-mail",
+            "strPhoto": "Logo",
+            "idSchoolType": "Tipo",
+            "strCNPJ": "CNPJ",
+            "strINEP": "Código INEP",
+            "strINEPName": "Nome INEP",
+            "dtmCreated": "Data de Cadastro",
+            "dtmLastUpdate": "Última Atualizaçao",
+            "intExcluded": "Excluído?",
+            "tblAddress": "Endereço",
+            "tblPhone": "Telefone",
+            "schoolTypeEmpty": "Você precisa criar pelo menos um tipo de escola antes de cadastrá-la",
+            "tblContact": "Contato"
+        }
+
+    }
+}

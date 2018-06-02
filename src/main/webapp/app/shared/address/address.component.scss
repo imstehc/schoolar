@@ -1,0 +1,156 @@
+$sc_primary_color:#1A38DC;
+$sc_dark_color:#0E0F54;
+$sc_light_blue_color:#C2C9F4;
+$sc_light2_color:#686868;
+$sc_light1_color:#929292;
+$sc_light_color:#fff;
+$sc_danger_color:red;
+.mdl-button .material-icons {
+    font-size: 12px;
+    vertical-align: middle;
+}
+.add_icon_address, .remove_icon_address{
+    min-width: 10px;
+    min-height: 10px;
+    height: 25px;
+    width: 25px;
+    font-size: 2px
+}
+.add_icon_address{
+    background-color: $sc_primary_color;
+    float: right;
+    right: 50px;
+    margin-right: 0px;
+}
+.remove_icon_address{
+    background-color: $sc_danger_color;
+    position: absolute;
+    margin: {
+        top:25px;
+    }
+    z-index: 9;
+    right: 60px;
+}
+.arrow_icon_address{
+    transition: all 0.3s;
+  font-size: 1rem;
+    position: absolute;
+    margin: {
+        top:-36px
+    }
+    z-index: 9;
+    right: 15px;
+}
+.address-info{
+    margin: {
+        left: 15px;
+        text-decoration: none !important;
+    }
+}
+.address-title{
+    font-size: 1.2em;
+    text-decoration: none !important;
+}
+ng-template {
+    text-decoration: none !important;
+}
+.mdl-textfield__label:after{
+    bottom: 12px;
+}
+.mdl-textfield.is-focused[ng-content-c9] .mdl-textfield__label [ng-content-c9] :after {
+   background-color: violet;
+}
+.input-border[_ngcontent-c9]{
+    border : {
+        color: #a8a8a8
+    }
+    box-shadow: none;
+    color: #9d9d9d;
+}
+.rotate90{
+    transform: rotate(-90deg);
+}
+.mdl-textfield--floating-label .mdl-textfield__label {
+    top: 2px;
+    font-size: 14px;
+}
+.title-card{
+    color: rgb(21, 22, 99);
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.label-text{
+    color: rgb(21, 22, 99);
+    font-weight: bold;
+}
+.label-accordion{
+    color: #767676;
+}
+.ng-template[ngbPanelTitle]{
+    background-color: red !important;
+}
+.add_button{
+    text-align: center;
+    vertical-align: middle;
+    color:$sc_primary_color;
+    font-size: 25px;
+    margin-top: 15px;
+    float: right;
+}
+.input-required:focus{
+    border-bottom-color: red;
+    box-shadow: none;
+}
+.asterisk{
+    color: red;
+    font-size: 18px;
+}
+.accordion-content{
+    position: relative;
+}
+.float-delete{
+    position: absolute;
+    right: 32px;
+    z-index: 1;
+    top: 21px;
+}
+
+.iconCircle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.add_icon{
+    text-align: center;
+    vertical-align: middle;
+    color: $sc_light_color;
+    float: right;
+    background-color: $sc_primary_color;
+    margin-bottom: 30px;
+}
+
+.remove_icon{
+    margin-top: 4PX;
+    margin-bottom: auto;
+    text-align: center;
+    vertical-align: middle;
+    color: $sc_light_color;
+    float: right;
+    background-color: $sc_danger_color;
+    margin-right: 10px;
+}
+
+.title-modal{
+    color: #151663;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 20px;
+}

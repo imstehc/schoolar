@@ -1,0 +1,26 @@
+{
+    "schoolarApp": {
+        "tblSchoolSubject" : {
+            "home": {
+                "title": "Tbl School Subjects",
+                "createLabel": "Create a new Tbl School Subject",
+                "createOrEditLabel": "Create or edit a Tbl School Subject"
+            },
+            "created": "A new Tbl School Subject is created with identifier {{ param }}",
+            "updated": "A Tbl School Subject is updated with identifier {{ param }}",
+            "deleted": "A Tbl School Subject is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl School Subject {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl School Subject"
+            },
+            "dtmCreated": "Dtm Created",
+            "dtmLastUpdade": "Dtm Last Updade",
+            "intExcluded": "Int Excluded",
+            "tblLevelType": "Tbl Level Type",
+            "tblSubject": "Tbl Subject",
+            "tblSchool": "Tbl School"
+        }
+    }
+}

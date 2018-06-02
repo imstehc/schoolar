@@ -1,0 +1,34 @@
+
+<div *ngIf="tblSchoolSetting">
+    <h2><span jhiTranslate="schoolarApp.tblSchoolSetting.detail.title">Tbl School Setting</span> {{tblSchoolSetting.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblSchoolSetting.intYear">Int Year</span></dt>
+        <dd>
+            <span>{{tblSchoolSetting.intYear}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolSetting.intEnabled">Int Enabled</span></dt>
+        <dd>
+            <span>{{tblSchoolSetting.intEnabled}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolSetting.dtmLastUpdate">Dtm Last Update</span></dt>
+        <dd>
+            <span>{{tblSchoolSetting.dtmLastUpdate | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-school-setting/'+ tblSchoolSetting.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

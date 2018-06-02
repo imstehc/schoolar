@@ -1,0 +1,36 @@
+
+<div *ngIf="tblNfc">
+    <h2><span jhiTranslate="schoolarApp.tblNfc.detail.title">Tbl Nfc</span> {{tblNfc.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblNfc.strName">Str Name</span></dt>
+        <dd>
+            <span>{{tblNfc.strName}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblNfc.dtmLastUpdate">Dtm Last Update</span></dt>
+        <dd>
+            <span>{{tblNfc.dtmLastUpdate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblNfc.user">User</span></dt>
+        <dd>
+            <div *ngIf="tblNfc.user">
+                <a [routerLink]="['/tbl-user', tblNfc.user?.id]">{{tblNfc.user?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-nfc/'+ tblNfc.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

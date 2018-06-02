@@ -1,0 +1,71 @@
+$sc_primary_color:#1A38DC;
+
+.school-list {
+    cursor: pointer !important;
+}
+.active{
+    background-color: $sc_primary_color;
+}
+.active::before{
+    content: "";
+    position: absolute;
+    right: -19px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid $sc_primary_color;
+    border-top: 20px solid transparent;
+    border-bottom: 25px solid transparent;
+}
+.list-group-item:first-child{
+    border: none;
+}
+.list-group-item{
+    border: none;
+}
+.format-check{
+    margin-left: 40px;
+}
+// -- checkbox --
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+}
+.container input ~ .checkmark {
+    border: 2px solid rgb(150, 147, 147);
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+.container .checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 7px;
+    height: 12px;
+    border: solid $sc_primary_color;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+// -- checkbox --

@@ -1,0 +1,116 @@
+<form name="editForm" role="form" (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTblPhoneLabel" jhiTranslate="schoolarApp.tblPhone.home.createOrEditLabel">Create or edit a Tbl Phone</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!tblPhone.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="tblPhone.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblPhone.strPrefix" for="field_strPrefix">Str Prefix</label>
+            <input type="text" class="form-control" name="strPrefix" id="field_strPrefix"
+                [(ngModel)]="tblPhone.strPrefix" maxlength="3"/>
+            <div [hidden]="!(editForm.controls.strPrefix?.dirty && editForm.controls.strPrefix?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.strPrefix?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 3 }">
+                   This field cannot be longer than 3 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblPhone.strNumber" for="field_strNumber">Str Number</label>
+            <input type="text" class="form-control" name="strNumber" id="field_strNumber"
+                [(ngModel)]="tblPhone.strNumber" required maxlength="10"/>
+            <div [hidden]="!(editForm.controls.strNumber?.dirty && editForm.controls.strNumber?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.strNumber?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.strNumber?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                   This field cannot be longer than 10 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblPhone.strPhoneType" for="field_strPhoneType">Str Phone Type</label>
+            <input type="text" class="form-control" name="strPhoneType" id="field_strPhoneType"
+                [(ngModel)]="tblPhone.strPhoneType" maxlength="10"/>
+            <div [hidden]="!(editForm.controls.strPhoneType?.dirty && editForm.controls.strPhoneType?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.strPhoneType?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                   This field cannot be longer than 10 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblPhone.strLabel" for="field_strLabel">Str Label</label>
+            <input type="text" class="form-control" name="strLabel" id="field_strLabel"
+                [(ngModel)]="tblPhone.strLabel" required maxlength="20"/>
+            <div [hidden]="!(editForm.controls.strLabel?.dirty && editForm.controls.strLabel?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.strLabel?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.strLabel?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                   This field cannot be longer than 20 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblPhone.dtmCreated" for="field_dtmCreated">Dtm Created</label>
+            <div class="d-flex">
+                <input id="field_dtmCreated" type="datetime-local" class="form-control" name="dtmCreated" [(ngModel)]="tblPhone.dtmCreated"
+                required/>
+            </div>
+            <div [hidden]="!(editForm.controls.dtmCreated?.dirty && editForm.controls.dtmCreated?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.dtmCreated?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.dtmCreated?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblPhone.dtmLastUpdate" for="field_dtmLastUpdate">Dtm Last Update</label>
+            <div class="d-flex">
+                <input id="field_dtmLastUpdate" type="datetime-local" class="form-control" name="dtmLastUpdate" [(ngModel)]="tblPhone.dtmLastUpdate"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblPhone.intExcluded" for="field_intExcluded">Int Excluded</label>
+            <input type="number" class="form-control" name="intExcluded" id="field_intExcluded"
+                [(ngModel)]="tblPhone.intExcluded" required/>
+            <div [hidden]="!(editForm.controls.intExcluded?.dirty && editForm.controls.intExcluded?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.intExcluded?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.intExcluded?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

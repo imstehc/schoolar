@@ -1,0 +1,38 @@
+
+<div *ngIf="tblAuthenticate">
+    <h2><span jhiTranslate="schoolarApp.tblAuthenticate.detail.title">Tbl Authenticate</span> {{tblAuthenticate.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblAuthenticate.dtmTimeStamp">Dtm Time Stamp</span></dt>
+        <dd>
+            <span>{{tblAuthenticate.dtmTimeStamp | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblAuthenticate.audienceClient">Audience Client</span></dt>
+        <dd>
+            <div *ngIf="tblAuthenticate.audienceClient">
+                <a [routerLink]="['/tbl-audience-client', tblAuthenticate.audienceClient?.id]">{{tblAuthenticate.audienceClient?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblAuthenticate.user">User</span></dt>
+        <dd>
+            <div *ngIf="tblAuthenticate.user">
+                <a [routerLink]="['/tbl-user', tblAuthenticate.user?.id]">{{tblAuthenticate.user?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-authenticate/'+ tblAuthenticate.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

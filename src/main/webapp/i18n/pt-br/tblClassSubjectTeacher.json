@@ -1,0 +1,24 @@
+{
+    "schoolarApp": {
+        "tblClassSubjectTeacher" : {
+            "home": {
+                "title": "Class Subject Teachers",
+                "createLabel": "Criar novo Class Subject Teacher",
+                "createOrEditLabel": "Criar ou editar Class Subject Teacher"
+            },
+            "created": "Um novo Class Subject Teacher foi criado com o identificador {{ param }}",
+            "updated": "Um Class Subject Teacher foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Class Subject Teacher foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Class Subject Teacher {{ id }}?"
+            },
+            "detail": {
+                "title": "Class Subject Teacher"
+            },
+            "dtmLastUpdate": "Last Update",
+            "tblSubject": "Subject",
+            "tblUser": "User",
+            "tblClass": "Class"
+        }
+    }
+}

@@ -1,0 +1,111 @@
+<div>
+    <h2>
+        <span class="h2Title" jhiTranslate="schoolarApp.tblUser.home.title">Tbl Users</span>
+
+        <div class="float-right" style="margin-top: -15px">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="field_search">
+                    <i class="fa fa-search"></i>
+                </label>
+                <div class="mdl-textfield__expandable-holder">
+                    <input name="search" id="field_search" [(ngModel)]="filter" class="mdl-textfield__input" maxlength="200" type="text" (keyup)="filterByName($event.target)"
+                        autocomplete="off" />
+                    <label class="mdl-textfield__label" for="field_search" jhiTranslate="schoolarApp.tblUser.home.filter">teste</label>
+                </div>
+            </div>
+
+            <button class="btn btn-primary jh-create-entity create-tbl-user" [routerLink]="['/', { outlets: { popup: ['tbl-user-new'] } }]">
+                <span class="btn-primary-icon fa fa-plus"></span>
+                <span jhiTranslate="schoolarApp.tblUser.home.createLabel">
+                    Create new Tbl User
+                </span>
+            </button>
+        </div>
+    </h2>
+
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="usersPage && usersPage.totalElements">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th width="45%" class="table-header-schoolar"><span jhiTranslate="schoolarApp.tblUser.strFirstName">Str First Name</span></th>
+                    <th width="30%" class="table-header-schoolar"><span>Login</span></th>
+                    <th width="25%" class="pull-center table-header-schoolar table-header-options-schoolar"><span jhiTranslate="global.form.options">Options</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tblUser of usersPage.content;trackBy: trackId">
+                    <td class="table-item-schoolar">{{tblUser.strFirstName+' '+tblUser.strLastName}}</td>
+                    <td class="table-item-schoolar"></td>
+                    <td class="table-item-schoolar text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit" [routerLink]="['/', { outlets: { popup: 'tbl-user/'+ tblUser.id + '/edit'} }]" replaceUrl="true" queryParamsHandling="merge"
+                                class="btn btn-lg iconTable iconTable-edit">
+
+                                <span class="d-none d-md-inline"></span>
+                            </button>
+                            <button type="submit" [routerLink]="['/', { outlets: { popup: 'tbl-user/'+ tblUser.id + '/delete'} }]" replaceUrl="true"
+                                queryParamsHandling="merge" class="btn btn-lg iconTable iconTable-delete">
+
+                                <span class="d-none d-md-inline"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="paginationTable">
+            <ul class="pagination">
+                <li class="page-item"  [ngClass]="{'disabled': this.pageOffSet.start == 0}">
+                    <a aria-label="Previous" class="page-link" [routerLink]=""  tabindex="-1">
+                        <span aria-hidden="true">
+                            <i class="fa fa-angle-double-left" aria-hidden="true" (click)="incrementPages(-20)"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="page-item " [ngClass]="{'disabled': this.pageOffSet.start == 0}">
+                    <a aria-label="Previous" class="page-link" [routerLink]=""  tabindex="-1"  (click)="incrementPages(-10)">
+                        <span aria-hidden="true">
+                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="page-item " [ngClass]="{'active':currentPage == (pageNumber) }"  *ngFor="let pageNumber of pageList | slice: pageOffSet.start :pageOffSet.end ; let i=index">
+                    <a class="page-link" [routerLink]="" (click)="changePage(pageNumber)" >
+                      {{ pageNumber }}
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" [routerLink]="" >
+                        ...
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="page-item " [ngClass]="{'disabled': this.pageOffSet.end > pagesQtd}">
+                    <a aria-label="Next" class="page-link" [routerLink]=""  tabindex="-1" (click)="incrementPages(10)">
+                        <span aria-hidden="true">
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </span>
+                    </a>
+                </li>
+                <li class="page-item" [ngClass]="{'disabled': this.pageOffSet.end > pagesQtd}">
+                    <a aria-label="Next" class="page-link" [routerLink]=""  tabindex="-1" (click)="incrementPages(20)">
+                        <span aria-hidden="true">
+                            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div *ngIf="usersPage?.totalElements == 0" jhiTranslate="schoolarApp.tblUser.home.noResults">
+        Nenhum registro encontrado.
+    </div>
+    <div *ngIf="msgLoadind" jhiTranslate="schoolarApp.tblUser.home.results">
+        Carregando resultados.
+    </div>
+</div>

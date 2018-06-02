@@ -1,0 +1,201 @@
+<form name="editForm" role="form" (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTblSchoolHistoryLabel" jhiTranslate="schoolarApp.tblSchoolHistory.home.createOrEditLabel">Create or edit a Tbl School History</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!tblSchoolHistory.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="tblSchoolHistory.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolHistory.strCode" for="field_strCode">Str Code</label>
+            <input type="text" class="form-control" name="strCode" id="field_strCode"
+                [(ngModel)]="tblSchoolHistory.strCode" required maxlength="10"/>
+            <div [hidden]="!(editForm.controls.strCode?.dirty && editForm.controls.strCode?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.strCode?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.strCode?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                   This field cannot be longer than 10 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolHistory.strName" for="field_strName">Str Name</label>
+            <input type="text" class="form-control" name="strName" id="field_strName"
+                [(ngModel)]="tblSchoolHistory.strName" required maxlength="20"/>
+            <div [hidden]="!(editForm.controls.strName?.dirty && editForm.controls.strName?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.strName?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.strName?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                   This field cannot be longer than 20 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolHistory.strLegalName" for="field_strLegalName">Str Legal Name</label>
+            <input type="text" class="form-control" name="strLegalName" id="field_strLegalName"
+                [(ngModel)]="tblSchoolHistory.strLegalName" required maxlength="20"/>
+            <div [hidden]="!(editForm.controls.strLegalName?.dirty && editForm.controls.strLegalName?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.strLegalName?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.strLegalName?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                   This field cannot be longer than 20 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolHistory.strEmail" for="field_strEmail">Str Email</label>
+            <input type="text" class="form-control" name="strEmail" id="field_strEmail"
+                [(ngModel)]="tblSchoolHistory.strEmail" maxlength="20"/>
+            <div [hidden]="!(editForm.controls.strEmail?.dirty && editForm.controls.strEmail?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.strEmail?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                   This field cannot be longer than 20 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolHistory.strPhoto" for="field_strPhoto">Str Photo</label>
+            <input type="text" class="form-control" name="strPhoto" id="field_strPhoto"
+                [(ngModel)]="tblSchoolHistory.strPhoto" maxlength="60"/>
+            <div [hidden]="!(editForm.controls.strPhoto?.dirty && editForm.controls.strPhoto?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.strPhoto?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 60 }">
+                   This field cannot be longer than 60 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolHistory.idSchoolType" for="field_idSchoolType">Id School Type</label>
+            <input type="number" class="form-control" name="schoolType" id="field_idSchoolType"
+                [(ngModel)]="tblSchoolHistory.idSchoolType" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolHistory.strCNPJ" for="field_strCNPJ">Str CNPJ</label>
+            <input type="text" class="form-control" name="strCNPJ" id="field_strCNPJ"
+                [(ngModel)]="tblSchoolHistory.strCNPJ" required maxlength="20"/>
+            <div [hidden]="!(editForm.controls.strCNPJ?.dirty && editForm.controls.strCNPJ?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.strCNPJ?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.strCNPJ?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                   This field cannot be longer than 20 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolHistory.strNEP" for="field_strNEP">Str NEP</label>
+            <input type="text" class="form-control" name="strNEP" id="field_strNEP"
+                [(ngModel)]="tblSchoolHistory.strNEP" maxlength="20"/>
+            <div [hidden]="!(editForm.controls.strNEP?.dirty && editForm.controls.strNEP?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.strNEP?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                   This field cannot be longer than 20 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolHistory.strNEPName" for="field_strNEPName">Str NEP Name</label>
+            <input type="text" class="form-control" name="strNEPName" id="field_strNEPName"
+                [(ngModel)]="tblSchoolHistory.strNEPName" maxlength="20"/>
+            <div [hidden]="!(editForm.controls.strNEPName?.dirty && editForm.controls.strNEPName?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.strNEPName?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                   This field cannot be longer than 20 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolHistory.intExcluded" for="field_intExcluded">Int Excluded</label>
+            <input type="number" class="form-control" name="intExcluded" id="field_intExcluded"
+                [(ngModel)]="tblSchoolHistory.intExcluded" required/>
+            <div [hidden]="!(editForm.controls.intExcluded?.dirty && editForm.controls.intExcluded?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.intExcluded?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.intExcluded?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolHistory.dtmChanged" for="field_dtmChanged">Dtm Changed</label>
+            <div class="d-flex">
+                <input id="field_dtmChanged" type="datetime-local" class="form-control" name="dtmChanged" [(ngModel)]="tblSchoolHistory.dtmChanged"
+                required/>
+            </div>
+            <div [hidden]="!(editForm.controls.dtmChanged?.dirty && editForm.controls.dtmChanged?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.dtmChanged?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.dtmChanged?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolHistory.dtmLastUpdate" for="field_dtmLastUpdate">Dtm Last Update</label>
+            <div class="d-flex">
+                <input id="field_dtmLastUpdate" type="datetime-local" class="form-control" name="dtmLastUpdate" [(ngModel)]="tblSchoolHistory.dtmLastUpdate"
+                />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolHistory.school" for="field_school">School</label>
+            <select class="form-control" id="field_school" name="school" [(ngModel)]="tblSchoolHistory.school" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tblSchoolOption.id === tblSchoolHistory.school?.id ? tblSchoolHistory.school : tblSchoolOption" *ngFor="let tblSchoolOption of tblschools; trackBy: trackTblSchoolById">{{tblSchoolOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolHistory.userAuthor" for="field_userAuthor">User Author</label>
+            <select class="form-control" id="field_userAuthor" name="userAuthor" [(ngModel)]="tblSchoolHistory.userAuthor" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tblUserOption.id === tblSchoolHistory.userAuthor?.id ? tblSchoolHistory.userAuthor : tblUserOption" *ngFor="let tblUserOption of tblusers; trackBy: trackTblUserById">{{tblUserOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolHistory.audienceClient" for="field_audienceClient">Audience Client</label>
+            <select class="form-control" id="field_audienceClient" name="audienceClient" [(ngModel)]="tblSchoolHistory.audienceClient" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tblAudienceClientOption.id === tblSchoolHistory.audienceClient?.id ? tblSchoolHistory.audienceClient : tblAudienceClientOption" *ngFor="let tblAudienceClientOption of tblaudienceclients; trackBy: trackTblAudienceClientById">{{tblAudienceClientOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolHistory.generalProcedureType" for="field_generalProcedureType">General Procedure Type</label>
+            <select class="form-control" id="field_generalProcedureType" name="generalProcedureType" [(ngModel)]="tblSchoolHistory.generalProcedureType" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tblGeneralProcedureTypeOption.id === tblSchoolHistory.generalProcedureType?.id ? tblSchoolHistory.generalProcedureType : tblGeneralProcedureTypeOption" *ngFor="let tblGeneralProcedureTypeOption of tblgeneralproceduretypes; trackBy: trackTblGeneralProcedureTypeById">{{tblGeneralProcedureTypeOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

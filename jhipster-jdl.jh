@@ -1,0 +1,327 @@
+entity TblRole {
+    strName String required maxlength(20),
+    strDescription String maxlength(200),
+    dtmCreated Instant required,
+    dtmLastUpdate Instant,
+    intExcluded Integer required,
+    intCanBeImpersonated Integer required
+}
+
+entity TblUserRole{
+    dtmCreated Instant required,
+    dtmLastUpdate Instant,
+    intExcluded Integer required
+}
+
+entity TblUser {
+    strCPF  String maxlength(20),
+    strFirstName String required maxlength(200),
+    strLastName String maxlength(200),
+    strNickName String maxlength(200),
+    dtmBirthday Instant,
+    strEmail String required maxlength(200),
+    strPhoto String maxlength(200),
+    strGender String maxlength(1),
+    dtmCreated Instant required,
+    dtmLastUpdate Instant,
+    intExcluded Integer required
+}
+
+entity TblLogin {
+    strUserName String required maxlength(20),
+    strPassword String required maxlength(20),
+    dtmLastUpdate Instant,
+}
+
+
+entity TblGuardian {
+    dtmLastUpdate Instant
+}
+
+entity TblGuardianType {
+    strName  String maxlength(20),
+    strDescription String maxlength(200),
+    dtmLastUpdate Instant,
+}
+
+entity TblSchoolUserRole {
+    dtmCreated Instant required,
+    dtmLastUpdate Instant,
+    intExcluded Integer required
+}
+
+entity TblAddress {
+    strLabel String required maxlength(20),
+    strPostCode String maxlength(10),
+    strStreet String required maxlength(200),
+    strNumber String maxlength(10),
+    strNeighborhood String maxlength(50),
+    strComplement String maxlength(200),
+    strCity String required maxlength(50),
+    strState String required maxlength(2),
+    strCountry String required maxlength(20),
+    dtmCreate Instant required,
+    dtmLastUpdate Instant,
+    intExcluded Integer required
+}
+
+entity TblSchoolType {
+    strName String required maxlength(50),
+    dtmLastUpdate Instant
+}
+
+entity TblSchoolUser {
+    dtmCreated Instant required,
+    dtmLastUpdate Instant,
+    intExcluded Integer required
+}
+
+entity TblPhone {
+    strPrefix String maxlength(3),
+    strNumber String required maxlength(10),
+    strPhoneType String maxlength(10),
+    strLabel String required maxlength(20),
+    dtmCreated Instant required,
+    dtmLastUpdate Instant,
+    intExcluded Integer required
+}
+
+entity TblGeneralProcedureType {
+    strName String required maxlength(20),
+    dtmLastUpdate Instant
+}
+
+entity TblSchoolNetwork {
+    strCode String required maxlength(20),
+    strName String required maxlength(50),
+    strLegalName String maxlength(50),
+    strCNPJ String maxlength(20),
+    strEmail String maxlength(20),
+    dtmCreated Instant required,
+    dtmLastUpdate Instant,
+    intExcluded Integer required
+}
+
+entity TblSchool {
+    strCode String required maxlength(10),
+    strName String required maxlength(200),
+    strLegalName String required maxlength(200),
+    strEmail String maxlength(200),
+    strPhoto String maxlength(200),
+    schoolType Integer,
+    strCNPJ String required maxlength(20),
+    strINEP String maxlength(20),
+    strINEPName String maxlength(20),
+    dtmCreated Instant required,
+    dtmLastUpdate Instant,
+    intExcluded Integer required
+}
+
+entity TblSchoolNetworkSchool {
+    dtmCreated Instant required,
+    dtmLastUpdate Instant,
+    intExcluded Integer required
+}
+
+entity TblAuthenticate {
+     dtmTimeStamp Instant,
+     dtmLastUpdate Instant
+}
+
+entity TblAudienceClient {
+    strBase64Secret String required maxlength(20),
+    strName String maxlength(20),
+    intDaysAccessTokenExpire Integer required,
+    intDaysRefreshTokenExpire Integer required,
+    dtmLastUpdate Instant
+}
+
+entity TblSchoolHistory{
+    strCode String required maxlength(10),
+    strName String required maxlength(20),
+    strLegalName String required maxlength(20),
+    strEmail String maxlength(20),
+    strPhoto String maxlength(60),
+    schoolType Integer,
+    strCNPJ String required maxlength(20),
+    strNEP String maxlength(20),
+    strNEPName String maxlength(20),
+    intExcluded Integer required,
+    dtmChanged Instant required,
+    dtmLastUpdate Instant
+}
+
+entity TblGuardianHistory{
+    dtmChanged Instant required,
+    dtmLastUpdate Instant
+}
+
+entity TblUserHistory {
+    strCPF  String maxlength(20),
+    strFirstName String required maxlength(20),
+    strLastName String maxlength(20),
+    strNickName String maxlength(20),
+    dtmBirthday Instant,
+    strUserName String required maxlength(20),
+    strEmail String required maxlength(20),
+    strPassword String required maxlength(32),
+    strPhoto String maxlength(20),
+    strGender String maxlength(10),
+    intExcluded Integer required,
+    dtmChanged Instant required,
+    dtmLastUpdate Instant
+}
+
+////////////////////////////////////////////////////////////////
+
+
+entity TblShiftType {
+    strName String,
+    dtmLastUpdate Instant
+}
+
+entity TblLevelType{
+    strName String,
+    strAbbreviation String,
+    intOrder Integer,
+    dtmLastUpdate Instant,
+}
+
+entity TblGrade {
+    strName String,
+    intNumber Integer,
+    dtmCreated Instant,
+    dtmLastUpdate Instant,
+    intExcluded Integer,
+    strLabel String,
+    dtmLastUpdate Instant
+}
+
+entity TblClassCoordinator {
+    dtmLastUpdate Instant
+}
+
+entity TblClassStudent {
+    dtmLastUpdate Instant
+}
+
+entity TblClass{
+    strName String,
+    intYear Integer,
+    dtmCreated Instant,
+    dtmLastUpdate Instant,
+    intExcluded Integer
+}
+
+entity TblClassSubjectTeacher {
+    dtmLastUpdate Instant
+}
+
+entity TblSubject{
+    strName String,
+    strAbbreviation String,
+    intOrder Integer,
+    strLabel String,
+    dtmCreated Instant,
+    dtmLastUpdate Instant,
+    intExcluded Integer
+}
+
+entity TblSchoolSubject {
+    dtmCreated Instant,
+    dtmLastUpdade Instant,
+    intExcluded Integer
+}
+
+entity TblSchoolSetting {
+    intYear Integer,
+    intEnabled Integer,
+    dtmLastUpdate Instant
+}
+
+entity TblDefaultSchoolSetting {
+    intYear Integer,
+    intEnabled Integer,
+    dtmLastUpdate Instant
+}
+
+entity TblNfc{
+    strName String required,
+    dtmLastUpdate Instant
+}
+
+relationship ManyToMany {
+
+    TblUser{TblPhone} to TblPhone{TblUser},
+    TblUser{TblAddress} to TblAddress{TblUser},
+    TblSchoolNetwork{TblPhone} to TblPhone{TblSchoolNetwork},
+    TblSchoolNetwork{TblAddress} to TblAddress{TblSchoolNetwork},
+    TblSchool{TblAddress} to TblAddress{TblSchool},
+    TblSchool{TblPhone} to TblPhone{TblSchool}
+
+}
+
+relationship ManyToOne {
+
+    TblLogin{user} to TblUser,
+    TblNfc{user} to TblUser,
+
+    TblUserRole{role} to TblRole,
+    TblUserRole{user} to TblUser,
+
+    TblGuardian{user} to TblUser,
+    TblGuardian{guardianUser} to TblUser,
+    TblGuardian{guardianType} to TblGuardianType,
+
+    TblSchoolUserRole{role} to TblRole,
+    TblSchoolUserRole{school} to TblSchool,
+    TblSchoolUserRole{user} to TblUser,
+
+    TblSchoolUser{school} to TblSchool,
+    TblSchoolUser{user} to TblUser,
+
+    TblSchoolNetworkSchool{school} to TblSchool,
+    TblSchoolNetworkSchool{schoolNetwork} to TblSchoolNetwork,
+
+    TblSchoolType{school} to TblSchool,
+
+    TblAuthenticate{audienceClient} to TblAudienceClient,
+    TblAuthenticate{user} to TblUser,
+
+    TblSchoolHistory{school} to TblSchool,
+    TblSchoolHistory{userAuthor} to TblUser,
+    TblSchoolHistory{audienceClient} to TblAudienceClient,
+    TblSchoolHistory{generalProcedureType} to TblGeneralProcedureType,
+
+    TblGuardianHistory{user} to TblUser,
+    TblGuardianHistory{guardianUser} to TblUser,
+    TblGuardianHistory{guardianType} to TblGuardianType,
+    TblGuardianHistory{userAuthor} to TblUser,
+    TblGuardianHistory{audienceClient} to TblAudienceClient,
+    TblGuardianHistory{generalProcedureType} to TblGeneralProcedureType,
+
+    TblUserHistory{user} to TblUser,
+    TblUserHistory{userAuthor} to TblUser,
+    TblUserHistory{audienceClient} to TblAudienceClient,
+    TblUserHistory{generalProcedureType} to TblGeneralProcedureType,
+
+    TblGrade{TblLevelType} to TblLevelType,
+
+    TblClassCoordinator{TblUser} to TblUser,
+    TblClassCoordinator{TblClass} to TblClass,
+
+    TblClassStudent{TblUser} to TblUser,
+    TblClassStudent{TblClass} to TblClass,
+
+    TblClass{TblSchool} to TblSchool,
+    TblClass{TblShiftType} to TblShiftType,
+
+    TblClassSubjectTeacher{TblSubject} to TblSubject,
+    TblClassSubjectTeacher{TblUser} to TblUser,
+    TblClassSubjectTeacher{TblClass} to TblClass,
+
+    TblSchoolSubject{TblLevelType} to TblLevelType,
+    TblSchoolSubject{TblSubject} to TblSubject,
+    TblSchoolSubject{TblSchool} to TblSchool
+
+}

@@ -1,0 +1,23 @@
+{
+    "schoolarApp": {
+        "tblClassCoordinator" : {
+            "home": {
+                "title": "Tbl Class Coordinators",
+                "createLabel": "Create a new Tbl Class Coordinator",
+                "createOrEditLabel": "Create or edit a Tbl Class Coordinator"
+            },
+            "created": "A new Tbl Class Coordinator is created with identifier {{ param }}",
+            "updated": "A Tbl Class Coordinator is updated with identifier {{ param }}",
+            "deleted": "A Tbl Class Coordinator is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl Class Coordinator {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl Class Coordinator"
+            },
+            "dtmLastUpdate": "Dtm Last Update",
+            "tblUser": "Tbl User",
+            "tblClass": "Tbl Class"
+        }
+    }
+}

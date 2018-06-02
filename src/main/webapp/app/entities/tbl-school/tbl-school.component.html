@@ -1,0 +1,56 @@
+<div>
+    <h2>
+        <span jhiTranslate="schoolarApp.tblSchool.home.title">Tbl Schools</span>
+        <button class="btn btn-primary float-right jh-create-entity create-tbl-school" [routerLink]="['/', { outlets: { popup: ['tbl-school-new'] } }]">
+            <span class="btn-primary-icon fa fa-plus"></span>
+            <span  jhiTranslate="schoolarApp.tblSchool.home.createLabel">
+            Create new Tbl School
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="tblSchools">
+        <table class="table" >
+            <thead>
+            <tr>
+            <th width="25%" class="table-header-schoolar"><span jhiTranslate="schoolarApp.tblSchool.strName">Str Name</span></th>
+            <th width="25%" class="table-header-schoolar"><span jhiTranslate="schoolarApp.tblSchool.strCNPJ">Str CNPJ</span></th>
+            <th width="25%" class="table-header-schoolar"><span jhiTranslate="schoolarApp.tblSchool.strEmail">Str Email</span></th>
+            <th width="25%" class="pull-center table-header-schoolar table-header-options-schoolar"><span jhiTranslate="global.form.options">Options</span></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tblSchool of tblSchools ;trackBy: trackId">
+                <td class="table-item-schoolar">{{tblSchool.strName}}</td>
+                <td class="table-item-schoolar" id="school-cnpj">{{getCnpjMask(tblSchool.strCNPJ)}}</td>
+                <td class="table-item-schoolar">{{tblSchool.strEmail}}</td>
+
+                <td class="text-center table-item-schoolar table-item-schoolar-options">
+                    <div class="btn-group flex-btn-group-container">
+
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-school/'+ tblSchool.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-lg">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" ></span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-school/'+ tblSchool.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn  btn-lg">
+                            <span class="fa fa-trash"></span>
+                            <span class="d-none d-md-inline" ></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

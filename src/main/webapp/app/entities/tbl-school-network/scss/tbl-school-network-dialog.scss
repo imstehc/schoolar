@@ -1,0 +1,68 @@
+@import '../../../../../../varibles.scss';
+
+h5{
+    color:$sc_primary_color;
+    clear: both;
+}
+select{
+    height: 32px;
+}
+.mdl-textfield__label{
+
+    &:after{
+        bottom: 13px;
+    }
+}
+.ng-invalid:not(form),.ng-valid[required], .ng-valid.required{
+    border: {
+        left: 0px;
+    }
+}
+.add_contact{
+    text-align: center;
+    vertical-align: middle;
+    color:$sc_primary_color;
+    float:right;
+}
+.remove_contact{
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    vertical-align: middle;
+    color: $sc_danger_color;
+    float:right;
+    height: 100%;
+}
+.arrow-rotate{
+    transform: rotate(-90deg) !important;
+}
+#arrow_accordion{
+    float: right;
+    transition: 0.2s all ease-in-out;
+}
+.search_icon{
+    top: -85px;
+    position: relative;
+    float: right;
+}
+.table_schools{
+    height: 300px;
+    overflow: auto;
+}
+.accordion{
+    margin: {
+        bottom: 20px;
+    }
+}
+.trash_icon{
+    color:$half_color !important;
+    float: right;
+    transition: 0.3s;
+    &:hover{
+        color: $sc_primary_color !important;
+    }
+}
+
+.closeModal{
+    font-size: 2.4rem;
+}

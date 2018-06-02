@@ -1,0 +1,23 @@
+{
+    "schoolarApp": {
+        "tblClassCoordinator" : {
+            "home": {
+                "title": "Class Coordinators",
+                "createLabel": "Criar novo Class Coordinator",
+                "createOrEditLabel": "Criar ou editar Class Coordinator"
+            },
+            "created": "Um novo Class Coordinator foi criado com o identificador {{ param }}",
+            "updated": "Um Class Coordinator foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Class Coordinator foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Class Coordinator {{ id }}?"
+            },
+            "detail": {
+                "title": "Class Coordinator"
+            },
+            "dtmLastUpdate": "Last Update",
+            "tblUser": "User",
+            "tblClass": "Class"
+        }
+    }
+}

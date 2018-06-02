@@ -1,0 +1,26 @@
+{
+    "schoolarApp": {
+        "tblLogin" : {
+            "home": {
+                "title": "Logins",
+                "createLabel": "Create a new Login",
+                "createOrEditLabel": "Create or edit a Login"
+            },
+            "created": "A new login was created",
+            "createdError": "Could not create a new login",
+            "updated": "A Login is updated with identifier {{ param }}",
+            "deleted": "A Login is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Login {{ id }}?"
+            },
+            "detail": {
+                "title": "Login"
+            },
+            "strUserName": "User",
+            "strPassword": "Password",
+            "dtmLastUpdate": "Last Update",
+            "user": "User",
+            "tblLoginsNotAvailable": "Listing logins is not available yet"
+        }
+    }
+}

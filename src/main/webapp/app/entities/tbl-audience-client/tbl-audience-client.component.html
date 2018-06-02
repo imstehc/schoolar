@@ -1,0 +1,64 @@
+<div>
+    <h2>
+        <span jhiTranslate="schoolarApp.tblAudienceClient.home.title">Tbl Audience Clients</span>
+        <button class="btn btn-primary float-right jh-create-entity create-tbl-audience-client" [routerLink]="['/', { outlets: { popup: ['tbl-audience-client-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="schoolarApp.tblAudienceClient.home.createLabel">
+            Create new Tbl Audience Client
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="tblAudienceClients">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th><span jhiTranslate="global.field.id">ID</span></th>
+                <th><span jhiTranslate="schoolarApp.tblAudienceClient.strBase64Secret">Str Base 64 Secret</span></th>
+                <th><span jhiTranslate="schoolarApp.tblAudienceClient.strName">Str Name</span></th>
+                <th><span jhiTranslate="schoolarApp.tblAudienceClient.intDaysAccessTokenExpire">Int Days Access Token Expire</span></th>
+                <th><span jhiTranslate="schoolarApp.tblAudienceClient.intDaysRefreshTokenExpire">Int Days Refresh Token Expire</span></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tblAudienceClient of tblAudienceClients ;trackBy: trackId">
+                <td><a [routerLink]="['../tbl-audience-client', tblAudienceClient.id ]">{{tblAudienceClient.id}}</a></td>
+                <td>{{tblAudienceClient.strBase64Secret}}</td>
+                <td>{{tblAudienceClient.strName}}</td>
+                <td>{{tblAudienceClient.intDaysAccessTokenExpire}}</td>
+                <td>{{tblAudienceClient.intDaysRefreshTokenExpire}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../tbl-audience-client', tblAudienceClient.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-audience-client/'+ tblAudienceClient.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-audience-client/'+ tblAudienceClient.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

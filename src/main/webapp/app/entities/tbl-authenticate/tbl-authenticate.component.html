@@ -1,0 +1,70 @@
+<div>
+    <h2>
+        <span jhiTranslate="schoolarApp.tblAuthenticate.home.title">Tbl Authenticates</span>
+        <button class="btn btn-primary float-right jh-create-entity create-tbl-authenticate" [routerLink]="['/', { outlets: { popup: ['tbl-authenticate-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="schoolarApp.tblAuthenticate.home.createLabel">
+            Create new Tbl Authenticate
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="tblAuthenticates">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th><span jhiTranslate="global.field.id">ID</span></th>
+                <th><span jhiTranslate="schoolarApp.tblAuthenticate.dtmTimeStamp">Dtm Time Stamp</span></th>
+                <th><span jhiTranslate="schoolarApp.tblAuthenticate.audienceClient">Audience Client</span></th>
+                <th><span jhiTranslate="schoolarApp.tblAuthenticate.user">User</span></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tblAuthenticate of tblAuthenticates ;trackBy: trackId">
+                <td><a [routerLink]="['../tbl-authenticate', tblAuthenticate.id ]">{{tblAuthenticate.id}}</a></td>
+                <td>{{tblAuthenticate.dtmTimeStamp | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="tblAuthenticate.audienceClient">
+                        <a [routerLink]="['../tbl-audience-client', tblAuthenticate.audienceClient?.id ]" >{{tblAuthenticate.audienceClient?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="tblAuthenticate.user">
+                        <a [routerLink]="['../tbl-user', tblAuthenticate.user?.id ]" >{{tblAuthenticate.user?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../tbl-authenticate', tblAuthenticate.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-authenticate/'+ tblAuthenticate.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-authenticate/'+ tblAuthenticate.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

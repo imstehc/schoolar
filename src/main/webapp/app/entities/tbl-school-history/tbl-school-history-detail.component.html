@@ -1,0 +1,94 @@
+
+<div *ngIf="tblSchoolHistory">
+    <h2><span jhiTranslate="schoolarApp.tblSchoolHistory.detail.title">Tbl School History</span> {{tblSchoolHistory.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblSchoolHistory.strCode">Str Code</span></dt>
+        <dd>
+            <span>{{tblSchoolHistory.strCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolHistory.strName">Str Name</span></dt>
+        <dd>
+            <span>{{tblSchoolHistory.strName}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolHistory.strLegalName">Str Legal Name</span></dt>
+        <dd>
+            <span>{{tblSchoolHistory.strLegalName}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolHistory.strEmail">Str Email</span></dt>
+        <dd>
+            <span>{{tblSchoolHistory.strEmail}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolHistory.strPhoto">Str Photo</span></dt>
+        <dd>
+            <span>{{tblSchoolHistory.strPhoto}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolHistory.schoolType">Id School Type</span></dt>
+        <dd>
+            <span>{{tblSchoolHistory.schoolType}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolHistory.strCNPJ">Str CNPJ</span></dt>
+        <dd>
+            <span>{{tblSchoolHistory.strCNPJ}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolHistory.strNEP">Str NEP</span></dt>
+        <dd>
+            <span>{{tblSchoolHistory.strNEP}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolHistory.strNEPName">Str NEP Name</span></dt>
+        <dd>
+            <span>{{tblSchoolHistory.strNEPName}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolHistory.intExcluded">Int Excluded</span></dt>
+        <dd>
+            <span>{{tblSchoolHistory.intExcluded}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolHistory.dtmChanged">Dtm Changed</span></dt>
+        <dd>
+            <span>{{tblSchoolHistory.dtmChanged | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolHistory.dtmLastUpdate">Dtm Last Update</span></dt>
+        <dd>
+            <span>{{tblSchoolHistory.dtmLastUpdate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolHistory.school">School</span></dt>
+        <dd>
+            <div *ngIf="tblSchoolHistory.school">
+                <a [routerLink]="['/tbl-school', tblSchoolHistory.school?.id]">{{tblSchoolHistory.school?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolHistory.userAuthor">User Author</span></dt>
+        <dd>
+            <div *ngIf="tblSchoolHistory.userAuthor">
+                <a [routerLink]="['/tbl-user', tblSchoolHistory.userAuthor?.id]">{{tblSchoolHistory.userAuthor?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolHistory.audienceClient">Audience Client</span></dt>
+        <dd>
+            <div *ngIf="tblSchoolHistory.audienceClient">
+                <a [routerLink]="['/tbl-audience-client', tblSchoolHistory.audienceClient?.id]">{{tblSchoolHistory.audienceClient?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolHistory.generalProcedureType">General Procedure Type</span></dt>
+        <dd>
+            <div *ngIf="tblSchoolHistory.generalProcedureType">
+                <a [routerLink]="['/tbl-general-procedure-type', tblSchoolHistory.generalProcedureType?.id]">{{tblSchoolHistory.generalProcedureType?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-school-history/'+ tblSchoolHistory.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

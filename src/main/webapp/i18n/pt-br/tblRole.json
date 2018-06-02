@@ -1,0 +1,26 @@
+{
+    "schoolarApp": {
+        "tblRole" : {
+            "home": {
+                "title": "Papéis",
+                "createLabel": "Cadastrar novo Papel",
+                "createOrEditLabel": "Criar ou editar Papel"
+            },
+            "created": "Um novo Papel foi criado com o identificador {{ param }}",
+            "updated": "Um Papel foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Papel foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir o Papel {{ id }}?"
+            },
+            "detail": {
+                "title": "Papéis"
+            },
+            "strName": "Nome",
+            "strDescription": "Descriçao",
+            "dtmCreated": "Data de Cadastro",
+            "dtmLastUpdate": "Última Atualizaçao",
+            "intExcluded": "Excluído?",
+            "intCanBeImpersonated": "Nao pode ser representado"
+        }
+    }
+}

@@ -1,0 +1,54 @@
+<div id="absolute-wrapper">
+    <section class="col-md-6" id="welcome">
+        <article>
+            <h2 jhiTranslate="global.form.welcome"></h2>
+            <h1>Schoolar</h1>
+            <p jhiTranslate="global.form.positivosystem">
+                <p jhiTranslate="global.form.educationalpositivo"></p>
+        </article>
+        <div id="footer-welcome">
+            <img src="../../../content/images/positivo-w.png" alt="">
+        </div>
+    </section>
+    <section class="col-md-6 login--box" id="login">
+        <form class="form" role="form" (ngSubmit)="login()">
+                <div *ngIf="isLoading" class="backdrop_loading">
+                        <div class="cssload-thecube" style="margin-top: 60%;">
+                            <div class="cssload-cube cssload-c1"></div>
+                            <div class="cssload-cube cssload-c2"></div>
+                            <div class="cssload-cube cssload-c4"></div>
+                        </div>
+                </div>
+            <!-- <h1 jhiTranslate="global.menu.account.login">Login</h1> -->
+            <div style="text-align: center; margin-bottom: 40px">
+                <div style="font-size: 38px; color: #1a38dd;">Bem-vindo!</div>
+                <div style="font-size: 18px; font-family: sans-serif; font-weight: 100;">
+                    Por favor, digite seu usuário e senha.
+                </div>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label col-md-12">
+                <input class="mdl-textfield__input" type="text" name="user" id="input-user"
+                       [(ngModel)]="username" [disabled]="isLoading"/>
+                <label class="mdl-textfield__label" for="input-user" jhiTranslate="global.form.username">Username</label>
+            </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label col-md-12">
+                <input class="mdl-textfield__input" type="password" name="password" id="input-password"
+                       [(ngModel)]="password" [disabled]="isLoading"/>
+                <label class="mdl-textfield__label" for="input-password" jhiTranslate="login.form.password">Password</label>
+            </div>
+
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect check" for="checkbox-2">
+                <input type="checkbox" name="remember" id="checkbox-2" class="mdl-checkbox__input" [(ngModel)]="rememberMe" checked [disabled]="isLoading">
+                <span class="mdl-checkbox__label" jhiTranslate="login.form.rememberme">Remember me</span>
+            </label>
+
+            <button class="btn col-md-12" type="submit" [disabled]="(!username || !password) || isLoading">Entrar</button>
+
+            <div class="col-md-12" id="auth-error">
+                <div class="alert alert-danger" *ngIf="authenticationError" jhiTranslate="login.messages.error.authentication">
+                    <strong>Failed to sign in!</strong> Please check your credentials and try again.
+                </div>
+            </div>
+        </form>
+    </section>
+</div>

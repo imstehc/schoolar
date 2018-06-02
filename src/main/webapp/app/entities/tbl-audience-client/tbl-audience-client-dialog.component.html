@@ -1,0 +1,81 @@
+<form name="editForm" role="form" (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTblAudienceClientLabel" jhiTranslate="schoolarApp.tblAudienceClient.home.createOrEditLabel">Create or edit a Tbl Audience Client</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!tblAudienceClient.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="tblAudienceClient.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblAudienceClient.strBase64Secret" for="field_strBase64Secret">Str Base 64 Secret</label>
+            <input type="text" class="form-control" name="strBase64Secret" id="field_strBase64Secret"
+                   [(ngModel)]="tblAudienceClient.strBase64Secret" required maxlength="20"/>
+            <div [hidden]="!(editForm.controls.strBase64Secret?.dirty && editForm.controls.strBase64Secret?.invalid)">
+                <small class="form-text text-danger"
+                       [hidden]="!editForm.controls.strBase64Secret?.errors?.required" jhiTranslate="entity.validation.required">
+                    This field is required.
+                </small>
+                <small class="form-text text-danger"
+                       [hidden]="!editForm.controls.strBase64Secret?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                    This field cannot be longer than 20 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblAudienceClient.strName" for="field_strName">Str Name</label>
+            <input type="text" class="form-control" name="strName" id="field_strName"
+                   [(ngModel)]="tblAudienceClient.strName" maxlength="20"/>
+            <div [hidden]="!(editForm.controls.strName?.dirty && editForm.controls.strName?.invalid)">
+                <small class="form-text text-danger"
+                       [hidden]="!editForm.controls.strName?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                    This field cannot be longer than 20 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblAudienceClient.intDaysAccessTokenExpire" for="field_intDaysAccessTokenExpire">Int Days Access Token Expire</label>
+            <input type="number" class="form-control" name="intDaysAccessTokenExpire" id="field_intDaysAccessTokenExpire"
+                   [(ngModel)]="tblAudienceClient.intDaysAccessTokenExpire" required/>
+            <div [hidden]="!(editForm.controls.intDaysAccessTokenExpire?.dirty && editForm.controls.intDaysAccessTokenExpire?.invalid)">
+                <small class="form-text text-danger"
+                       [hidden]="!editForm.controls.intDaysAccessTokenExpire?.errors?.required" jhiTranslate="entity.validation.required">
+                    This field is required.
+                </small>
+                <small class="form-text text-danger"
+                       [hidden]="!editForm.controls.intDaysAccessTokenExpire?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblAudienceClient.intDaysRefreshTokenExpire" for="field_intDaysRefreshTokenExpire">Int Days Refresh Token Expire</label>
+            <input type="number" class="form-control" name="intDaysRefreshTokenExpire" id="field_intDaysRefreshTokenExpire"
+                   [(ngModel)]="tblAudienceClient.intDaysRefreshTokenExpire" required/>
+            <div [hidden]="!(editForm.controls.intDaysRefreshTokenExpire?.dirty && editForm.controls.intDaysRefreshTokenExpire?.invalid)">
+                <small class="form-text text-danger"
+                       [hidden]="!editForm.controls.intDaysRefreshTokenExpire?.errors?.required" jhiTranslate="entity.validation.required">
+                    This field is required.
+                </small>
+                <small class="form-text text-danger"
+                       [hidden]="!editForm.controls.intDaysRefreshTokenExpire?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

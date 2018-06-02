@@ -1,0 +1,96 @@
+<div>
+    <h2>
+        <span jhiTranslate="schoolarApp.tblGuardianHistory.home.title">Tbl Guardian Histories</span>
+        <button class="btn btn-primary float-right jh-create-entity create-tbl-guardian-history" [routerLink]="['/', { outlets: { popup: ['tbl-guardian-history-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="schoolarApp.tblGuardianHistory.home.createLabel">
+            Create new Tbl Guardian History
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="tblGuardianHistories">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="schoolarApp.tblGuardianHistory.dtmChanged">Dtm Changed</span></th>
+            <th><span jhiTranslate="schoolarApp.tblGuardianHistory.dtmLastUpdate">Dtm Last Update</span></th>
+            <th><span jhiTranslate="schoolarApp.tblGuardianHistory.user">User</span></th>
+            <th><span jhiTranslate="schoolarApp.tblGuardianHistory.guardianUser">Guardian User</span></th>
+            <th><span jhiTranslate="schoolarApp.tblGuardianHistory.guardianType">Guardian Type</span></th>
+            <th><span jhiTranslate="schoolarApp.tblGuardianHistory.userAuthor">User Author</span></th>
+            <th><span jhiTranslate="schoolarApp.tblGuardianHistory.audienceClient">Audience Client</span></th>
+            <th><span jhiTranslate="schoolarApp.tblGuardianHistory.generalProcedureType">General Procedure Type</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tblGuardianHistory of tblGuardianHistories ;trackBy: trackId">
+                <td><a [routerLink]="['../tbl-guardian-history', tblGuardianHistory.id ]">{{tblGuardianHistory.id}}</a></td>
+                <td>{{tblGuardianHistory.dtmChanged | date:'medium'}}</td>
+                <td>{{tblGuardianHistory.dtmLastUpdate | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="tblGuardianHistory.user">
+                        <a [routerLink]="['../tbl-user', tblGuardianHistory.user?.id ]" >{{tblGuardianHistory.user?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="tblGuardianHistory.guardianUser">
+                        <a [routerLink]="['../tbl-user', tblGuardianHistory.guardianUser?.id ]" >{{tblGuardianHistory.guardianUser?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="tblGuardianHistory.guardianType">
+                        <a [routerLink]="['../tbl-guardian-type', tblGuardianHistory.guardianType?.id ]" >{{tblGuardianHistory.guardianType?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="tblGuardianHistory.userAuthor">
+                        <a [routerLink]="['../tbl-user', tblGuardianHistory.userAuthor?.id ]" >{{tblGuardianHistory.userAuthor?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="tblGuardianHistory.audienceClient">
+                        <a [routerLink]="['../tbl-audience-client', tblGuardianHistory.audienceClient?.id ]" >{{tblGuardianHistory.audienceClient?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="tblGuardianHistory.generalProcedureType">
+                        <a [routerLink]="['../tbl-general-procedure-type', tblGuardianHistory.generalProcedureType?.id ]" >{{tblGuardianHistory.generalProcedureType?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../tbl-guardian-history', tblGuardianHistory.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-guardian-history/'+ tblGuardianHistory.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-guardian-history/'+ tblGuardianHistory.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

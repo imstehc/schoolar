@@ -1,0 +1,86 @@
+schoolar.tbl_school_network:
+- id: 1
+  str_name: ESCOLA GENERICA
+  str_code: 1212
+  str_legal_name: 1212
+  dtm_created: 2017-05-24 10:54:00
+  int_excluded: 0
+- id: 2
+  str_name: ESCOLA PATHERFIELD
+  str_code: 999
+  str_legal_name: PTAH LTD
+  dtm_created: 2017-05-24 10:54:00
+  int_excluded: 0
+
+schoolar.tbl_school_type:
+- id: 1
+  str_name: school_type
+  dtm_last_update: 2017-05-24 10:54:00
+
+schoolar.tbl_school:
+- id: 1
+  str_cnpj: 123456
+  str_name: MF
+  str_code: CODE
+  str_email: mf@mf.com.br
+  str_legal_name: AAA
+  str_photo: http://sd
+  dtm_created: 2017-05-24 10:54:00
+  int_excluded: 0
+  id_school_type: 1
+  str_inep: inep
+  str_inep_name: inep_name
+  dtm_last_update: 2017-05-24 10:54:00
+- id: 2
+  str_cnpj: 1234567
+  str_name: MFA
+  str_code: CODEA
+  str_email: mf@mf.com.br
+  str_legal_name: AAA5
+  str_photo: http://zzz
+  dtm_created: 2017-05-24 10:54:00
+  int_excluded: 0
+  id_school_type: 1
+  str_inep: inep
+  str_inep_name: inep_name
+  dtm_last_update: 2017-05-24 10:54:00
+- id: 3
+  str_cnpj: 1234567
+  str_name: MFB
+  str_code: CODEB
+  str_email: mf@mf.com.br
+  str_legal_name: AAA5
+  str_photo: http://zzz
+  dtm_created: 2017-05-24 10:54:00
+  int_excluded: 0
+  id_school_type: 1
+  str_inep: inep
+  str_inep_name: inep_name
+  dtm_last_update: 2017-05-24 10:54:00
+
+schoolar.tbl_school_network_school:
+- id: 1
+  dtm_created: 2017-05-24 10:54:00
+  int_excluded: 0
+  school_id: 1
+  school_network_id: 1
+- id: 2
+  dtm_created: 2017-05-24 10:54:00
+  int_excluded: 0
+  school_id: 2
+  school_network_id: 2
+
+schoolar.tbl_address:
+- id: 1
+  str_street: Rua Helio
+  str_number: 4
+  str_neighborhood: Cidade Nova
+  str_city: Manaus
+  str_state: AM
+  str_country: Amazonas
+  dtm_create: 2017-05-24 10:54:00
+  int_excluded: 0
+
+schoolar.tbl_school_tbl_address:
+- tbl_addresses_id: 1
+  tbl_schools_id: 1

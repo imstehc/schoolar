@@ -1,0 +1,44 @@
+
+<div *ngIf="tblGuardian">
+    <h2><span jhiTranslate="schoolarApp.tblGuardian.detail.title">Tbl Guardian</span> {{tblGuardian.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblGuardian.dtmLastUpdate">Dtm Last Update</span></dt>
+        <dd>
+            <span>{{tblGuardian.dtmLastUpdate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblGuardian.user">User</span></dt>
+        <dd>
+            <div *ngIf="tblGuardian.user">
+                <a [routerLink]="['/tbl-user', tblGuardian.user?.id]">{{tblGuardian.user?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblGuardian.guardianUser">Guardian User</span></dt>
+        <dd>
+            <div *ngIf="tblGuardian.guardianUser">
+                <a [routerLink]="['/tbl-user', tblGuardian.guardianUser?.id]">{{tblGuardian.guardianUser?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblGuardian.guardianType">Guardian Type</span></dt>
+        <dd>
+            <div *ngIf="tblGuardian.guardianType">
+                <a [routerLink]="['/tbl-guardian-type', tblGuardian.guardianType?.id]">{{tblGuardian.guardianType?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-guardian/'+ tblGuardian.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

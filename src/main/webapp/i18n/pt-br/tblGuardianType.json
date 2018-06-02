@@ -1,0 +1,23 @@
+{
+    "schoolarApp": {
+        "tblGuardianType" : {
+            "home": {
+                "title": "Guardian Types",
+                "createLabel": "Criar novo Guardian Type",
+                "createOrEditLabel": "Criar ou editar Guardian Type"
+            },
+            "created": "Um novo Guardian Type foi criado com o identificador {{ param }}",
+            "updated": "Um Guardian Type foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Guardian Type foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Guardian Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Guardian Type"
+            },
+            "strName": "Name",
+            "strDescription": "Description",
+            "dtmLastUpdate": "Last Update"
+        }
+    }
+}

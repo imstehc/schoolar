@@ -1,0 +1,188 @@
+$sc_primary_color: #1A38DC;
+$sc_dark_color: #0E0F54;
+$sc_light_blue_color: #C2C9F4;
+$sc_light2_color: #686868;
+$sc_light1_color: #929292;
+$sc_light3_color: #979797;
+$sc_light_color: #fff;
+$sc_danger_color: red;
+
+.form-control:focus{
+    box-shadow: none;
+}
+
+.input-border{
+    transition: 0.2s all linear;
+    border: none 1px {
+        radius: 0px;
+        bottom: solid 1px;
+        color: $sc_light3_color;
+    }
+
+    &:focus,
+    &:hover,
+    &:active{
+        border: none 1px {
+            radius: 0px;
+            bottom: solid 1px;
+            color: $sc_primary_color;
+        }
+    }
+}
+
+.mdl-textfield__label{
+    color:$sc_light2_color;
+    margin-left: 0px;
+    padding-left: 20px;
+}
+
+.mdl-textfield__label::after{
+    background-color:$sc_primary_color;
+    bottom:13px !important;
+    height:3px;
+}
+
+label{
+    color: $sc_light2_color;
+}
+
+.phone-group{
+    line-height: 20px;
+}
+
+.school_logo{
+    height: 100px;
+    width: 100px;
+    border: solid 1px $sc_light_blue_color;
+    border-radius:50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $sc_primary_color;
+}
+
+.iconCircle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.add_contact{
+    text-align: center;
+    vertical-align: middle;
+    color: $sc_light_color;
+    float: right;
+    background-color: $sc_primary_color;
+}
+
+.remove_contact{
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    vertical-align: middle;
+    color: $sc_light_color;
+    float: right;
+    background-color: $sc_danger_color;
+}
+
+.phone-group{
+    line-height: 20px;
+}
+
+.logo_container{
+
+}
+
+.logo_content{
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+.btn-secondary {
+    color: #1f40dc;
+    background-color: #cdd4f9;
+    border-color: #cdd4f9;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-secondary:hover {
+    background-color: #b3bdf3;
+    border-color: #b3bdf3;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #1A38DC;
+    border-color: #1A38DC;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-primary:hover {
+    background-color: #0E0F54;
+    border-color: #0E0F54;
+}
+.spaceBefore{
+    margin-top: 30px;
+}
+.label-text{
+    color: rgb(21, 22, 99);
+    font-weight: bold;
+}
+.title-card{
+    color: rgb(21, 22, 99);
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+.form-row .card{
+    margin-bottom: 25px;
+}
+.title{
+    color: $sc_primary_color;
+    font-weight: bold;
+}
+.border-margin{
+    margin: 0 30px;
+}
+.input-required:focus{
+    border-bottom: 1px solid red;
+}
+.select-align{
+    margin-top: 7px;
+}
+
+.asterisk{
+    color: red;
+    font-size: 18px;
+}
+
+.closeModal{
+    font-size: 3rem;
+    position: relative;
+    top: 7px;
+    padding:0;
+}
+
+.title-info-school{
+    font-size: 22px;
+}
+
+.space-between-fields-left{
+    padding-right: 20px;
+}
+
+.space-between-fields-right{
+    padding-left: 20px;
+}
+
+.column-wrapper-align{
+    position: relative;
+    margin-top: -15px;
+}
+
+.modal-border-schoolar{
+    border-color: #979797;
+}

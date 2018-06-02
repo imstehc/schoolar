@@ -1,0 +1,37 @@
+{
+    "schoolarApp": {
+        "tblAddress" : {
+            "home": {
+                "title": "Endereço",
+                "createLabel": "Criar novo Endereço",
+                "createOrEditLabel": "Criar ou editar Endereço"
+            },
+            "created": "Um novo Endereço foi criado com o identificador {{ param }}",
+            "updated": "Um Tbl Endereço foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Tbl Endereço foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Endereço {{ id }}?"
+            },
+            "detail": {
+                "title": "Endereço"
+            },
+            "strLabel": "Nome do endereço",
+            "strPostCode": "CEP",
+            "strStreet": "Rua",
+            "strNumber": "Número",
+            "strNeighborhood": "Bairro",
+            "strComplement": "Complemento",
+            "strCity": "Cidade",
+            "strState": "Estado",
+            "strCountry": "País",
+            "dtmCreate": "Data de criação",
+            "dtmLastUpdate": "Data da última atualização",
+            "intExcluded": "Excluído",
+            "tblUser": "Usuário",
+            "tblSchoolNetwork": "Rede Escolar",
+            "tblSchool": "Escola",
+            "newAddress": "Novo endereço",
+            "editAddress": "Editar endereço"
+        }
+    }
+}

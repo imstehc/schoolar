@@ -1,0 +1,26 @@
+{
+    "schoolarApp": {
+        "tblRole" : {
+            "home": {
+                "title": "Tbl Roles",
+                "createLabel": "Create a new Tbl Role",
+                "createOrEditLabel": "Create or edit a Tbl Role"
+            },
+            "created": "A new Tbl Role is created with identifier {{ param }}",
+            "updated": "A Tbl Role is updated with identifier {{ param }}",
+            "deleted": "A Tbl Role is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl Role {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl Role"
+            },
+            "strName": "Str Name",
+            "strDescription": "Str Description",
+            "dtmCreated": "Dtm Created",
+            "dtmLastUpdate": "Dtm Last Update",
+            "intExcluded": "Int Excluded",
+            "intCanBeImpersonated": "Int Can Be Impersonated"
+        }
+    }
+}

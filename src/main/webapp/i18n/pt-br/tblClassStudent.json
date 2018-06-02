@@ -1,0 +1,23 @@
+{
+    "schoolarApp": {
+        "tblClassStudent" : {
+            "home": {
+                "title": "Class Students",
+                "createLabel": "Criar novo Class Student",
+                "createOrEditLabel": "Criar ou editar Class Student"
+            },
+            "created": "Um novo Class Student foi criado com o identificador {{ param }}",
+            "updated": "Um Class Student foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Class Student foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Class Student {{ id }}?"
+            },
+            "detail": {
+                "title": "Class Student"
+            },
+            "dtmLastUpdate": "Last Update",
+            "tblUser": "User",
+            "tblClass": "Class"
+        }
+    }
+}

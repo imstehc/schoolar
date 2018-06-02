@@ -1,0 +1,27 @@
+{
+    "schoolarApp": {
+        "tblGrade" : {
+            "home": {
+                "title": "Tbl Grades",
+                "createLabel": "Create a new Tbl Grade",
+                "createOrEditLabel": "Create or edit a Tbl Grade"
+            },
+            "created": "A new Tbl Grade is created with identifier {{ param }}",
+            "updated": "A Tbl Grade is updated with identifier {{ param }}",
+            "deleted": "A Tbl Grade is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl Grade {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl Grade"
+            },
+            "strName": "Str Name",
+            "intNumber": "Int Number",
+            "dtmCreated": "Dtm Created",
+            "dtmLastUpdate": "Dtm Last Update",
+            "intExcluded": "Int Excluded",
+            "strLabel": "Str Label",
+            "tblLevelType": "Tbl Level Type"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>E6F2F5F2-E5CB-4711-9894-6AD2D68C04B9</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <circle id="path-1" cx="13" cy="13" r="13"></circle>
+        <filter x="-40.4%" y="-28.8%" width="180.8%" height="180.8%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Schoolar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="SchoolNetwork---Create-SchoolNetwork" transform="translate(-1224.000000, -1028.000000)">
+            <g id="btn-delete" transform="translate(1230.000000, 1031.000000)">
+                <g id="Oval-2">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#DC1A1A" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <path d="M11.5,11.5 L11.5,7 L14.5,7 L14.5,11.5 L19,11.5 L19,14.5 L14.5,14.5 L14.5,19 L11.5,19 L11.5,14.5 L7,14.5 L7,11.5 L11.5,11.5 Z" id="Combined-Shape" fill="#FFFFFF" fill-rule="evenodd" transform="translate(13.000000, 13.000000) rotate(45.000000) translate(-13.000000, -13.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

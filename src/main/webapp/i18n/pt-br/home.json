@@ -1,0 +1,19 @@
+{
+    "home": {
+        "title": "Bem vindo ao Schoolar!",
+        "subtitle": "Esta é  a página principal",
+        "logged": {
+            "message": "Você está logado como \"{{username}}\"."
+        },
+        "question": "Em caso de dúvida sobre o Schoolar:",
+        "link": {
+            "homepage": "Schoolar homepage",
+            "stackoverflow": "Schoolar no Stack Overflow",
+            "bugtracker": "Schoolar bug tracker",
+            "chat": "Schoolar public chat room",
+            "follow": "contate @java_hipster on Twitter"
+        },
+        "like": "Se você gosta do Schoolar, não se esqueça de avaliar no",
+        "github": "GitHub"
+    }
+}

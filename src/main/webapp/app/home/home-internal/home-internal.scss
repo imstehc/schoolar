@@ -1,0 +1,211 @@
+
+.nav-side-menu {
+    background-color: #162386; /* Old browsers */
+    background-image: url("../../../content/images/bg-menu-schoolar.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    overflow: hidden;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    position: fixed;
+    width: 253px;
+    height: 100%;
+    min-height: 930px;
+    top: 0;
+    color: #e1ffff;
+    box-shadow: -1px 7px 4px #6b6969;
+    z-index: 1001;
+    overflow: hidden;
+    .brand {
+        display: block;
+        text-align: center;
+        padding: 30px;
+
+        img{
+            width: 70%;
+        }
+        a:link, a:visited, a:active, a:hover{
+            text-decoration: none;
+        }
+    }
+
+    .toggle-btn {
+        display: none;
+    }
+
+    .title{
+        color: white !important;
+        z-index: 9999 !important;
+        position: relative;
+        font-family: 'Raleway', sans-serif;
+    }
+    img {
+        position: absolute;
+        height: 46em;
+        top: -300px;
+        left: -307px;
+        z-index: 0;
+    }
+    ul, li{
+        position: relative;
+        z-index: 9999;
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+        line-height: 58px;
+        cursor: pointer;
+        font-family: 'Raleway', sans-serif;
+
+        &.active {
+            border-left: 3px solid #ffffff;
+            background:rgba(255,255,255, 0.2);
+        }
+
+        li{
+            padding-left: 0px;
+            border-left: 3px groove #102b99;
+
+            a{
+                text-decoration: none;
+                color: #ffffff;
+                font-size: 14px;
+                letter-spacing: 1px;
+
+                i{
+                    padding-left: 20px;
+                    width: 20px;
+                    font-size: 18px;
+                    padding-right: 16px;
+                }
+
+                span{
+                    margin-left:10px;
+                    color: white;
+                    margin-left: 25px;
+                }
+            }
+
+            &:hover{
+                border-left: 3px solid #ffffff;
+                background:rgba(255,255,255, 0.2);
+                -webkit-transition: all 1s ease;
+                -moz-transition: all 1s ease;
+                -o-transition: all 1s ease;
+                -ms-transition: all 1s ease;
+                transition: all 1s ease;
+            }
+        }
+    }
+}
+
+.container_warp{
+    padding-left: 278px;
+    padding-right: 22px;
+    padding-top: 42px;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-align: inherit;
+    white-space: nowrap;
+    background: none;
+    border: 0;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #16181b;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.dropdown-item.disabled, .dropdown-item:disabled {
+    color: #cfd5dd;
+    background-color: transparent;
+}
+
+.jh-cardInternal {
+    padding: 1.5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    margin-top: 0px;
+    border: none;
+    box-shadow: 10px 10px 26px -6px rgba(0, 0, 0, 0.16);
+}
+
+.jh-navbar {
+    background-color: #353d47;
+    padding: .2em 1em;
+    .profile-image {
+        margin: -10px 0px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+    }
+    .dropdown-item.active, .dropdown-item.active:focus, .dropdown-item.active:hover {
+        background-color: #dddadd;
+    }
+
+    ul.navbar-nav {
+        padding: 0.5em;
+        .nav-item {
+            margin-left: 1.5rem;
+        }
+    }
+    a.nav-link {
+        font-weight: 400;
+    }
+    .jh-navbar-toggler {
+        color: #ccc;
+        font-size: 1.5em;
+        padding: 10px;
+        &:hover {
+            color: #606060;
+        }
+    }
+}
+
+/* ==========================================================================
+Main page styles
+========================================================================== */
+
+.hipster {
+    display: inline-block;
+    width: 347px;
+    height: 497px;
+    //background: url("../../content/images/hipster.png") no-repeat center top;
+    background-size: contain;
+}
+
+/* wait autoprefixer update to allow simple generation of high pixel density media query */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx),
+only screen and (                min-width:      767px ){
+    .hipster {
+        //background: url("../../content/images/hipster2x.png") no-repeat center top;
+        background-size: contain;
+    }
+
+    .nav-side-menu .menu-list .menu-content {
+        display: block;
+    }
+}
+
+

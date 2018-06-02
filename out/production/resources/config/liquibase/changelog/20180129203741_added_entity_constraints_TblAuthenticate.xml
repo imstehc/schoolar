@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity TblAuthenticate.
+    -->
+    <changeSet id="20180129203741-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="audience_client_id"
+                                 baseTableName="tbl_authenticate"
+                                 baseTableSchemaName="schoolar"
+                                 constraintName="fk_tbl_authenticate_audience_client_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tbl_audience_client"
+                                 referencedTableSchemaName="schoolar"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableSchemaName="schoolar"
+                                 baseTableName="tbl_authenticate"
+                                 constraintName="fk_tbl_authenticate_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tbl_user"
+                                 referencedTableSchemaName="schoolar"/>
+
+    </changeSet>
+</databaseChangeLog>

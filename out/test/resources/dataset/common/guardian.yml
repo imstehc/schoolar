@@ -1,0 +1,7 @@
+schoolar.tbl_guardian:
+- id: 1
+  user_id: 1
+  guardian_user_id: 1
+  guardian_type_id: 1
+  int_excluded: 0
+

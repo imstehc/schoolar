@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="data_load" author="fernando.supi@indt.org.br">
+        <!--tbl_role-->
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/tbl_role.csv"
+                  separator=";"
+                  tableName="tbl_role">
+        </loadData>
+
+        <!--tbl_user-->
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/tbl_user.csv"
+                  separator=";"
+                  tableName="tbl_user">
+        </loadData>
+
+        <!--tbl_login-->
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/tbl_login.csv"
+                  separator=";"
+                  tableName="tbl_login">
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

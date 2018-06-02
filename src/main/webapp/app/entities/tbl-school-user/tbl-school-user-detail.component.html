@@ -1,0 +1,46 @@
+
+<div *ngIf="tblSchoolUser">
+    <h2><span jhiTranslate="schoolarApp.tblSchoolUser.detail.title">Tbl School User</span> {{tblSchoolUser.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblSchoolUser.dtmCreated">Dtm Created</span></dt>
+        <dd>
+            <span>{{tblSchoolUser.dtmCreated | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolUser.dtmLastUpdate">Dtm Last Update</span></dt>
+        <dd>
+            <span>{{tblSchoolUser.dtmLastUpdate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolUser.intExcluded">Int Excluded</span></dt>
+        <dd>
+            <span>{{tblSchoolUser.intExcluded}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolUser.school">School</span></dt>
+        <dd>
+            <div *ngIf="tblSchoolUser.school">
+                <a [routerLink]="['/tbl-school', tblSchoolUser.school?.id]">{{tblSchoolUser.school?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolUser.user">User</span></dt>
+        <dd>
+            <div *ngIf="tblSchoolUser.user">
+                <a [routerLink]="['/tbl-user', tblSchoolUser.user?.id]">{{tblSchoolUser.user?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-school-user/'+ tblSchoolUser.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

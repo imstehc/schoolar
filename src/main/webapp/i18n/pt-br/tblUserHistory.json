@@ -1,0 +1,37 @@
+{
+    "schoolarApp": {
+        "tblUserHistory" : {
+            "home": {
+                "title": "User Histories",
+                "createLabel": "Criar novo Tbl User History",
+                "createOrEditLabel": "Criar ou editar User History"
+            },
+            "created": "Um novo User History foi criado com o identificador {{ param }}",
+            "updated": "Um User History foi atualizado com o identificador {{ param }}",
+            "deleted": "Um User History foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir User History {{ id }}?"
+            },
+            "detail": {
+                "title": "User History"
+            },
+            "strCPF": "CPF",
+            "strFirstName": "First Name",
+            "strLastName": "Last Name",
+            "strNickName": "Nick Name",
+            "dtmBirthday": "Birthday",
+            "strUserName": "User Name",
+            "strEmail": "Email",
+            "strPassword": "Password",
+            "strPhoto": "Photo",
+            "strGender": "Gender",
+            "intExcluded": "Excluded",
+            "dtmChanged": "Changed",
+            "dtmLastUpdate": "Last Update",
+            "user": "User",
+            "userAuthor": "User Author",
+            "audienceClient": "Audience Client",
+            "generalProcedureType": "General Procedure Type"
+        }
+    }
+}

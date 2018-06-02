@@ -1,0 +1,83 @@
+<div>
+    <h2>
+        <span jhiTranslate="schoolarApp.tblLogin.home.title">Tbl Logins</span>
+        <button class="btn btn-primary float-right jh-create-entity create-tbl-login" [routerLink]="['/', { outlets: { popup: ['tbl-login-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="schoolarApp.tblLogin.home.createLabel">
+            Create new Tbl Login
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="col-md-12" *ngIf="!tblLogins || !tblLogins.length">
+        <div class="alert alert-warning" jhiTranslate="schoolarApp.tblLogin.tblLoginsNotAvailable">
+            Listing logins is not available yet
+        </div>
+    </div>
+    <div class="col-md-12" *ngIf="creationResponse === 'OK'">
+        <div class="alert alert-success" jhiTranslate="schoolarApp.tblLogin.created">
+            A new login was created
+        </div>
+    </div>
+    <div class="col-md-12" *ngIf="creationResponse === 'NOT_OK'">
+        <div class="alert alert-danger" jhiTranslate="schoolarApp.tblLogin.createdError">
+            Could not create a new login
+        </div>
+    </div>
+    <div class="table-responsive" *ngIf="tblLogins && tblLogins.length">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="schoolarApp.tblLogin.strUserName">Str User Name</span></th>
+            <th><span jhiTranslate="schoolarApp.tblLogin.strPassword">Str Password</span></th>
+            <th><span jhiTranslate="schoolarApp.tblLogin.dtmLastUpdate">Dtm Last Update</span></th>
+            <th><span jhiTranslate="schoolarApp.tblLogin.user">User</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tblLogin of tblLogins ;trackBy: trackId">
+                <td><a [routerLink]="['../tbl-login', tblLogin.id ]">{{tblLogin.id}}</a></td>
+                <td>{{tblLogin.strUserName}}</td>
+                <td>{{tblLogin.strPassword}}</td>
+                <td>{{tblLogin.dtmLastUpdate | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="tblLogin.user">
+                        <a [routerLink]="['../tbl-user', tblLogin.user?.id ]" >{{tblLogin.user?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../tbl-login', tblLogin.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-login/'+ tblLogin.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-login/'+ tblLogin.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

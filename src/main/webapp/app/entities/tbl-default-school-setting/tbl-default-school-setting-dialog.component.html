@@ -1,0 +1,42 @@
+<form name="editForm" role="form" (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTblDefaultSchoolSettingLabel" jhiTranslate="schoolarApp.tblDefaultSchoolSetting.home.createOrEditLabel">Create or edit a Tbl Default School Setting</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!tblDefaultSchoolSetting.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="tblDefaultSchoolSetting.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblDefaultSchoolSetting.intYear" for="field_intYear">Int Year</label>
+            <input type="number" class="form-control" name="intYear" id="field_intYear"
+                [(ngModel)]="tblDefaultSchoolSetting.intYear" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblDefaultSchoolSetting.intEnabled" for="field_intEnabled">Int Enabled</label>
+            <input type="number" class="form-control" name="intEnabled" id="field_intEnabled"
+                [(ngModel)]="tblDefaultSchoolSetting.intEnabled" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblDefaultSchoolSetting.dtmLastUpdate" for="field_dtmLastUpdate">Dtm Last Update</label>
+            <div class="d-flex">
+                <input id="field_dtmLastUpdate" type="datetime-local" class="form-control" name="dtmLastUpdate" [(ngModel)]="tblDefaultSchoolSetting.dtmLastUpdate"
+                />
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

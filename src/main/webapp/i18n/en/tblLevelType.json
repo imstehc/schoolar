@@ -1,0 +1,24 @@
+{
+    "schoolarApp": {
+        "tblLevelType" : {
+            "home": {
+                "title": "Tbl Level Types",
+                "createLabel": "Create a new Tbl Level Type",
+                "createOrEditLabel": "Create or edit a Tbl Level Type"
+            },
+            "created": "A new Tbl Level Type is created with identifier {{ param }}",
+            "updated": "A Tbl Level Type is updated with identifier {{ param }}",
+            "deleted": "A Tbl Level Type is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl Level Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl Level Type"
+            },
+            "strName": "Str Name",
+            "strAbbreviation": "Str Abbreviation",
+            "intOrder": "Int Order",
+            "dtmLastUpdate": "Dtm Last Update"
+        }
+    }
+}

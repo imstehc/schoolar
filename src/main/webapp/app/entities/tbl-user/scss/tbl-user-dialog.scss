@@ -1,0 +1,285 @@
+@import '../../../../../../varibles.scss';
+
+.form-control:focus{
+    box-shadow: none;
+}
+
+.input-border{
+    transition: 0.2s all linear;
+    border: none 1px{
+            radius: 0px;
+            bottom: solid 1px;
+            color:#a8a8a8;
+          }
+    color: #9d9d9d;
+}
+
+.input-radio{
+    transition: 0.2s all linear;
+    height: 16px;
+    width:16px;
+}
+
+.profile_pic{
+    height: 100px;
+    width: 100px;
+    background-color: $sc_light1_color;
+
+    &:hover{
+        cursor: pointer;}
+    margin:auto;
+    border: none{
+    radius:50%;
+    }
+}
+
+.lab-pic{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info_pic{
+    vertical-align: middle;
+    display: table-cell;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    opacity: 0.1;
+    height: 100%;
+    width: 100%;
+    float: left;
+    color:$sc_light_color;
+    transition:0.3s;
+    border-radius: 50%;
+    display:table-cell;
+}
+
+.info_pic:hover{
+    display:block;
+    opacity: 1;
+}
+
+.phone-group{
+    line-height: 20px;
+}
+
+.add_button{
+    text-align: center;
+    vertical-align: middle;
+    color:$sc_primary_color;
+    font-size: 25px;
+    float: right;
+}
+.add_button_nfc{
+    text-align: center;
+    vertical-align: middle;
+    color:$sc_primary_color;
+    font-size: 25px;
+    float: right;
+    margin-top: 15px;
+}
+
+.remove_contact{
+    margin-top: 40px;
+    margin-bottom: auto;
+    text-align: center;
+    vertical-align: middle;
+    color: $sc_danger_color;
+    height: 100%;
+}
+
+.mdl-textfield__label{
+    color:$sc_light2_color;
+    margin-left: 0px;
+    padding-left: 20px;
+}
+
+.mdl-textfield__label::after{
+    background-color:$sc_primary_color;
+    bottom:13px !important;
+    height:3px;
+}
+.btn-secondary {
+    color: #343434;
+    background-color: #cdd4f9;
+    border-color: #cdd4f9;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 172px;
+    min-height: 48px;
+    font-weight: 600;
+    font-size: 18px;
+}
+.btn-secondary:hover {
+    background-color: #b3bdf3;
+    border-color: #b3bdf3;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #1A38DC;
+    border-color: #1A38DC;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    min-height: 48px;
+}
+.btn-primary:hover {
+    background-color: #0E0F54;
+    border-color: #0E0F54;
+}
+.icon_primary{
+    color: $sc_primary_color;
+}
+.primary_color{
+    transition: all 0.3s;
+    background-color: $sc_primary_color;
+    &:hover{
+        background-color: $sc_dark_color;
+    }
+}
+.form-row .card{
+    margin-bottom: 25px;
+}
+.drop-list{
+    transition: all 0.3s;
+    li{
+        &:hover{
+            cursor: pointer;
+            font-weight: bold;
+            background-color:$sc_light_blue_color;
+        }
+    }
+    margin-top: 55px;
+    z-index: 9999;
+    position: absolute;
+}
+.dependent-cards{
+    margin-bottom: 2px !important;
+}
+.title{
+    color: $sc_primary_color;
+    font-family: Raleway;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.89px;
+}
+.title-card{
+    color: rgb(21, 22, 99);
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+.primary_color{
+    background-color: $sc_primary_color;
+}
+.mdl-button--fab.mdl-button--mini-fab{
+    background-color: $sc_primary_color;
+}
+.border-margin{
+    margin: 0 30px;
+}
+.spaceBefore{
+    margin-top: 30px;
+}
+.mdl-textfield__label[_ngcontent-c6] {
+    top: 2px;
+}
+.label-text{
+    color: rgb(21, 22, 99);
+    font-weight: bold;
+}
+.label-custom-radio{
+    color: rgba(21, 22, 99, 0.5);
+}
+.label-phone{
+    color: #767676;
+}
+.asterisk{
+    color: red;
+    font-size: 18px;
+}
+
+.valid-select{
+    color: red;
+    font-size: 18px;
+    font-size: small;
+    margin: 10px 0px 0px 15px;
+}
+
+.input-required:focus{
+    border-bottom-color: red;
+}
+.button-add{
+    margin-top: 28px;
+}
+#SearchAssociated{
+    background: url('../icons/user-search.svg') no-repeat 3px 3px;
+    background-position: right 6px;
+    width: 80%;
+    text-align: right;
+    padding-right: 30px;
+}
+#SearchAssociated:focus{
+    border-bottom: 1px solid #1A38DC;
+}
+.custom-card{
+    width: 80%;
+}
+.remove-associated{
+    padding-top: 5px;
+    padding-right: 5px;
+}
+.title-card-associated{
+    margin-left: 22px;
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #757575;
+}
+.my-title-nfc {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.select-search-associated{
+    background: #EBEBEB;
+    width: 193px;
+    height: 42px;
+    margin-bottom: 29px;
+    margin-left: 22px;
+    border-bottom: none;
+}
+
+.closeModal{
+    font-size: 3rem;
+    position: relative;
+    top: 7px;
+    padding:0;
+}
+
+.iconCircle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.add_contact{
+    text-align: center;
+    vertical-align: middle;
+    color: $sc_light_color;
+    float: right;
+    background-color: $sc_primary_color;
+}
+
+.remove_contact{
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    vertical-align: middle;
+    color: $sc_light_color;
+    float: right;
+    background-color: $sc_danger_color;
+}

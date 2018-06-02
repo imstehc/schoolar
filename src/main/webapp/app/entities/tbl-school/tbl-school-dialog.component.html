@@ -1,0 +1,293 @@
+<form name="editForm" role="form" (ngSubmit)="save()" #editForm="ngForm" class="border-margin" [hidden]="!tblSchoolTypeDependencyResolved">
+
+    <div class="modal-header spaceBefore modal-border-schoolar" [hidden]="!(!tblSchool.id)">
+        <h4 class="modal-title title" id="myTblSchoolLabel" jhiTranslate="schoolarApp.tblSchool.home.createLabelTitle">Register School</h4>
+        <button type="button" class="close closeModal" data-dismiss="modal" aria-hidden="true" (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-header spaceBefore modal-border-schoolar" [hidden]="!(tblSchool.id)">
+        <h4 class="modal-title title" jhiTranslate="schoolarApp.tblSchool.home.editLabelTitle">Edit School</h4>
+        <button type="button" class="close closeModal" data-dismiss="modal" aria-hidden="true" (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <h4 class="title-card title-info-school" jhiTranslate="schoolarApp.tblSchool.home.personalData">Personal Data</h4>
+        <div class="col-md-12" id="auth-error" *ngIf="!schoolTypes.length">
+            <div class="alert alert-warning" jhiTranslate="schoolarApp.tblSchool.schoolTypeEmpty">
+                You need to create at least a school type before creating it
+            </div>
+        </div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <!--<div class="form-row">
+            <div class="form-group logo_content">
+                <img for="profile_pic" src="../../../content/images/logo.jpg" alt="" class="school_logo">
+                <input hidden type="file" name="profile_pic" id="profile_pic">
+
+            </div>
+        </div>-->
+        <div class="form-row">
+            <div class="form-group col-md-6 mdl-textfield mdl-js-textfield space-between-fields-left">
+                <label class="form-control-label label-text" jhiTranslate="schoolarApp.tblSchool.strCode" for="field_strCode">Str Code</label>
+                <span class="asterisk">*</span>
+                <input type="text" class="form-control input-border input-required" name="strCode" id="field_strCode"
+                       [(ngModel)]="tblSchool.strCode" required maxlength="10"/>
+                <div [hidden]="!(editForm.controls.strCode?.dirty && editForm.controls.strCode?.invalid)">
+                    <small class="form-text text-danger"
+                           [hidden]="!editForm.controls.strCode?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                    <small class="form-text text-danger"
+                           [hidden]="!editForm.controls.strCode?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10 }">
+                        This field cannot be longer than 10 characters.
+                    </small>
+                </div>
+            </div>
+
+            <div class="form-group col-md-6 mdl-textfield mdl-js-textfield space-between-fields-right">
+                <label class="form-control-label label-text" jhiTranslate="schoolarApp.tblSchool.strCNPJ">Str CNPJ</label>
+                <span class="asterisk">*</span>
+                <input type="text" class="form-control form-control input-border input-required" name="strCNPJ" id="field_strCNPJ"
+                       [(ngModel)]="tblSchool.strCNPJ" required maxlength="20" minlength="14" mask="00.000.000/0000-00" placeholder="00.000.000/0000-00"/>
+                <div [hidden]="!(editForm.controls.strCNPJ?.dirty && editForm.controls.strCNPJ?.invalid)">
+                    <small class="form-text text-danger"
+                           [hidden]="!editForm.controls.strCNPJ?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                    <small class="form-text text-danger"
+                           [hidden]="editForm.controls.strCNPJ?.errors?.dirty && editForm.controls.strCNPJ?.invalid" jhiTranslate="global.form.cnpj">
+                        Please enter a valid cnpj
+                    </small>
+                    <small class="form-text text-danger"
+                           [hidden]="!editForm.controls.strCNPJ?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="form-row column-wrapper-align">
+            <div class="form-group col-md-12 mdl-textfield mdl-js-textfield">
+                <label class="form-control-label label-text" jhiTranslate="schoolarApp.tblSchool.strName" for="field_strName">Str Name</label>
+                <span class="asterisk">*</span>
+                <input type="text" class="form-control input-border input-required" name="strName" id="field_strName"
+                       [(ngModel)]="tblSchool.strName" required maxlength="200"/>
+                <div [hidden]="!(editForm.controls.strName?.dirty && editForm.controls.strName?.invalid)">
+                    <small class="form-text text-danger"
+                           [hidden]="!editForm.controls.strName?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                    <small class="form-text text-danger"
+                           [hidden]="!editForm.controls.strName?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 200 }">
+                        This field cannot be longer than 200 characters.
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="form-row column-wrapper-align">
+            <div class="form-group col-md-12 mdl-textfield mdl-js-textfield">
+                <label class="form-control-label label-text" jhiTranslate="schoolarApp.tblSchool.strLegalName" for="field_strLegalName">Str Legal Name</label>
+                <span class="asterisk">*</span>
+                <input type="text" class="form-control input-border input-required" name="strLegalName" id="field_strLegalName"
+                       [(ngModel)]="tblSchool.strLegalName" required maxlength="200"/>
+                <div [hidden]="!(editForm.controls.strLegalName?.dirty && editForm.controls.strLegalName?.invalid)">
+                    <small class="form-text text-danger"
+                           [hidden]="!editForm.controls.strLegalName?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                    <small class="form-text text-danger"
+                           [hidden]="!editForm.controls.strLegalName?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 200 }">
+                        This field cannot be longer than 200 characters.
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="form-row column-wrapper-align">
+            <div class="form-group col-md-6 mdl-textfield mdl-js-textfield space-between-fields-left">
+                <label class="form-control-label label-text" jhiTranslate="schoolarApp.tblSchool.strINEP" for="field_strINEP">Str INEP</label>
+                <input type="text" class="form-control input-border mdl-textfield__input" name="strINEP" id="field_strINEP"
+                       [(ngModel)]="tblSchool.strINEP" maxlength="20"/>
+                <div [hidden]="!(editForm.controls.strINEP?.dirty && editForm.controls.strINEP?.invalid)">
+                    <small class="form-text text-danger"
+                           [hidden]="!editForm.controls.strINEP?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                    </small>
+                </div>
+            </div>
+
+            <div class="form-group col-md-6 mdl-textfield mdl-js-textfield space-between-fields-right">
+                <label class="form-control-label label-text" jhiTranslate="schoolarApp.tblSchool.strINEPName" for="field_strINEPName">Str INEP Name</label>
+                <input type="text" class="form-control input-border mdl-textfield__input" name="strINEPName" id="field_strINEPName"
+                       [(ngModel)]="tblSchool.strINEPName" maxlength="20"/>
+                <div [hidden]="!(editForm.controls.strINEPName?.dirty && editForm.controls.strINEPName?.invalid)">
+                    <small class="form-text text-danger"
+                           [hidden]="!editForm.controls.strINEPName?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div  class="form-row column-wrapper-align">
+            <div class="form-group col-md-6 mdl-textfield mdl-js-textfield space-between-fields-left">
+                <!--<label [hidden]="!(idSchoolTypeSelected === undefined)"  for="field_schoolType" class="form-control-label label-text" jhiTranslate="schoolarApp.tblSchool.idSchoolType">School Type</label>-->
+                <label for="field_schoolType" class="form-control-label label-text" jhiTranslate="schoolarApp.tblSchool.idSchoolType">School Type</label>
+                <select name="schoolType" id="field_schoolType" class=" select-form mdl-textfield__input select-align input-required" [(ngModel)]="idSchoolTypeSelected">
+                    <option [value]="0" id="defaultSchoolType" disabled jhiTranslate="schoolarApp.tblSchool.form.selectSchoolType" selected>
+                        <span>Select school type</span></option>
+                    </option>
+                    <option *ngFor="let t of schoolTypes" [value]="t.id">{{t.strName}}</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-6 mdl-textfield mdl-js-textfield space-between-fields-right">
+                <label class="form-control-label label-text" jhiTranslate="schoolarApp.tblSchool.strEmail" for="field_strEmail">Str Email</label>
+                <span class="asterisk">*</span>
+                <input type="email" class="text" class="form-control input-border input-required" name="strEmail" id="field_strEmail"
+                       required maxlength="200" [(ngModel)]="tblSchool.strEmail" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"/>
+                <div [hidden]="!(editForm.controls.strEmail?.dirty && editForm.controls.strEmail?.invalid)">
+                    <small class="form-text text-danger"
+                           [hidden]="!editForm.controls.strEmail?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                    <small class="form-text text-danger"
+                           [hidden]="editForm.controls.strEmail?.errors?.dirty && editForm.controls.strEmail?.invalid" jhiTranslate="global.form.emailinvalid">
+                        Please enter a valid email
+                    </small>
+                    <small class="form-text text-danger"
+                           [hidden]="!editForm.controls.strEmail?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 200 }">
+                        This field cannot be longer than 20 characters.
+                    </small>
+                </div>
+            </div>
+        </div>
+        <div class="form-row column-wrapper-align">
+            <div class="form-group col-md-6 mdl-textfield mdl-js-textfield space-between-fields-left">
+                <label for="latitude" class="form-control-label label-text">Latitude  </label>
+                <input type="text" class="form-control  input-border mdl-textfield__input" name="latitude" id ="latitude"  [(ngModel)]="tblSchool.latitude"/>
+            </div>
+
+            <div class="form-group col-md-6 mdl-textfield mdl-js-textfield space-between-fields-right">
+                <label for="longitude" class="form-control-label label-text">Longitude  </label>
+                <input type="text" class="form-control  input-border mdl-textfield__input" name="longitude" id ="longitude"  [(ngModel)]="tblSchool.longitude"/>
+            </div>
+        </div>
+        <h4 jhiTranslate="schoolarApp.tblSchool.tblAddress" class="title-card">Address </h4>
+        <div class="form-row column-wrapper-align">
+
+            <div class="form-group col-md-6 mdl-textfield mdl-js-textfield space-between-fields-left">
+                <label for="city" class="form-control-label label-text"  jhiTranslate="schoolarApp.tblAddress.strCity">City</label>
+                <span class="asterisk">*</span>
+                <input type="text" class="form-control  input-border input-required" name="city" id ="city" [(ngModel)]="tblAddresses.strCity"
+                       maxlength="50" required/>
+            </div>
+
+            <div class="form-group col-md-6 mdl-textfield mdl-js-textfield space-between-fields-right">
+                <label for="state" class="form-control-label label-text"  jhiTranslate="schoolarApp.tblAddress.strState" >State</label>
+                <span class="asterisk">*</span>
+                <input type="text" class="form-control  input-border input-required" maxlength="2" name="state" id ="state" [(ngModel)]="tblAddresses.strState" required/>
+            </div>
+        </div>
+        <div class="form-row column-wrapper-align">
+            <div class="form-group col-md-6 mdl-textfield mdl-js-textfield">
+                <label for="country" class="form-control-label label-text"  jhiTranslate="schoolarApp.tblAddress.strCountry" >Country</label>
+                <span class="asterisk">*</span>
+                <input type="text" class="form-control  input-border input-required" name="country" id ="country"
+                       [(ngModel)]="tblAddresses.strCountry" maxlength="20" required/>
+            </div>
+            <div class="form-group col-md-6 mdl-textfield mdl-js-textfield">
+                <label for="zip_code" class="form-control-label label-text" jhiTranslate="schoolarApp.tblAddress.strPostCode" >Zip Code</label>
+                <span class="asterisk">*</span>
+                <input type="text" class="form-control  input-border mdl-textfield__input" name="zip_code" id ="zip_code"
+                [(ngModel)]="tblAddresses.strPostCode"  maxlength="9" placeholder="00000-000" mask="00000-000"/>
+            </div>
+        </div>
+        <div class="form-row column-wrapper-align">
+            <div class="form-group col-md-12 mdl-textfield mdl-js-textfield">
+                <label for="street" class="form-control-label label-text" jhiTranslate="schoolarApp.tblAddress.strStreet" >Street</label>
+                <span class="asterisk">*</span>
+                <input type="text" class="form-control  input-border input-required" name="street" id ="street" [(ngModel)]="tblAddresses.strStreet" required/>
+            </div>
+        </div>
+        <div class="form-row column-wrapper-align">
+            <div class="form-group col-md-6 mdl-textfield mdl-js-textfield space-between-fields-left">
+                <label for="andress_number" class="form-control-label label-text" jhiTranslate="schoolarApp.tblAddress.strNumber">Number</label>
+                <span class="asterisk">*</span>
+                <input type="text" class="form-control input-border mdl-textfield__input" maxlength="10" name="andress_number" id ="andress_number"  [(ngModel)]="tblAddresses.strNumber"/>
+            </div>
+            <div class="form-group col-md-6 mdl-textfield mdl-js-textfield space-between-fields-right">
+                <label for="beighborhood" class="form-control-label label-text" jhiTranslate="schoolarApp.tblAddress.strNeighborhood" >Neighborhood</label>
+                <span class="asterisk">*</span>
+                <input type="text" class="form-control input-border mdl-textfield__input" maxlength="50" name="beighborhood" id ="beighborhood"  [(ngModel)]="tblAddresses.strNeighborhood"/>
+            </div>
+        </div>
+        <div class="form-row column-wrapper-align">
+            <div class="form-group col-md-12 mdl-textfield mdl-js-textfield">
+                <label for="complements" class="form-control-label label-text" jhiTranslate="schoolarApp.tblAddress.strComplement" >Complements  </label>
+                <input type="text" class="form-control input-border mdl-textfield__input" maxlength="200" name="complements" id ="complements"  [(ngModel)]="tblAddresses.strComplement"/>
+            </div>
+        </div>
+        <h4 jhiTranslate="schoolarApp.tblSchool.tblContact" class="title-card">Contact </h4>
+        <div class="form-row column-wrapper-align">
+            <div class="form-group mdl-textfield mdl-js-textfield  col-md-11">
+                <h5 jhiTranslate="schoolarApp.tblPhone.home.title">Phones:</h5>
+
+            </div>
+            <div class="form-group col-md-1 mdl-textfield mdl-js-textfield">
+                <span class="iconCircle add_contact" (click)="addPhone()">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </span>
+            </div>
+        </div>
+        <div class="form-row phone-group column-wrapper-align" *ngFor="let phone of tblPhones; index as i">
+            <div class="form-group col-md-2 mdl-textfield mdl-js-textfield space-between-fields-left">
+                <label for="strPrefix__{{i}}" class="form-control-label" jhiTranslate="schoolarApp.tblPhone.strPrefix">Prefix</label>
+                <input type="text" class="form-control  input-border input-required" name="strPrefix__{{i}}" id="strPrefix__{{i}}" maxlength="2"
+                       [(ngModel)]="phone.strPrefix" required mask="000" placeholder="(00)"/>
+                <small class="form-text text-danger"
+                       *ngIf="phone.strPrefix === ''" jhiTranslate="entity.validation.required">
+                    This field is required.
+                </small>
+            </div>
+
+            <div class="form-group col-md-4 mdl-textfield mdl-js-textfield space-between-fields-right">
+                <label for="strNumber__{{i}}"  class="form-control-label" jhiTranslate="schoolarApp.tblPhone.strNumber">Number</label>
+                <input type="text" class="form-control  input-border input-required" name="strNumber__{{i}}" id="strNumber__{{i}}" maxlength="14"
+                       [(ngModel)]="phone.strNumber" required mask="00000-0000" placeholder="00000-0000"/>
+                <small class="form-text text-danger"
+                       *ngIf="phone.strNumber === ''" jhiTranslate="entity.validation.required">
+                    This field is required.
+                </small>
+            </div>
+            <div class="form-group  col-md-2 mdl-textfield mdl-js-textfield space-between-fields-right">
+                <label for="strPhoneType__{{i}}" class="form-control-label">Tipo</label>
+                <select name="strPhoneType__{{i}}" id="strPhoneType__{{i}}" class=" select-form mdl-textfield__input select-align input-required" [(ngModel)]="phone.strPhoneType">
+                    <option *ngFor="let c of strPhoneTypes" jhiTranslate="{{c.jhiTranslate}}" [value]="c.strPhoneType">{{c.strPhoneType}}</option>
+                </select>
+            </div>
+
+            <div class="form-group  col-md-3 mdl-textfield mdl-js-textfield space-between-fields-right">
+                <label for="strLabel__{{i}}" class="form-control-label" jhiTranslate="schoolarApp.tblPhone.strLabel">Label</label>
+                <input type="text" class="form-control  input-border input-required" name="strLabel__{{i}}" id="strLabel__{{i}}"
+                       [(ngModel)]="phone.strLabel" maxlength="20" required/>
+                <small class="form-text text-danger"
+                       *ngIf="phone.strLabel === ''" jhiTranslate="entity.validation.required">
+                    This field is required.
+                </small>
+            </div>
+            <div class="form-group col-md-1 mdl-textfield mdl-js-textfield" [hidden]="i === 0">
+                <span class="iconCircle remove_contact" (click)="removePhone(i)">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="form-group col-md-6 ">
+            <button type="button" class="btn btn-secondary form-control" data-dismiss="modal" (click)="clear()">
+                <span></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+            </button>
+        </div>
+        <div class="form-group col-md-6 ">
+            <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary form-control">
+                <span></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+            </button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,74 @@
+<div>
+    <h2>
+        <span jhiTranslate="schoolarApp.tblGrade.home.title">Tbl Grades</span>
+        <button class="btn btn-primary float-right jh-create-entity create-tbl-grade" [routerLink]="['/', { outlets: { popup: ['tbl-grade-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="schoolarApp.tblGrade.home.createLabel">
+            Create new Tbl Grade
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="tblGrades">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="schoolarApp.tblGrade.strName">Str Name</span></th>
+            <th><span jhiTranslate="schoolarApp.tblGrade.intNumber">Int Number</span></th>
+            <th><span jhiTranslate="schoolarApp.tblGrade.dtmCreated">Dtm Created</span></th>
+            <th><span jhiTranslate="schoolarApp.tblGrade.dtmLastUpdate">Dtm Last Update</span></th>
+            <th><span jhiTranslate="schoolarApp.tblGrade.intExcluded">Int Excluded</span></th>
+            <th><span jhiTranslate="schoolarApp.tblGrade.strLabel">Str Label</span></th>
+            <th><span jhiTranslate="schoolarApp.tblGrade.tblLevelType">Tbl Level Type</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tblGrade of tblGrades ;trackBy: trackId">
+                <td><a [routerLink]="['../tbl-grade', tblGrade.id ]">{{tblGrade.id}}</a></td>
+                <td>{{tblGrade.strName}}</td>
+                <td>{{tblGrade.intNumber}}</td>
+                <td>{{tblGrade.dtmCreated | date:'medium'}}</td>
+                <td>{{tblGrade.dtmLastUpdate | date:'medium'}}</td>
+                <td>{{tblGrade.intExcluded}}</td>
+                <td>{{tblGrade.strLabel}}</td>
+                <td>
+                    <div *ngIf="tblGrade.tblLevelType">
+                        <a [routerLink]="['../tbl-level-type', tblGrade.tblLevelType?.id ]" >{{tblGrade.tblLevelType?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../tbl-grade', tblGrade.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-grade/'+ tblGrade.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-grade/'+ tblGrade.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+{
+    "schoolarApp": {
+        "tblNfc" : {
+            "home": {
+                "title": "Tbl Nfcs",
+                "createLabel": "Create a new Tbl Nfc",
+                "createOrEditLabel": "Create or edit a Tbl Nfc"
+            },
+            "created": "A new Tbl Nfc is created with identifier {{ param }}",
+            "updated": "A Tbl Nfc is updated with identifier {{ param }}",
+            "deleted": "A Tbl Nfc is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl Nfc {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl Nfc"
+            },
+            "strName": "Str Name",
+            "dtmLastUpdate": "Dtm Last Update",
+            "user": "User"
+        }
+    }
+}

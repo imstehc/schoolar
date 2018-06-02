@@ -1,0 +1,52 @@
+
+<div *ngIf="tblSchoolUserRole">
+    <h2><span jhiTranslate="schoolarApp.tblSchoolUserRole.detail.title">Tbl School User Role</span> {{tblSchoolUserRole.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblSchoolUserRole.dtmCreated">Dtm Created</span></dt>
+        <dd>
+            <span>{{tblSchoolUserRole.dtmCreated | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolUserRole.dtmLastUpdate">Dtm Last Update</span></dt>
+        <dd>
+            <span>{{tblSchoolUserRole.dtmLastUpdate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolUserRole.intExcluded">Int Excluded</span></dt>
+        <dd>
+            <span>{{tblSchoolUserRole.intExcluded}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolUserRole.role">Role</span></dt>
+        <dd>
+            <div *ngIf="tblSchoolUserRole.role">
+                <a [routerLink]="['/tbl-role', tblSchoolUserRole.role?.id]">{{tblSchoolUserRole.role?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolUserRole.school">School</span></dt>
+        <dd>
+            <div *ngIf="tblSchoolUserRole.school">
+                <a [routerLink]="['/tbl-school', tblSchoolUserRole.school?.id]">{{tblSchoolUserRole.school?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolUserRole.user">User</span></dt>
+        <dd>
+            <div *ngIf="tblSchoolUserRole.user">
+                <a [routerLink]="['/tbl-user', tblSchoolUserRole.user?.id]">{{tblSchoolUserRole.user?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-school-user-role/'+ tblSchoolUserRole.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

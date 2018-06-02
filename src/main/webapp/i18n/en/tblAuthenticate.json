@@ -1,0 +1,23 @@
+{
+    "schoolarApp": {
+        "tblAuthenticate" : {
+            "home": {
+                "title": "Tbl Authenticates",
+                "createLabel": "Create a new Tbl Authenticate",
+                "createOrEditLabel": "Create or edit a Tbl Authenticate"
+            },
+            "created": "A new Tbl Authenticate is created with identifier {{ param }}",
+            "updated": "A Tbl Authenticate is updated with identifier {{ param }}",
+            "deleted": "A Tbl Authenticate is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl Authenticate {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl Authenticate"
+            },
+            "dtmTimeStamp": "Dtm Time Stamp",
+            "audienceClient": "Audience Client",
+            "user": "User"
+        }
+    }
+}

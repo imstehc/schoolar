@@ -1,0 +1,25 @@
+{
+    "schoolarApp": {
+        "tblAuthentication" : {
+            "home": {
+                "title": "Tbl Authentications",
+                "createLabel": "Create a new Tbl Authentication",
+                "createOrEditLabel": "Create or edit a Tbl Authentication"
+            },
+            "created": "A new Tbl Authentication is created with identifier {{ param }}",
+            "updated": "A Tbl Authentication is updated with identifier {{ param }}",
+            "deleted": "A Tbl Authentication is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl Authentication {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl Authentication"
+            },
+            "idAuthentication": "Id Authentication",
+            "strCPF": "Str CPF",
+            "strUserName": "Str User Name",
+            "strEmail": "Str Email",
+            "strPassword": "Str Password"
+        }
+    }
+}

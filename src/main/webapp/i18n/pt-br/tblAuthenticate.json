@@ -1,0 +1,23 @@
+{
+    "schoolarApp": {
+        "tblAuthenticate" : {
+            "home": {
+                "title": "Authenticates",
+                "createLabel": "Criar novo Authenticate",
+                "createOrEditLabel": "Criar ou editar Authenticate"
+            },
+            "created": "Um novo Authenticate foi criado com o identificador {{ param }}",
+            "updated": "Um Authenticate foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Authenticate foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Authenticate {{ id }}?"
+            },
+            "detail": {
+                "title": "Authenticate"
+            },
+            "dtmTimeStamp": "Time Stamp",
+            "audienceClient": "Audience Client",
+            "user": "User"
+        }
+    }
+}

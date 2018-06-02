@@ -1,0 +1,24 @@
+{
+    "schoolarApp": {
+        "tblLevelType" : {
+            "home": {
+                "title": "Level Types",
+                "createLabel": "Criar novo Level Type",
+                "createOrEditLabel": "Criar ou editar Level Type"
+            },
+            "created": "Um novo Level Type foi criado com o identificador {{ param }}",
+            "updated": "Um Level Type foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Level Type foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Level Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Level Type"
+            },
+            "strName": "Name",
+            "strAbbreviation": "Abbreviation",
+            "intOrder": "Order",
+            "dtmLastUpdate": "Last Update"
+        }
+    }
+}

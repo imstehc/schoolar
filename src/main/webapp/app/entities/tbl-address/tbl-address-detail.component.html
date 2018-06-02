@@ -1,0 +1,70 @@
+
+<div *ngIf="tblAddress">
+    <h2><span jhiTranslate="schoolarApp.tblAddress.detail.title">Tbl Address</span> {{tblAddress.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblAddress.strLabel">Str Label</span></dt>
+        <dd>
+            <span>{{tblAddress.strLabel}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblAddress.strPostCode">Str Post Code</span></dt>
+        <dd>
+            <span>{{tblAddress.strPostCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblAddress.strStreet">Str Street</span></dt>
+        <dd>
+            <span>{{tblAddress.strStreet}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblAddress.strNumber">Str Number</span></dt>
+        <dd>
+            <span>{{tblAddress.strNumber}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblAddress.strNeighborhood">Str Neighborhood</span></dt>
+        <dd>
+            <span>{{tblAddress.strNeighborhood}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblAddress.strComplement">Str Complement</span></dt>
+        <dd>
+            <span>{{tblAddress.strComplement}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblAddress.strCity">Str City</span></dt>
+        <dd>
+            <span>{{tblAddress.strCity}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblAddress.strState">Str State</span></dt>
+        <dd>
+            <span>{{tblAddress.strState}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblAddress.strCountry">Str Country</span></dt>
+        <dd>
+            <span>{{tblAddress.strCountry}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblAddress.dtmCreate">Dtm Create</span></dt>
+        <dd>
+            <span>{{tblAddress.dtmCreate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblAddress.dtmLastUpdate">Dtm Last Update</span></dt>
+        <dd>
+            <span>{{tblAddress.dtmLastUpdate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblAddress.intExcluded">Int Excluded</span></dt>
+        <dd>
+            <span>{{tblAddress.intExcluded}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-address/'+ tblAddress.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,27 @@
+{
+    "schoolarApp": {
+        "tblClass" : {
+            "home": {
+                "title": "Tbl Classes",
+                "createLabel": "Create a new Tbl Class",
+                "createOrEditLabel": "Create or edit a Tbl Class"
+            },
+            "created": "A new Tbl Class is created with identifier {{ param }}",
+            "updated": "A Tbl Class is updated with identifier {{ param }}",
+            "deleted": "A Tbl Class is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl Class {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl Class"
+            },
+            "strName": "Str Name",
+            "intYear": "Int Year",
+            "dtmCreated": "Dtm Created",
+            "dtmLastUpdate": "Dtm Last Update",
+            "intExcluded": "Int Excluded",
+            "tblSchool": "Tbl School",
+            "tblShiftType": "Tbl Shift Type"
+        }
+    }
+}

@@ -1,0 +1,3 @@
+id;str_cpf;str_first_name;str_last_name;str_nick_name;dtm_birthday;str_email;str_photo;str_gender;dtm_created;dtm_last_update;bol_excluded
+1;99999999990;ALUNO;DA ESCOLA;JOAZINHO;2010-02-11;joao@gmail.com;http://path/phoy;M;now();now();false
+2;99999999991;ATENDENTE;DA CANTINA;ATENDER;2009-02-11;atendente@gmail.com;http://path/phoy;M;now();now();false

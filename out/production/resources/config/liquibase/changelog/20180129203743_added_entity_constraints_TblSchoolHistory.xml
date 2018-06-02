@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity TblSchoolHistory.
+    -->
+    <changeSet id="20180129203743-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="school_id"
+                                 baseTableName="tbl_school_history"
+                                 baseTableSchemaName="schoolar"
+                                 constraintName="fk_tbl_school_history_school_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tbl_school"
+                                 referencedTableSchemaName="schoolar"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_author_id"
+                                 baseTableName="tbl_school_history"
+                                 baseTableSchemaName="schoolar"
+                                 constraintName="fk_tbl_school_history_user_author_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tbl_user"
+                                 referencedTableSchemaName="schoolar"/>
+
+        <addForeignKeyConstraint baseColumnNames="audience_client_id"
+                                 baseTableName="tbl_school_history"
+                                 baseTableSchemaName="schoolar"
+                                 constraintName="fk_tbl_school_history_audience_client_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tbl_audience_client"
+                                 referencedTableSchemaName="schoolar"/>
+
+        <addForeignKeyConstraint baseColumnNames="general_procedure_type_id"
+                                 baseTableName="tbl_school_history"
+                                 baseTableSchemaName="schoolar"
+                                 constraintName="fk_tbl_school_history_general_procedure_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tbl_general_procedure_type"
+                                 referencedTableSchemaName="schoolar"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,23 @@
+{
+    "schoolarApp": {
+        "tblSchoolSetting" : {
+            "home": {
+                "title": "Tbl School Settings",
+                "createLabel": "Create a new Tbl School Setting",
+                "createOrEditLabel": "Create or edit a Tbl School Setting"
+            },
+            "created": "A new Tbl School Setting is created with identifier {{ param }}",
+            "updated": "A Tbl School Setting is updated with identifier {{ param }}",
+            "deleted": "A Tbl School Setting is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl School Setting {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl School Setting"
+            },
+            "intYear": "Int Year",
+            "intEnabled": "Int Enabled",
+            "dtmLastUpdate": "Dtm Last Update"
+        }
+    }
+}

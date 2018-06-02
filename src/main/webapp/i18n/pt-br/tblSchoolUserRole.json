@@ -1,0 +1,26 @@
+{
+    "schoolarApp": {
+        "tblSchoolUserRole" : {
+            "home": {
+                "title": "School User Roles",
+                "createLabel": "Criar novo School User Role",
+                "createOrEditLabel": "Criar ou editar School User Role"
+            },
+            "created": "Um novo School User Role foi criado com o identificador {{ param }}",
+            "updated": "Um School User Role foi atualizado com o identificador {{ param }}",
+            "deleted": "Um School User Role foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir School User Role {{ id }}?"
+            },
+            "detail": {
+                "title": "School User Role"
+            },
+            "dtmCreated": "Created",
+            "dtmLastUpdate": "Last Update",
+            "intExcluded": "Excluded",
+            "role": "Role",
+            "school": "School",
+            "user": "User"
+        }
+    }
+}

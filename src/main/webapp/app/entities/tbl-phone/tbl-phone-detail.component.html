@@ -1,0 +1,50 @@
+
+<div *ngIf="tblPhone">
+    <h2><span jhiTranslate="schoolarApp.tblPhone.detail.title">Tbl Phone</span> {{tblPhone.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblPhone.strPrefix">Str Prefix</span></dt>
+        <dd>
+            <span>{{tblPhone.strPrefix}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblPhone.strNumber">Str Number</span></dt>
+        <dd>
+            <span>{{tblPhone.strNumber}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblPhone.strPhoneType">Str Phone Type</span></dt>
+        <dd>
+            <span>{{tblPhone.strPhoneType}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblPhone.strLabel">Str Label</span></dt>
+        <dd>
+            <span>{{tblPhone.strLabel}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblPhone.dtmCreated">Dtm Created</span></dt>
+        <dd>
+            <span>{{tblPhone.dtmCreated | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblPhone.dtmLastUpdate">Dtm Last Update</span></dt>
+        <dd>
+            <span>{{tblPhone.dtmLastUpdate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblPhone.intExcluded">Int Excluded</span></dt>
+        <dd>
+            <span>{{tblPhone.intExcluded}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-phone/'+ tblPhone.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

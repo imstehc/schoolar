@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity TblClassSubjectTeacher.
+    -->
+    <changeSet id="20180129203752-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="tbl_subject_id"
+                                 baseTableName="tbl_class_subject_teacher"
+                                 baseTableSchemaName="schoolar"
+                                 constraintName="fk_tbl_class_subject_teacher_tbl_subject_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tbl_subject"
+                                 referencedTableSchemaName="schoolar"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="tbl_user_id"
+                                 baseTableName="tbl_class_subject_teacher"
+                                 baseTableSchemaName="schoolar"
+                                 constraintName="fk_tbl_class_subject_teacher_tbl_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tbl_user"
+                                 referencedTableSchemaName="schoolar"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="tbl_class_id"
+                                 baseTableName="tbl_class_subject_teacher"
+                                 baseTableSchemaName="schoolar"
+                                 constraintName="fk_tbl_class_subject_teacher_tbl_class_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tbl_class"
+                                 referencedTableSchemaName="schoolar"
+                                 />
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,23 @@
+{
+    "schoolarApp": {
+        "tblSchoolType" : {
+            "home": {
+                "title": "Tbl School Types",
+                "createLabel": "Create a new Tbl School Type",
+                "createOrEditLabel": "Create or edit a Tbl School Type"
+            },
+            "created": "A new Tbl School Type is created with identifier {{ param }}",
+            "updated": "A Tbl School Type is updated with identifier {{ param }}",
+            "deleted": "A Tbl School Type is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl School Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl School Type"
+            },
+            "strName": "Str Name",
+            "dtmLastUpdate": "Dtm Last Update",
+            "school": "School"
+        }
+    }
+}

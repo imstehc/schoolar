@@ -1,0 +1,24 @@
+schoolar.tbl_guardian_type:
+- id: 1
+  str_name: RESPONSAVEL
+  str_description: Responsável por aluno
+  dtm_last_update: 2018-05-05 00:00:00
+
+schoolar.tbl_guardian:
+- id: 1
+  dtm_last_update: 2017-03-28 12:00:00
+  user_id: 1
+  guardian_user_id: 2
+  guardian_type_id: 1
+- id: 2
+  dtm_last_update: 2017-03-28 12:00:00
+  user_id: 1
+  guardian_user_id: 3
+  guardian_type_id: 1
+
+schoolar.tbl_nfc:
+- id: 1
+  str_name: 123
+  dtm_last_update: 2018-03-28 00:00:01
+  user_id: 1
+

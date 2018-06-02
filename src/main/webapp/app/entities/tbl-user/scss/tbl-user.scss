@@ -1,0 +1,113 @@
+$sc_primary_color:#1A38DC;
+
+.h2Title{
+    color: #484848;
+    font-family: Raleway;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.89px;
+    margin-bottom: 42px;
+    display: block;
+    float: left;
+}
+
+.btn-lg{
+    margin-left: 5px !important;
+    color: gray;
+    border: none;
+    background-color: rgba($color: #000000, $alpha: 0);
+    transition: 0.3s;
+}
+.btn-lg :hover{
+    color: #1a38dc;
+    cursor: pointer;
+}
+.btn-active{
+    color: $sc_primary_color;
+    padding-left: 5px;
+    padding-right: 8px;
+}
+.text-right-option{
+    padding-left: 100px;
+}
+
+.closeModal{
+    font-size: 2.4rem;
+}
+
+.page-item:first-child .page-link {
+    margin-left: 0;
+    border-top-left-radius: 0.15rem;
+    border-bottom-left-radius: 0.15rem;
+}
+
+.paginationTable{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ul.pagination{
+        .page-link {
+            position: relative;
+            display: block;
+            padding: 0.5rem 0.75rem;
+            margin-left: -1px;
+            line-height: 1.25;
+            color: #484848;
+            background-color: #fff;
+            border: 0;
+            font-size: 14px;
+        }
+
+        .page-item.disabled .page-link {
+            color: #9e9e9e;
+            pointer-events: none;
+            background-color: #fff;
+            border-color: transparent;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            line-height: 16px;
+        }
+
+        .page-item.active .page-link {
+            z-index: 2;
+            color: #fff;
+            background-color: #243193;
+            border-color: transparent;
+            border-radius: 5px;
+        }
+
+    }
+}
+
+.iconTable {
+    width: 20px;
+    height: 26px;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 4px 0px 4px 0px;
+    cursor: pointer;
+}
+
+.iconTable-edit{
+    background-image: url(../icons/edit-01.svg);
+    &:hover,
+    &:focus,
+    &:active,
+    &.active
+    {
+        background-image: url(../icons/edit-02.svg)!important;
+    }
+}
+
+.iconTable-delete{
+    background-image: url(../icons/delete-01.svg);
+    &:hover,
+    &:focus,
+    &:active,
+    &.active
+    {
+        background-image: url(../icons/delete-02.svg)!important;
+    }
+}

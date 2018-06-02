@@ -1,0 +1,8 @@
+id;str_name;str_description;dtm_created;dtm_last_update;bol_excluded;bol_can_be_impersonated
+1;ADMIN;ADMIN;now();now();false;false
+2;RESPONSAVEL;RESPONSAVEL;now();now();false;false
+3;INSPETOR;INSPETOR;now();now();false;false
+4;SEGURANCA;SEGURANCA;now();now();false;false
+5;DIRETOR;DIRETOR;now();now();false;false
+6;COORDENADOR;COORDENADOR;now();now();false;false
+7;PROFESSOR;PROFESSOR;now();now();false;false

@@ -1,0 +1,80 @@
+<div>
+    <h2>
+        <span jhiTranslate="schoolarApp.tblAddress.home.title">Tbl Addresses</span>
+        <button class="btn btn-primary float-right jh-create-entity create-tbl-address" [routerLink]="['/', { outlets: { popup: ['tbl-address-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="schoolarApp.tblAddress.home.createLabel">
+            Create new Tbl Address
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="tblAddresses">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="schoolarApp.tblAddress.strLabel">Str Label</span></th>
+            <th><span jhiTranslate="schoolarApp.tblAddress.strPostCode">Str Post Code</span></th>
+            <th><span jhiTranslate="schoolarApp.tblAddress.strStreet">Str Street</span></th>
+            <th><span jhiTranslate="schoolarApp.tblAddress.strNumber">Str Number</span></th>
+            <th><span jhiTranslate="schoolarApp.tblAddress.strNeighborhood">Str Neighborhood</span></th>
+            <th><span jhiTranslate="schoolarApp.tblAddress.strComplement">Str Complement</span></th>
+            <th><span jhiTranslate="schoolarApp.tblAddress.strCity">Str City</span></th>
+            <th><span jhiTranslate="schoolarApp.tblAddress.strState">Str State</span></th>
+            <th><span jhiTranslate="schoolarApp.tblAddress.strCountry">Str Country</span></th>
+            <th><span jhiTranslate="schoolarApp.tblAddress.dtmCreate">Dtm Create</span></th>
+            <th><span jhiTranslate="schoolarApp.tblAddress.dtmLastUpdate">Dtm Last Update</span></th>
+            <th><span jhiTranslate="schoolarApp.tblAddress.intExcluded">Int Excluded</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tblAddress of tblAddresses ;trackBy: trackId">
+                <td><a [routerLink]="['../tbl-address', tblAddress.id ]">{{tblAddress.id}}</a></td>
+                <td>{{tblAddress.strLabel}}</td>
+                <td>{{tblAddress.strPostCode}}</td>
+                <td>{{tblAddress.strStreet}}</td>
+                <td>{{tblAddress.strNumber}}</td>
+                <td>{{tblAddress.strNeighborhood}}</td>
+                <td>{{tblAddress.strComplement}}</td>
+                <td>{{tblAddress.strCity}}</td>
+                <td>{{tblAddress.strState}}</td>
+                <td>{{tblAddress.strCountry}}</td>
+                <td>{{tblAddress.dtmCreate | date:'medium'}}</td>
+                <td>{{tblAddress.dtmLastUpdate | date:'medium'}}</td>
+                <td>{{tblAddress.intExcluded}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../tbl-address', tblAddress.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-address/'+ tblAddress.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tbl-address/'+ tblAddress.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

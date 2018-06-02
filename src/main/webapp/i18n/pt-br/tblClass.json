@@ -1,0 +1,27 @@
+{
+    "schoolarApp": {
+        "tblClass" : {
+            "home": {
+                "title": "Turma",
+                "createLabel": "Cadastrar nova Turma",
+                "createOrEditLabel": "Criar ou editar Tbl Class"
+            },
+            "created": "Uma novo Turma foi criado com o identificador {{ param }}",
+            "updated": "Uma Turma foi atualizado com o identificador {{ param }}",
+            "deleted": "Uma Turmafoi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Turma {{ id }}?"
+            },
+            "detail": {
+                "title": "Turma"
+            },
+            "strName": "Nome",
+            "intYear": "Ano",
+            "dtmCreated": "Data de Cadastro",
+            "dtmLastUpdate": "Última Atualizaçao",
+            "intExcluded": "Excluído?",
+            "tblSchool": "Escola",
+            "tblShiftType": "Turno"
+        }
+    }
+}

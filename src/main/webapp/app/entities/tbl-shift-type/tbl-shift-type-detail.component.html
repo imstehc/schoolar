@@ -1,0 +1,30 @@
+
+<div *ngIf="tblShiftType">
+    <h2><span jhiTranslate="schoolarApp.tblShiftType.detail.title">Tbl Shift Type</span> {{tblShiftType.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblShiftType.strName">Str Name</span></dt>
+        <dd>
+            <span>{{tblShiftType.strName}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblShiftType.dtmLastUpdate">Dtm Last Update</span></dt>
+        <dd>
+            <span>{{tblShiftType.dtmLastUpdate | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-shift-type/'+ tblShiftType.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

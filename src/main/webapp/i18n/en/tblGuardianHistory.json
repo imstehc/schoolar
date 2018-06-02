@@ -1,0 +1,28 @@
+{
+    "schoolarApp": {
+        "tblGuardianHistory" : {
+            "home": {
+                "title": "Tbl Guardian Histories",
+                "createLabel": "Create a new Tbl Guardian History",
+                "createOrEditLabel": "Create or edit a Tbl Guardian History"
+            },
+            "created": "A new Tbl Guardian History is created with identifier {{ param }}",
+            "updated": "A Tbl Guardian History is updated with identifier {{ param }}",
+            "deleted": "A Tbl Guardian History is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl Guardian History {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl Guardian History"
+            },
+            "dtmChanged": "Dtm Changed",
+            "dtmLastUpdate": "Dtm Last Update",
+            "user": "User",
+            "guardianUser": "Guardian User",
+            "guardianType": "Guardian Type",
+            "userAuthor": "User Author",
+            "audienceClient": "Audience Client",
+            "generalProcedureType": "General Procedure Type"
+        }
+    }
+}

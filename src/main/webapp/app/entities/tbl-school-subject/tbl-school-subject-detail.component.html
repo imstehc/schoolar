@@ -1,0 +1,52 @@
+
+<div *ngIf="tblSchoolSubject">
+    <h2><span jhiTranslate="schoolarApp.tblSchoolSubject.detail.title">Tbl School Subject</span> {{tblSchoolSubject.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblSchoolSubject.dtmCreated">Dtm Created</span></dt>
+        <dd>
+            <span>{{tblSchoolSubject.dtmCreated | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolSubject.dtmLastUpdade">Dtm Last Updade</span></dt>
+        <dd>
+            <span>{{tblSchoolSubject.dtmLastUpdade | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolSubject.intExcluded">Int Excluded</span></dt>
+        <dd>
+            <span>{{tblSchoolSubject.intExcluded}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolSubject.tblLevelType">Tbl Level Type</span></dt>
+        <dd>
+            <div *ngIf="tblSchoolSubject.tblLevelType">
+                <a [routerLink]="['/tbl-level-type', tblSchoolSubject.tblLevelType?.id]">{{tblSchoolSubject.tblLevelType?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolSubject.tblSubject">Tbl Subject</span></dt>
+        <dd>
+            <div *ngIf="tblSchoolSubject.tblSubject">
+                <a [routerLink]="['/tbl-subject', tblSchoolSubject.tblSubject?.id]">{{tblSchoolSubject.tblSubject?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolSubject.tblSchool">Tbl School</span></dt>
+        <dd>
+            <div *ngIf="tblSchoolSubject.tblSchool">
+                <a [routerLink]="['/tbl-school', tblSchoolSubject.tblSchool?.id]">{{tblSchoolSubject.tblSchool?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-school-subject/'+ tblSchoolSubject.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

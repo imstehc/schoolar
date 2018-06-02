@@ -1,0 +1,23 @@
+{
+    "schoolarApp": {
+        "tblClassStudent" : {
+            "home": {
+                "title": "Tbl Class Students",
+                "createLabel": "Create a new Tbl Class Student",
+                "createOrEditLabel": "Create or edit a Tbl Class Student"
+            },
+            "created": "A new Tbl Class Student is created with identifier {{ param }}",
+            "updated": "A Tbl Class Student is updated with identifier {{ param }}",
+            "deleted": "A Tbl Class Student is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl Class Student {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl Class Student"
+            },
+            "dtmLastUpdate": "Dtm Last Update",
+            "tblUser": "Tbl User",
+            "tblClass": "Tbl Class"
+        }
+    }
+}

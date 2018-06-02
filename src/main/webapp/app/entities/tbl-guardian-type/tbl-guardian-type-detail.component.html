@@ -1,0 +1,34 @@
+
+<div *ngIf="tblGuardianType">
+    <h2><span jhiTranslate="schoolarApp.tblGuardianType.detail.title">Tbl Guardian Type</span> {{tblGuardianType.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblGuardianType.strName">Str Name</span></dt>
+        <dd>
+            <span>{{tblGuardianType.strName}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblGuardianType.strDescription">Str Description</span></dt>
+        <dd>
+            <span>{{tblGuardianType.strDescription}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblGuardianType.dtmLastUpdate">Dtm Last Update</span></dt>
+        <dd>
+            <span>{{tblGuardianType.dtmLastUpdate | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-guardian-type/'+ tblGuardianType.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

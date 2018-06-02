@@ -1,0 +1,66 @@
+
+<div *ngIf="tblSchoolNetwork">
+    <h2><span jhiTranslate="schoolarApp.tblSchoolNetwork.detail.title">Tbl School Network</span> {{tblSchoolNetwork.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblSchoolNetwork.strCode">Str Code</span></dt>
+        <dd>
+            <span>{{tblSchoolNetwork.strCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolNetwork.strName">Str Name</span></dt>
+        <dd>
+            <span>{{tblSchoolNetwork.strName}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolNetwork.strLegalName">Str Legal Name</span></dt>
+        <dd>
+            <span>{{tblSchoolNetwork.strLegalName}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolNetwork.strCNPJ">Str CNPJ</span></dt>
+        <dd>
+            <span>{{tblSchoolNetwork.strCNPJ}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolNetwork.strEmail">Str Email</span></dt>
+        <dd>
+            <span>{{tblSchoolNetwork.strEmail}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolNetwork.dtmCreated">Dtm Created</span></dt>
+        <dd>
+            <span>{{tblSchoolNetwork.dtmCreated | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolNetwork.dtmLastUpdate">Dtm Last Update</span></dt>
+        <dd>
+            <span>{{tblSchoolNetwork.dtmLastUpdate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolNetwork.intExcluded">Int Excluded</span></dt>
+        <dd>
+            <span>{{tblSchoolNetwork.intExcluded}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolNetwork.tblPhone">Tbl Phone</span></dt>
+        <dd>
+            <span *ngFor="let tblPhone of tblSchoolNetwork.tblPhones; let last = last">
+                <a [routerLink]="['/tbl-phone', tblPhone?.id ]">{{tblPhone.id}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolNetwork.tblAddress">Tbl Address</span></dt>
+        <dd>
+            <span *ngFor="let tblAddress of tblSchoolNetwork.tblAddresses; let last = last">
+                <a [routerLink]="['/tbl-address', tblAddress?.id ]">{{tblAddress.id}}</a>{{last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-school-network/'+ tblSchoolNetwork.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

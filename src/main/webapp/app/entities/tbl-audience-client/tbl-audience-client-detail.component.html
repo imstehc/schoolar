@@ -1,0 +1,38 @@
+
+<div *ngIf="tblAudienceClient">
+    <h2><span jhiTranslate="schoolarApp.tblAudienceClient.detail.title">Tbl Audience Client</span> {{tblAudienceClient.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblAudienceClient.strBase64Secret">Str Base 64 Secret</span></dt>
+        <dd>
+            <span>{{tblAudienceClient.strBase64Secret}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblAudienceClient.strName">Str Name</span></dt>
+        <dd>
+            <span>{{tblAudienceClient.strName}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblAudienceClient.intDaysAccessTokenExpire">Int Days Access Token Expire</span></dt>
+        <dd>
+            <span>{{tblAudienceClient.intDaysAccessTokenExpire}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblAudienceClient.intDaysRefreshTokenExpire">Int Days Refresh Token Expire</span></dt>
+        <dd>
+            <span>{{tblAudienceClient.intDaysRefreshTokenExpire}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-audience-client/'+ tblAudienceClient.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

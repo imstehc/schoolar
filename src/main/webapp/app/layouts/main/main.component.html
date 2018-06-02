@@ -1,0 +1,23 @@
+<div [hidden]="!securityReady">
+    <div>
+        <router-outlet name="navbar"></router-outlet>
+    </div>
+    <div [ngSwitch]="isAuthenticated()">
+        <div *ngSwitchCase="true">
+            <jhi-home-internal></jhi-home-internal>
+            <div id="wrapper" [hidden] ="!this.isHome">
+                <div class="container_warp_main">
+                    <div class="card jh-card_main">
+                        <h2 jhiTranslate="global.form.welcome"></h2>
+                        <h1>Schoolar</h1>
+                        <p jhiTranslate="global.form.positivosystem">
+                        <p jhiTranslate="global.form.educationalpositivo"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngSwitchCase="false">
+            <jhi-home-external></jhi-home-external>
+        </div>
+    </div>
+</div>

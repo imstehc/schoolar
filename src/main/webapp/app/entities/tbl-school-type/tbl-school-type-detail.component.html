@@ -1,0 +1,36 @@
+
+<div *ngIf="tblSchoolType">
+    <h2><span jhiTranslate="schoolarApp.tblSchoolType.detail.title">Tbl School Type</span> {{tblSchoolType.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblSchoolType.strName">Str Name</span></dt>
+        <dd>
+            <span>{{tblSchoolType.strName}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolType.dtmLastUpdate">Dtm Last Update</span></dt>
+        <dd>
+            <span>{{tblSchoolType.dtmLastUpdate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSchoolType.school">School</span></dt>
+        <dd>
+            <div *ngIf="tblSchoolType.school">
+                <a [routerLink]="['/tbl-school', tblSchoolType.school?.id]">{{tblSchoolType.school?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-school-type/'+ tblSchoolType.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

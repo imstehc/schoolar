@@ -1,0 +1,78 @@
+<form name="editForm" role="form" (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTblSchoolNetworkSchoolLabel" jhiTranslate="schoolarApp.tblSchoolNetworkSchool.home.createOrEditLabel">Create or edit a Tbl School Network School</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!tblSchoolNetworkSchool.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="tblSchoolNetworkSchool.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolNetworkSchool.dtmCreated" for="field_dtmCreated">Dtm Created</label>
+            <div class="d-flex">
+                <input id="field_dtmCreated" type="datetime-local" class="form-control" name="dtmCreated" [(ngModel)]="tblSchoolNetworkSchool.dtmCreated"
+                required/>
+            </div>
+            <div [hidden]="!(editForm.controls.dtmCreated?.dirty && editForm.controls.dtmCreated?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.dtmCreated?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.dtmCreated?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolNetworkSchool.dtmLastUpdate" for="field_dtmLastUpdate">Dtm Last Update</label>
+            <div class="d-flex">
+                <input id="field_dtmLastUpdate" type="datetime-local" class="form-control" name="dtmLastUpdate" [(ngModel)]="tblSchoolNetworkSchool.dtmLastUpdate"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolNetworkSchool.intExcluded" for="field_intExcluded">Int Excluded</label>
+            <input type="number" class="form-control" name="intExcluded" id="field_intExcluded"
+                [(ngModel)]="tblSchoolNetworkSchool.intExcluded" required/>
+            <div [hidden]="!(editForm.controls.intExcluded?.dirty && editForm.controls.intExcluded?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.intExcluded?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+                <small class="form-text text-danger"
+                    [hidden]="!editForm.controls.intExcluded?.errors?.number" jhiTranslate="entity.validation.number">
+                    This field should be a number.
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolNetworkSchool.school" for="field_school">School</label>
+            <select class="form-control" id="field_school" name="school" [(ngModel)]="tblSchoolNetworkSchool.school" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tblSchoolOption.id === tblSchoolNetworkSchool.school?.id ? tblSchoolNetworkSchool.school : tblSchoolOption" *ngFor="let tblSchoolOption of tblschools; trackBy: trackTblSchoolById">{{tblSchoolOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblSchoolNetworkSchool.schoolNetwork" for="field_schoolNetwork">School Network</label>
+            <select class="form-control" id="field_schoolNetwork" name="schoolNetwork" [(ngModel)]="tblSchoolNetworkSchool.schoolNetwork" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tblSchoolNetworkOption.id === tblSchoolNetworkSchool.schoolNetwork?.id ? tblSchoolNetworkSchool.schoolNetwork : tblSchoolNetworkOption" *ngFor="let tblSchoolNetworkOption of tblschoolnetworks; trackBy: trackTblSchoolNetworkById">{{tblSchoolNetworkOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

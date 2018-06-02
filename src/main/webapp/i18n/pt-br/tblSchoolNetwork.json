@@ -1,0 +1,33 @@
+{
+    "schoolarApp": {
+        "tblSchoolNetwork" : {
+            "home": {
+                "title": "Rede de Escolas",
+                "createLabel": "Criar nova Rede",
+                "createOrEditLabel": "Criar ou editar School Network"
+            },
+            "created": "Um novo School Network foi criado com o identificador {{ param }}",
+            "updated": "Um School Network foi atualizado com o identificador {{ param }}",
+            "deleted": "Um School Network foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir a Rede de escolas {{ id }}?"
+            },
+            "detail": {
+                "title": "Rede de Escolas"
+            },
+            "strCode": "Código",
+            "strName": "Name",
+            "strLegalName": "Razão Social",
+            "strCNPJ": "CNPJ",
+            "strEmail": "Email",
+            "dtmCreated": "Created",
+            "dtmLastUpdate": "Last Update",
+            "intExcluded": "Excluded",
+            "tblPhone": "Telefone",
+            "tblAddress": "Endereço",
+            "tblAssociated": "Escolar Associadas",
+            "tblAssociate": "Associar Escolar"
+
+        }
+    }
+}

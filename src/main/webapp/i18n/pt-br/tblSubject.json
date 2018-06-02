@@ -1,0 +1,27 @@
+{
+    "schoolarApp": {
+        "tblSubject" : {
+            "home": {
+                "title": "Disciplina",
+                "createLabel": "Criar nova Disciplina",
+                "createOrEditLabel": "Criar ou editar Disciplina"
+            },
+            "created": "Uma nova Disciplina foi criado com o identificador {{ param }}",
+            "updated": "Uma Disciplina foi atualizado com o identificador {{ param }}",
+            "deleted": "Uma Disciplina foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir a Disciplina {{ id }}?"
+            },
+            "detail": {
+                "title": "Disciplina"
+            },
+            "strName": "Nome",
+            "strAbbreviation": "Abreviaçao",
+            "intOrder": "Ordem",
+            "strLabel": "Descriçao",
+            "dtmCreated": "Data de Cadastro",
+            "dtmLastUpdate": "Última Atualizaçao",
+            "intExcluded": "Excluído?"
+        }
+    }
+}

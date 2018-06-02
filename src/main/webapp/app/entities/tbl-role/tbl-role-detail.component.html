@@ -1,0 +1,46 @@
+
+<div *ngIf="tblRole">
+    <h2><span jhiTranslate="schoolarApp.tblRole.detail.title">Tbl Role</span> {{tblRole.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblRole.strName">Str Name</span></dt>
+        <dd>
+            <span>{{tblRole.strName}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblRole.strDescription">Str Description</span></dt>
+        <dd>
+            <span>{{tblRole.strDescription}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblRole.dtmCreated">Dtm Created</span></dt>
+        <dd>
+            <span>{{tblRole.dtmCreated | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblRole.dtmLastUpdate">Dtm Last Update</span></dt>
+        <dd>
+            <span>{{tblRole.dtmLastUpdate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblRole.intExcluded">Int Excluded</span></dt>
+        <dd>
+            <span>{{tblRole.intExcluded}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblRole.intCanBeImpersonated">Int Can Be Impersonated</span></dt>
+        <dd>
+            <span>{{tblRole.intCanBeImpersonated}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-role/'+ tblRole.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

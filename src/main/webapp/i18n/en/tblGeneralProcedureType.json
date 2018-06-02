@@ -1,0 +1,22 @@
+{
+    "schoolarApp": {
+        "tblGeneralProcedureType" : {
+            "home": {
+                "title": "Tbl General Procedure Types",
+                "createLabel": "Create a new Tbl General Procedure Type",
+                "createOrEditLabel": "Create or edit a Tbl General Procedure Type"
+            },
+            "created": "A new Tbl General Procedure Type is created with identifier {{ param }}",
+            "updated": "A Tbl General Procedure Type is updated with identifier {{ param }}",
+            "deleted": "A Tbl General Procedure Type is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl General Procedure Type {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl General Procedure Type"
+            },
+            "strName": "Str Name",
+            "dtmLastUpdate": "Dtm Last Update"
+        }
+    }
+}

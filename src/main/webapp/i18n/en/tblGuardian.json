@@ -1,0 +1,24 @@
+{
+    "schoolarApp": {
+        "tblGuardian" : {
+            "home": {
+                "title": "Tbl Guardians",
+                "createLabel": "Create a new Tbl Guardian",
+                "createOrEditLabel": "Create or edit a Tbl Guardian"
+            },
+            "created": "A new Tbl Guardian is created with identifier {{ param }}",
+            "updated": "A Tbl Guardian is updated with identifier {{ param }}",
+            "deleted": "A Tbl Guardian is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tbl Guardian {{ id }}?"
+            },
+            "detail": {
+                "title": "Tbl Guardian"
+            },
+            "dtmLastUpdate": "Dtm Last Update",
+            "user": "User",
+            "guardianUser": "Guardian User",
+            "guardianType": "Guardian Type"
+        }
+    }
+}

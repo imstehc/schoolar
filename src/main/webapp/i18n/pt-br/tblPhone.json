@@ -1,0 +1,38 @@
+{
+    "schoolarApp": {
+        "tblPhone" : {
+            "home": {
+                "title": "Telefone",
+                "createLabel": "Criar novo Telefone",
+                "createOrEditLabel": "Criar ou editar Telefone"
+            },
+            "created": "Um novo Telefone foi criado com o identificador {{ param }}",
+            "updated": "Um Telefone foi atualizado com o identificador {{ param }}",
+            "deleted": "Um TTelefonee foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Telefone {{ id }}?"
+            },
+            "detail": {
+                "title": "Telefone"
+            },
+            "strPrefix": "Prefixo",
+            "strNumber": "Telefone",
+            "strPhoneType": "Tipo de telefone",
+            "strLabel": "Descrição",
+            "dtmCreated": "Data de criação",
+            "dtmLastUpdate": "Data da última atualização",
+            "intExcluded": "Excluído",
+            "tblUser": "Usuário",
+            "tblSchoolNetwork": "Rede Escolar",
+            "tblSchool": "Escola",
+			"strPhoneTypes":{
+				"Cell":"Celular",
+				"Residence":"Residencial",
+				"Comercial":"Comercial",
+				"Others":"Outros"
+
+			},
+            "newPhone": "Novo Telefone"
+        }
+    }
+}

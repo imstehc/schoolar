@@ -1,0 +1,7 @@
+id;str_user_name;str_password;user_id
+1;user.cantina;123456;2
+2;user*cantina;123456;2
+3;user-cantina;123456;2
+4;user_cantina;123456;2
+5;user??cantina;123456;2
+6;user^cantina;123456;2

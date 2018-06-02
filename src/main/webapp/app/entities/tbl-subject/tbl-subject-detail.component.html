@@ -1,0 +1,50 @@
+
+<div *ngIf="tblSubject">
+    <h2><span jhiTranslate="schoolarApp.tblSubject.detail.title">Tbl Subject</span> {{tblSubject.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="schoolarApp.tblSubject.strName">Str Name</span></dt>
+        <dd>
+            <span>{{tblSubject.strName}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSubject.strAbbreviation">Str Abbreviation</span></dt>
+        <dd>
+            <span>{{tblSubject.strAbbreviation}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSubject.intOrder">Int Order</span></dt>
+        <dd>
+            <span>{{tblSubject.intOrder}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSubject.strLabel">Str Label</span></dt>
+        <dd>
+            <span>{{tblSubject.strLabel}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSubject.dtmCreated">Dtm Created</span></dt>
+        <dd>
+            <span>{{tblSubject.dtmCreated | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSubject.dtmLastUpdate">Dtm Last Update</span></dt>
+        <dd>
+            <span>{{tblSubject.dtmLastUpdate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="schoolarApp.tblSubject.intExcluded">Int Excluded</span></dt>
+        <dd>
+            <span>{{tblSubject.intExcluded}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tbl-subject/'+ tblSubject.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

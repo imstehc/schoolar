@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity TblSchoolSubject.
+    -->
+    <changeSet id="20180129203754-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="tbl_level_type_id"
+                                 baseTableName="tbl_school_subject"
+                                 constraintName="fk_tbl_school_subject_tbl_level_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tbl_level_type"/>
+
+        <addForeignKeyConstraint baseColumnNames="tbl_subject_id"
+                                 baseTableName="tbl_school_subject"
+                                 constraintName="fk_tbl_school_subject_tbl_subject_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tbl_subject"/>
+
+        <addForeignKeyConstraint baseColumnNames="tbl_school_id"
+                                 baseTableName="tbl_school_subject"
+                                 constraintName="fk_tbl_school_subject_tbl_school_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tbl_school"/>
+
+    </changeSet>
+</databaseChangeLog>

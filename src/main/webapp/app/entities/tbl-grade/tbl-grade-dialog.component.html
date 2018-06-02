@@ -1,0 +1,66 @@
+<form name="editForm" role="form" (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myTblGradeLabel" jhiTranslate="schoolarApp.tblGrade.home.createOrEditLabel">Create or edit a Tbl Grade</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!tblGrade.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="tblGrade.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblGrade.strName" for="field_strName">Str Name</label>
+            <input type="text" class="form-control" name="strName" id="field_strName"
+                [(ngModel)]="tblGrade.strName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblGrade.intNumber" for="field_intNumber">Int Number</label>
+            <input type="number" class="form-control" name="intNumber" id="field_intNumber"
+                [(ngModel)]="tblGrade.intNumber" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblGrade.dtmCreated" for="field_dtmCreated">Dtm Created</label>
+            <div class="d-flex">
+                <input id="field_dtmCreated" type="datetime-local" class="form-control" name="dtmCreated" [(ngModel)]="tblGrade.dtmCreated"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblGrade.dtmLastUpdate" for="field_dtmLastUpdate">Dtm Last Update</label>
+            <div class="d-flex">
+                <input id="field_dtmLastUpdate" type="datetime-local" class="form-control" name="dtmLastUpdate" [(ngModel)]="tblGrade.dtmLastUpdate"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblGrade.intExcluded" for="field_intExcluded">Int Excluded</label>
+            <input type="number" class="form-control" name="intExcluded" id="field_intExcluded"
+                [(ngModel)]="tblGrade.intExcluded" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblGrade.strLabel" for="field_strLabel">Str Label</label>
+            <input type="text" class="form-control" name="strLabel" id="field_strLabel"
+                [(ngModel)]="tblGrade.strLabel" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="schoolarApp.tblGrade.tblLevelType" for="field_tblLevelType">Tbl Level Type</label>
+            <select class="form-control" id="field_tblLevelType" name="tblLevelType" [(ngModel)]="tblGrade.tblLevelType" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="tblLevelTypeOption.id === tblGrade.tblLevelType?.id ? tblGrade.tblLevelType : tblLevelTypeOption" *ngFor="let tblLevelTypeOption of tblleveltypes; trackBy: trackTblLevelTypeById">{{tblLevelTypeOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,27 @@
+{
+    "schoolarApp": {
+        "tblGrade" : {
+            "home": {
+                "title": "Série",
+                "createLabel": "Cadastrar nova Série",
+                "createOrEditLabel": "Criar ou editar Série"
+            },
+            "created": "Uma nova Série foi criado com o identificador {{ param }}",
+            "updated": "Uma Série Série foi atualizado com o identificador {{ param }}",
+            "deleted": "Uma  foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluír Série {{ id }}?"
+            },
+            "detail": {
+                "title": "Série"
+            },
+            "strName": "Nome",
+            "intNumber": "Número",
+            "dtmCreated": "Data de Cadastro",
+            "dtmLastUpdate": "Última Atualizaçao",
+            "intExcluded": "Excluído?",
+            "strLabel": "Descriçao",
+            "tblLevelType": "Tipo de Nível"
+        }
+    }
+}
